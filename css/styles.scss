@@ -1,0 +1,595 @@
+$Blue: rgb(60, 129, 194);
+$DarkBlue: #0d1c3d;
+$LightBackground: #e6f2f7;
+$white: #fff;
+$black: #000;
+$grey: rgb(117, 117, 117);
+$lightgrey: rgb(240, 240, 240);
+$Font: Arial, Helvetica, sans-serif;
+$FontSize: 18px;
+$smallerFontSize: 14px;
+$firstQuerry: screen and (max-width: 1800px);
+$secondQurry: screen and (max-width: 1733px);
+$thirdQuerry: screen and (max-width: 1730px);
+$fourthQuerry: screen and (max-width: 1517px);
+$fifthQuerry: screen and (max-width: 1060px);
+$sixthQuerry: screen and (max-width: 807px);
+
+html, body {
+    font-family: $Font;
+    margin: 0;
+    @media #{$fifthQuerry} {
+        overflow-x: hidden;
+    }
+}
+
+.container {
+    @media #{$fifthQuerry} {
+        display: none;
+    }
+    .nav-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $Blue;
+    }
+    
+    .drop-down-menus {
+        color: $white;
+        margin-left: 10%;  
+    }
+    
+    #menu {
+        border: 1px solid $white;
+        border-radius: 4px;
+        padding: 5px;
+        color: $white;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    #menu:hover {
+        cursor: pointer;
+    }
+    
+    #menu, select {
+        background: $Blue;
+    }
+    
+    .employers-and-brokers {
+        margin-right: 10%;
+        li {
+            color: $white;
+            font-size: $FontSize;
+            padding: 5px;
+            display: inline-block;
+            list-style: none;
+        }
+    }
+    
+    #underline-link {
+        text-decoration: none;
+        color: $white;
+    }
+    
+    #underline-link:hover {
+        text-decoration: underline;
+    }
+    
+    #window-icon {
+        top: 6px;
+        position: relative;
+        color: $white;
+    }
+}
+
+.container-2 {
+    background-color: $DarkBlue;
+    display: flex;
+    justify-content: space-between;
+    #logo {
+        width: 420px;
+        height: 50px;
+        display: flex;
+        margin: 20px 0px 40px 10%;
+        border: 0px solid #ccc;
+        box-sizing: border-box;
+        @media #{$fifthQuerry} {
+            width: 25%;
+            height: 15%;
+            margin-left: 20px;
+        }
+    }
+
+    .login-options {
+        margin: 18px 10% 0px 0px;
+        @media #{$fifthQuerry} {
+            margin-right: 80px;
+        }
+    }
+
+    .register {
+        border-radius: 20px;
+        text-decoration: none;
+        color: $LightBackground;
+        background-color: $DarkBlue;
+        border: 1px solid $LightBackground;
+        padding: 10px 13px 10px 13px;
+        font-size: $FontSize;
+        box-sizing: border-box;
+    }
+
+    .sign-in {
+        text-decoration: none;
+        color: $DarkBlue;
+        background-color: $LightBackground;
+        border: 1px solid #164099;
+        border-radius: 20px;
+        padding: 1px 13px 10px 13px;
+        font-size: $FontSize;
+        box-sizing: border-box;
+    }
+
+    .profile-icon {
+        width: 25px;
+        height: 25px;
+        position: relative;
+        top: 5px;
+        right: 4px;
+
+    }
+
+    button {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.container-3 {
+    background-color: #0d1c3d;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    .option-list {
+        margin-left: 7.5%;
+        float: left;
+        display: flex;
+        li {
+            color: $white;
+            font-weight: bold;
+            list-style: none;
+            display: inline-block;
+            margin: 0px 10px 0px 10px;
+        }
+        a {
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+                transition: color 1s;
+            }
+        }
+        @media #{$fifthQuerry} {
+            display: none;
+        }
+    }
+    
+    #white-hover-link {
+        text-decoration: none;
+        color: $white;
+    }
+
+    #hamburger-icon {
+        margin: auto 0;
+        display: none;
+        cursor: pointer;
+        div {
+            width: 35px;
+            height: 3px;
+            background-color: $white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+        @media #{$fifthQuerry} {
+            display: block;
+            position: absolute;
+            left: 95%;
+            top: 30px;
+        }
+    }
+
+    .mobile-menu {
+        display: none;
+        position: absolute;
+        bottom: -100px;
+        right: 400px;
+        width: 100%;
+    }
+
+    .open {
+        @for $i from 1 through 3{
+            .bar#{$i} {
+                transition: opacity 1s;
+            }
+        }
+        .mobile-menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            float: right;
+            text-decoration: none;
+            li {
+                margin-bottom: 10px;
+                margin-right: 5px;
+                text-decoration: none;
+                list-style-type: none;
+                font-size: 13px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+                background-color: rgb(255, 255, 255);
+                width: 80px;
+                padding: 10px;
+                text-align: right;
+                border: 3px;
+                border-radius: 4px;
+            }
+
+            a {
+                color:rgb(0, 0, 0);
+                li {
+                    &:hover {
+                    background-color: skyblue;
+                    opacity: 50%;
+                    transition: 1s;
+                    }
+                }
+            }
+        } 
+    }
+    
+    a {
+        &:link {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+
+        &:hover {
+            text-decoration: none;
+            color: $white;
+        }
+    }
+        
+    .search-container {
+        margin-right: 10%;
+        margin-bottom: 10px;
+        @media #{$fifthQuerry} {
+            margin: 0px 0px 20px 10px;  
+        }
+        .search-bar {
+            font-size: 18px;
+            border: $Blue;
+            border-radius: 5px;
+            height: 40px;
+            width: 400px;
+            padding-left: 10px;
+        }
+    
+        .search-button {
+            border-radius: 20px;
+            text-decoration: none;
+            color: $LightBackground;
+            background-color: $DarkBlue;
+            border: 1px solid $LightBackground;
+            padding: 12px;
+            font-size: $smallerFontSize;;
+            margin: 0px 0px 10px 10px;
+            letter-spacing: 1px;
+            @media #{$fourthQuerry} {
+                left: 410px; 
+                bottom: 43px;
+                position: relative;
+                display: unset;
+            }
+            @media #{$fifthQuerry} {
+                display: none;
+            }
+        }
+    
+        .search-button-mobile {
+            border-radius: 20px;
+            text-decoration: none;
+            color: $LightBackground;
+            background-color: $DarkBlue;
+            border: 1px solid $LightBackground;
+            padding: 12px;
+            font-size: $smallerFontSize;;
+            display: none;
+            @media #{$fifthQuerry} {
+                display: unset;             
+            }
+        }
+    }
+}
+
+.container-4 {
+	align-items: center;
+	display: flex;
+    @media #{$firstQuerry} {
+        display: unset;
+		padding-left: 18%;
+    }
+        
+	.friends-sitting {
+		border: solid $grey 1px;
+		border-radius: 3px;
+		margin-top: 20px;
+		position: relative;
+		margin-left: 13%;
+        @media #{$firstQuerry} {
+            margin-left: 0;
+        }
+        @media #{$fifthQuerry} {
+            display: none;
+        }
+	}
+	.todays-suggestions {
+		border: 1px solid $grey;
+		border-radius: 4px;
+		background-color: $white;
+		align-self: end;
+		z-index: 1;
+		position: relative;
+		margin-right: 1pc;
+		margin-left: 1pc;
+		padding: 15px 80px 2pc 1pc;
+		right: 250px;
+		bottom: 180px;
+		color: $DarkBlue;
+        @media #{$firstQuerry} { 
+            position: unset;
+            padding-left: 18%;  
+        }
+        @media #{$thirdQuerry} {
+            box-sizing: border-box;
+            flex: 1;
+        }
+        @media #{$fourthQuerry} {
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+		h2 {
+			margin-left: 50px;
+			margin: 0;
+			padding: 30px 0px 30px 0px;
+		}
+		button {
+			text-decoration: none;
+			border: 1px solid $Blue;
+			background-color: $LightBackground;
+			border-radius: 24px;
+			margin: 10px 10px 0px 10px;
+			padding: 14px;
+			font-size: 18px;
+			color: $Blue;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+        br {
+            @media #{$firstQuerry} {
+                display: none;
+            }
+            @media #{$fifthQuerry} {
+                display: none;
+            }
+        }
+	}
+}
+
+.container-5 {
+    display: flex;
+    background-color: $lightgrey;
+    .more-resources {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-top: 0;
+        padding-left: 13%;
+        img {
+            margin: 5px 10px 0px 0px;
+        }
+        @media #{$firstQuerry} {
+            text-align: center;
+        }
+    }
+}
+
+.container-6 {
+    display: flex;
+    background-color: $lightgrey;
+    p {
+        padding: 0px 0px 10px 10px;
+        padding-left: 13%;
+    }
+}
+
+.container-7 {
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 100px;
+    text-align: left;
+    margin-left: 14%;
+    #column-container {
+        text-decoration: none;
+        color: $black;
+    }
+
+    .column {
+        border: 1px solid $grey;
+        border-radius: 8px;
+        box-sizing: border-box;
+        width: 332px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        height: 500px;
+        img {
+            width: 332px;
+            height: 220px;
+        }
+
+        p, h2, h4 {
+            padding: 10px;
+        }
+
+        h4 {
+            color: $Blue;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        p {
+            font-weight: 500;
+        }
+    }
+}
+
+.container-8 {
+    height: 100%;
+    position: relative;
+    margin-top: 50px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 100px 0px 100px;
+    @media #{$fifthQuerry} {
+        display: unset;
+    }
+    .column-encyclopedia-container {
+        display: flex;
+        @media #{$fifthQuerry} {
+            width: 150%;
+        }
+        @media #{$sixthQuerry} {
+            flex-wrap: wrap;
+        }
+        #column-encyclopedia {
+            border: 0px solid $grey;
+            box-sizing: border-box;
+            width: 40%;
+            margin: 0px 50px 0px 50px;
+            grid-column: span 6;
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 30px;
+            @media #{$fifthQuerry} {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+        #child-container-8 {
+            margin-top: 80px;
+            width: 60%;
+            padding-left: 30px;
+            #icon-desc {
+                margin-left: 30px;
+                width: 300px;
+            }
+
+            #browse-button {
+                border: 1px solid $Blue;
+                border-radius: 16px;
+                font-size: $smallerFontSize;
+                padding: 10px 6px 10px 6px;
+                background-color: $LightBackground;
+                color: $Blue;
+                margin-left: 30px;
+            }
+
+            .magnefying-glass-icon {
+                padding: 20px 20px 0px 0px;
+                @media #{$fifthQuerry} {
+                    display: none;
+                }
+            }
+
+            .drug-icon {
+                padding: 20px 40px 0px 0px;
+                @media #{$fifthQuerry} { 
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.container-9 {
+    background-color:$DarkBlue;
+    .kp-logo-mini {
+        width: 12%;
+        height: 12%;
+        position: relative;
+        left: 18.8%;
+        margin-top: 40px;
+    }
+}
+
+.container-footer {
+    background-color: $DarkBlue;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: left;
+    .column-group {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 12.5%;
+    }
+
+    #column-of-info {
+        padding: 20px;
+        border: 0px solid $grey;
+        box-sizing: border-box;
+        margin-left: 60px;
+    }
+
+    #list-of-info {
+        list-style: none;
+        color: $white;
+        font-size: $smallerFontSize;
+        width: 200px;
+    }
+
+    .container-footer-child {
+        margin-left: 18.8%;
+    }
+
+    .follow-us {
+        color: $white;
+        font-size: $smallerFontSize;
+        margin-bottom: 25px;
+    }
+
+    #sm-icon {
+        margin-right: 10px;
+    }
+
+    .about-kp {
+        padding-bottom: 40px;
+        padding-top: 20px;
+        color: $white;
+        font-size: 12px;
+        width: 1200px;
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+
+
+

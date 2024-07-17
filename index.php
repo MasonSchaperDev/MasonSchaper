@@ -9,9 +9,7 @@
 </head>
 
 <body>
-    <?php 
-    include 'header.php'; 
-    ?>
+    <?php include 'header.php';?>
 
 <!--today's suggestions-->
     <div class="container-4">

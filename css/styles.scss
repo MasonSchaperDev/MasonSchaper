@@ -1,37 +1,39 @@
-$Blue: rgb(60, 129, 194);
-$DarkBlue: #0d1c3d;
-$LightBackground: #e6f2f7;
+// lowercase across the board with naming conventions
+// spelling mistakes need to be fixed
+$blue: rgb(60, 129, 194);
+$darkBlue: #0d1c3d;
+$lightBackground: #e6f2f7;
 $white: #fff;
 $black: #000;
 $grey: rgb(117, 117, 117);
-$lightgrey: rgb(240, 240, 240);
+$lightGrey: rgb(240, 240, 240);
 $Font: Arial, Helvetica, sans-serif;
 $FontSize: 18px;
 $smallerFontSize: 14px;
-$firstQuerry: screen and (max-width: 1800px);
+$firstQuery: screen and (max-width: 1800px);
 $secondQurry: screen and (max-width: 1733px);
-$thirdQuerry: screen and (max-width: 1730px);
-$fourthQuerry: screen and (max-width: 1517px);
-$fifthQuerry: screen and (max-width: 1060px);
-$sixthQuerry: screen and (max-width: 807px);
+$thirdQuery: screen and (max-width: 1730px);
+$fourthQuery: screen and (max-width: 1517px);
+$fifthQuery: screen and (max-width: 1060px);
+$sixthQuery: screen and (max-width: 807px);
 
 html, body {
     font-family: $Font;
     margin: 0;
-    @media #{$fifthQuerry} {
+    @media #{$fifthQuery} {
         overflow-x: hidden;
     }
 }
 
 .container {
-    @media #{$fifthQuerry} {
+    @media #{$fifthQuery} {
         display: none;
     }
     .nav-bar {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: $Blue;
+        background-color: $blue;
     }
     
     .drop-down-menus {
@@ -53,7 +55,7 @@ html, body {
     }
     
     #menu, select {
-        background: $Blue;
+        background: $blue;
     }
     
     .employers-and-brokers {
@@ -84,7 +86,7 @@ html, body {
 }
 
 .container-2 {
-    background-color: $DarkBlue;
+    background-color: $darkBlue;
     display: flex;
     justify-content: space-between;
     #logo {
@@ -94,7 +96,7 @@ html, body {
         margin: 20px 0px 40px 10%;
         border: 0px solid #ccc;
         box-sizing: border-box;
-        @media #{$fifthQuerry} {
+        @media #{$fifthQuery} {
             width: 25%;
             height: 15%;
             margin-left: 20px;
@@ -103,7 +105,7 @@ html, body {
 
     .login-options {
         margin: 18px 10% 0px 0px;
-        @media #{$fifthQuerry} {
+        @media #{$fifthQuery} {
             margin-right: 80px;
         }
     }
@@ -111,9 +113,9 @@ html, body {
     .register {
         border-radius: 20px;
         text-decoration: none;
-        color: $LightBackground;
-        background-color: $DarkBlue;
-        border: 1px solid $LightBackground;
+        color: $lightBackground;
+        background-color: $darkBlue;
+        border: 1px solid $lightBackground;
         padding: 10px 13px 10px 13px;
         font-size: $FontSize;
         box-sizing: border-box;
@@ -121,8 +123,8 @@ html, body {
 
     .sign-in {
         text-decoration: none;
-        color: $DarkBlue;
-        background-color: $LightBackground;
+        color: $darkBlue;
+        background-color: $lightBackground;
         border: 1px solid #164099;
         border-radius: 20px;
         padding: 1px 13px 10px 13px;
@@ -169,7 +171,7 @@ html, body {
                 transition: color 1s;
             }
         }
-        @media #{$fifthQuerry} {
+        @media #{$fifthQuery} {
             display: none;
         }
     }
@@ -190,7 +192,7 @@ html, body {
             margin: 6px 0;
             transition: 0.4s;
         }
-        @media #{$fifthQuerry} {
+        @media #{$fifthQuery} {
             display: block;
             position: absolute;
             left: 95%;
@@ -262,12 +264,12 @@ html, body {
     .search-container {
         margin-right: 10%;
         margin-bottom: 10px;
-        @media #{$fifthQuerry} {
+        @media #{$fifthQuery} {
             margin: 0px 0px 20px 10px;  
         }
         .search-bar {
             font-size: 18px;
-            border: $Blue;
+            border: $blue;
             border-radius: 5px;
             height: 40px;
             width: 400px;
@@ -277,20 +279,20 @@ html, body {
         .search-button {
             border-radius: 20px;
             text-decoration: none;
-            color: $LightBackground;
-            background-color: $DarkBlue;
-            border: 1px solid $LightBackground;
+            color: $lightBackground;
+            background-color: $darkBlue;
+            border: 1px solid $lightBackground;
             padding: 12px;
             font-size: $smallerFontSize;;
             margin: 0px 0px 10px 10px;
             letter-spacing: 1px;
-            @media #{$fourthQuerry} {
+            @media #{$fourthQuery} {
                 left: 410px; 
                 bottom: 43px;
                 position: relative;
                 display: unset;
             }
-            @media #{$fifthQuerry} {
+            @media #{$fifthQuery} {
                 display: none;
             }
         }
@@ -298,13 +300,13 @@ html, body {
         .search-button-mobile {
             border-radius: 20px;
             text-decoration: none;
-            color: $LightBackground;
-            background-color: $DarkBlue;
-            border: 1px solid $LightBackground;
+            color: $lightBackground;
+            background-color: $darkBlue;
+            border: 1px solid $lightBackground;
             padding: 12px;
             font-size: $smallerFontSize;;
             display: none;
-            @media #{$fifthQuerry} {
+            @media #{$fifthQuery} {
                 display: unset;             
             }
         }
@@ -314,7 +316,7 @@ html, body {
 .container-4 {
 	align-items: center;
 	display: flex;
-    @media #{$firstQuerry} {
+    @media #{$firstQuery} {
         display: unset;
 		padding-left: 18%;
     }
@@ -325,10 +327,10 @@ html, body {
 		margin-top: 20px;
 		position: relative;
 		margin-left: 13%;
-        @media #{$firstQuerry} {
+        @media #{$firstQuery} {
             margin-left: 0;
         }
-        @media #{$fifthQuerry} {
+        @media #{$fifthQuery} {
             display: none;
         }
 	}
@@ -344,16 +346,16 @@ html, body {
 		padding: 15px 80px 2pc 1pc;
 		right: 250px;
 		bottom: 180px;
-		color: $DarkBlue;
-        @media #{$firstQuerry} { 
+		color: $darkBlue;
+        @media #{$firstQuery} { 
             position: unset;
             padding-left: 18%;  
         }
-        @media #{$thirdQuerry} {
+        @media #{$thirdQuery} {
             box-sizing: border-box;
             flex: 1;
         }
-        @media #{$fourthQuerry} {
+        @media #{$fourthQuery} {
             flex-wrap: wrap;
             margin-bottom: 20px;
         }
@@ -364,23 +366,23 @@ html, body {
 		}
 		button {
 			text-decoration: none;
-			border: 1px solid $Blue;
-			background-color: $LightBackground;
+			border: 1px solid $blue;
+			background-color: $lightBackground;
 			border-radius: 24px;
 			margin: 10px 10px 0px 10px;
 			padding: 14px;
 			font-size: 18px;
-			color: $Blue;
+			color: $blue;
 			&:hover {
 				text-decoration: underline;
 			}
 		}
 
         br {
-            @media #{$firstQuerry} {
+            @media #{$firstQuery} {
                 display: none;
             }
-            @media #{$fifthQuerry} {
+            @media #{$fifthQuery} {
                 display: none;
             }
         }
@@ -389,7 +391,7 @@ html, body {
 
 .container-5 {
     display: flex;
-    background-color: $lightgrey;
+    background-color: $lightGrey;
     .more-resources {
         font-size: 30px;
         font-weight: bold;
@@ -399,7 +401,7 @@ html, body {
         img {
             margin: 5px 10px 0px 0px;
         }
-        @media #{$firstQuerry} {
+        @media #{$firstQuery} {
             text-align: center;
         }
     }
@@ -407,7 +409,7 @@ html, body {
 
 .container-6 {
     display: flex;
-    background-color: $lightgrey;
+    background-color: $lightGrey;
     p {
         padding: 0px 0px 10px 10px;
         padding-left: 13%;
@@ -446,7 +448,7 @@ html, body {
         }
 
         h4 {
-            color: $Blue;
+            color: $blue;
             font-size: 12px;
             font-weight: bold;
         }
@@ -465,15 +467,15 @@ html, body {
     display: flex;
     justify-content: space-between;
     padding: 0px 100px 0px 100px;
-    @media #{$fifthQuerry} {
+    @media #{$fifthQuery} {
         display: unset;
     }
     .column-encyclopedia-container {
         display: flex;
-        @media #{$fifthQuerry} {
+        @media #{$fifthQuery} {
             width: 150%;
         }
-        @media #{$sixthQuerry} {
+        @media #{$sixthQuery} {
             flex-wrap: wrap;
         }
         #column-encyclopedia {
@@ -485,7 +487,7 @@ html, body {
             display: flex;
             flex-wrap: wrap;
             padding-bottom: 30px;
-            @media #{$fifthQuerry} {
+            @media #{$fifthQuery} {
                 display: flex;
                 flex-wrap: wrap;
             }
@@ -500,25 +502,25 @@ html, body {
             }
 
             #browse-button {
-                border: 1px solid $Blue;
+                border: 1px solid $blue;
                 border-radius: 16px;
                 font-size: $smallerFontSize;
                 padding: 10px 6px 10px 6px;
-                background-color: $LightBackground;
-                color: $Blue;
+                background-color: $lightBackground;
+                color: $blue;
                 margin-left: 30px;
             }
 
-            .magnefying-glass-icon {
+            .magnifying-glass-icon {
                 padding: 20px 20px 0px 0px;
-                @media #{$fifthQuerry} {
+                @media #{$fifthQuery} {
                     display: none;
                 }
             }
 
             .drug-icon {
                 padding: 20px 40px 0px 0px;
-                @media #{$fifthQuerry} { 
+                @media #{$fifthQuery} { 
                     display: none;
                 }
             }
@@ -527,7 +529,7 @@ html, body {
 }
 
 .container-9 {
-    background-color:$DarkBlue;
+    background-color:$darkBlue;
     .kp-logo-mini {
         width: 12%;
         height: 12%;
@@ -538,7 +540,7 @@ html, body {
 }
 
 .container-footer {
-    background-color: $DarkBlue;
+    background-color: $darkBlue;
     width: 100%;
     height: 100%;
     position: relative;

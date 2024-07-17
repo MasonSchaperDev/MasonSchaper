@@ -192,8 +192,7 @@ button:hover {
 .container-10b {
     padding: 0px 180px 0px 180px;
     display: flex;
-    margin-top: 60px;
-    float: right;
+    margin: 60px 0px 30px 0px;
 }
 
 .info-column-2 {

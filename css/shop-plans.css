@@ -149,7 +149,6 @@ button:hover {
     background-color: #F2F8FB;
     padding: 10px 30px 10px 30px;
     font-size: 15px;
-    width: 300px;
 }
 
 .container-9b {
@@ -233,6 +232,12 @@ button:hover {
 
 /* Media Queries */
 
+@media screen and (max-width: 1687px) {
+    .column {
+        height: 300px;
+    }
+}
+
 @media screen and (max-width: 1420px) {
     .admins-and-plans {
         margin-right: 0;
@@ -251,6 +256,10 @@ button:hover {
     
     .column-container {
         display: unset;
+    }
+
+    .column {
+        height: 250px;
     }
 
     .info-column {

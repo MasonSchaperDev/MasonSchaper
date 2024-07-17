@@ -7,9 +7,9 @@ $white: #fff;
 $black: #000;
 $grey: rgb(117, 117, 117);
 $lightGrey: rgb(240, 240, 240);
-$Font: Arial, Helvetica, sans-serif;
-$FontSize: 18px;
-$smallerFontSize: 14px;
+$font: Arial, Helvetica, sans-serif;
+$fontSize: 18px;
+$smallerfontSize: 14px;
 $firstQuery: screen and (max-width: 1800px);
 $secondQurry: screen and (max-width: 1733px);
 $thirdQuery: screen and (max-width: 1730px);
@@ -18,7 +18,7 @@ $fifthQuery: screen and (max-width: 1060px);
 $sixthQuery: screen and (max-width: 807px);
 
 html, body {
-    font-family: $Font;
+    font-family: $font;
     margin: 0;
     @media #{$fifthQuery} {
         overflow-x: hidden;
@@ -62,7 +62,7 @@ html, body {
         margin-right: 10%;
         li {
             color: $white;
-            font-size: $FontSize;
+            font-size: $fontSize;
             padding: 5px;
             display: inline-block;
             list-style: none;
@@ -117,7 +117,7 @@ html, body {
         background-color: $darkBlue;
         border: 1px solid $lightBackground;
         padding: 10px 13px 10px 13px;
-        font-size: $FontSize;
+        font-size: $fontSize;
         box-sizing: border-box;
     }
 
@@ -128,7 +128,7 @@ html, body {
         border: 1px solid #164099;
         border-radius: 20px;
         padding: 1px 13px 10px 13px;
-        font-size: $FontSize;
+        font-size: $fontSize;
         box-sizing: border-box;
     }
 
@@ -283,7 +283,7 @@ html, body {
             background-color: $darkBlue;
             border: 1px solid $lightBackground;
             padding: 12px;
-            font-size: $smallerFontSize;;
+            font-size: $smallerfontSize;;
             margin: 0px 0px 10px 10px;
             letter-spacing: 1px;
             @media #{$fourthQuery} {
@@ -304,7 +304,7 @@ html, body {
             background-color: $darkBlue;
             border: 1px solid $lightBackground;
             padding: 12px;
-            font-size: $smallerFontSize;;
+            font-size: $smallerfontSize;;
             display: none;
             @media #{$fifthQuery} {
                 display: unset;             
@@ -504,7 +504,7 @@ html, body {
             #browse-button {
                 border: 1px solid $blue;
                 border-radius: 16px;
-                font-size: $smallerFontSize;
+                font-size: $smallerfontSize;
                 padding: 10px 6px 10px 6px;
                 background-color: $lightBackground;
                 color: $blue;
@@ -561,7 +561,7 @@ html, body {
     #list-of-info {
         list-style: none;
         color: $white;
-        font-size: $smallerFontSize;
+        font-size: $smallerfontSize;
         width: 200px;
     }
 
@@ -571,7 +571,7 @@ html, body {
 
     .follow-us {
         color: $white;
-        font-size: $smallerFontSize;
+        font-size: $smallerfontSize;
         margin-bottom: 25px;
     }
 

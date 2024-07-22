@@ -1,0 +1,154 @@
+html, body {
+font-family: "Gotham 4r",Verdana;
+margin: 0;
+}
+
+.top-menu-container {
+background-color: #0d1c3d;
+display: flex;
+justify-content: space-between;
+}
+
+#kaiser-logo {
+width: 420px;
+height: 50px;
+display: flex;
+margin: 20px 0px 20px 10%;
+border: 0px solid #ccc;
+box-sizing: border-box;
+}
+
+#registration-container {
+   margin-left: 20%;
+}
+
+#registration-header {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+#all-fields-required {
+    margin: 0px 0px 50px 10px;
+}
+
+.fill-out-fields-column {
+    display: inline-block;
+    margin: 0px 200px 0px 0px;
+}
+
+.fill-out-fields-column-2 {
+    display: inline-block;
+    padding-bottom: 200px;
+    position: absolute;
+}
+
+.fill-out-field {
+    margin-bottom: 30px;
+}
+
+.fill-out-field h5 {
+    margin: 0;
+    color: #003b71;
+}
+
+.fill-out-field p {
+    margin: 0;
+    font-size: 12px;
+    color: #858282;
+}
+
+.fill-out-field input {
+    border: 1px solid #505050;
+    border-radius: 5px;
+    padding: 14px 10px 14px 10px;
+    margin: 7px 0px 7px 0px;
+    font-size: 20px;
+    width: 120%;
+}
+
+#states-menu {
+    border: 1px solid #505050;
+    border-radius: 5px;
+    padding: 14px 10px 14px 10px;
+    margin: 7px 0px 7px 0px;
+    font-size: 20px;
+    width: 127%;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+#buttons-container {
+    margin-bottom: 100px;
+}
+
+#buttons-container button {
+    padding: 13px 20px 13px 15px;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+#buttons-container button:hover {
+    background-color: #02315f;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#back-button {
+    border: 1px solid #0074ad;
+    color: #0074ad;
+    background-color: transparent;
+}
+
+#continue-button {
+    border: 1px solid #0074ad;
+    color: white;
+    background-color: #0074ad;
+}
+
+@media screen and (max-width: 1160px) {
+    #registration-container {
+        margin-left: 10%;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    #registration-container {
+        margin-left: 5%;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    #registration-container {
+        margin-left: 1%;
+    }
+}
+
+@media screen and (max-width: 830px) {
+
+    #registration-container {
+        text-align: center;
+    }
+
+    .fill-out-fields-column {
+        display: unset;
+        padding-bottom: 200px;
+        position: static;
+    }
+
+    .fill-out-fields-column-2 {
+        display: unset;
+        padding-bottom: 200px;
+        position: static;
+    }
+
+    .fill-out-field input {
+        width: 94%;
+    }
+
+    #states-menu {
+        width: 98.5%;
+    }
+}

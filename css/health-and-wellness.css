@@ -1,0 +1,193 @@
+html, body {
+    font-family: "Gotham 4r",Verdana;
+    margin: 0;
+}
+
+.container-4c {
+    display: flex;
+    margin: 0% 0% 3% 10%;
+
+}
+
+#health-and-wellness {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.container-4c h1 {
+    font-size: 40px;
+    color: #0d1c3d;
+}
+
+.container-4c p {
+    font-size: 18px;
+}
+
+.container-4c img {
+    pointer-events: none; 
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.container-5c {
+    margin: 0% 0% 2% 10%;
+}
+
+.container-5c button {
+    font-size: 18px;
+    border: 1px solid #0074ad;
+    border-radius: 35px;
+    padding: 13px 20px 13px 20px;
+    color: #0074ad;
+    background-color: #f2f8fb;
+    margin: 20px 5px 0px 0px;
+}
+
+.container-5c button:hover {
+    text-decoration: underline;
+    color: #0074ad;
+    transition: 0.5s;
+}
+
+.container-6c {
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+#healthy-spotlight {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+#healthy-spotlight img {
+    margin-right: 10px;
+}
+
+#row {
+    display: flex;
+}
+
+.column {
+    height: auto;
+}
+
+.column a {
+    text-decoration: none;
+    color: #000;
+}
+
+.column a:hover {
+    text-decoration: underline;
+    color: #0074ad;
+    transition: 0.5s;
+}
+
+.container-7c {
+    background-color: #f2f8fb;
+    display: flex;
+    padding: 5% 0% 3% 10%;
+}
+
+.container-7c button:hover {
+    text-decoration: underline;
+    color: #0074ad;
+    transition: 0.5s;
+}
+
+#browse-topics {
+    width: 49%;
+    padding: 0% 0% 2% 4%;
+}
+
+#browse-topics button {
+    font-size: 18px;
+    border: 1px solid #0074ad;
+    border-radius: 35px;
+    padding: 13px 20px 13px 20px;
+    color: #0074ad;
+    background-color: #f2f8fb;
+    margin: 20px 5px 0px 0px;
+}
+
+#show-more {
+    margin: 30px 0px 0px 0px;
+    color:#0074ad;
+    text-decoration: underline;
+}
+
+#show-more:hover {
+    background-color: #0074ad;
+    color: #fff;
+    cursor: pointer;
+    width: 160px;
+}
+
+#show-more-topics {
+    display: none;
+}
+
+.container-8c {
+    display: flex;
+    margin: 160px 0px 80px 10%;
+}
+
+.container-8c button {
+    font-size: 18px;
+    border: 1px solid #0074ad;
+    border-radius: 35px;
+    padding: 13px 20px 13px 20px;
+    color: #0074ad;
+    background-color: #f2f8fb;
+    margin: 20px 5px 0px 0px;
+}
+
+.container-8c button:hover {
+    text-decoration: underline;
+    color: #0074ad;
+    transition: 0.5s;
+}
+
+.container-8c p {
+    font-size: 20px;
+}
+
+.container-8c img {
+    
+}
+
+#allergy-season {
+    width: 60%;
+}
+
+#care-for-yourself {
+    display: flex;
+}
+
+.container-9c {
+    padding: 0px 0px 0px 10%;
+    display: flex;
+    background-color: #f2f8fb;
+}
+
+#search-for-classes {
+    width: 60%;
+}
+
+#search-for-class-header {
+    display: flex;
+}
+
+#class-search-column {
+    
+}
+
+#woman-exercising {
+    height: 400px;
+    width: 500px;
+}
+
+
+
+
+

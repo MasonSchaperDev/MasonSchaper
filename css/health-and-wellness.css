@@ -117,10 +117,9 @@ html, body {
 }
 
 #show-more:hover {
-    background-color: #0074ad;
-    color: #fff;
+    color: #0d1c3d;
     cursor: pointer;
-    width: 160px;
+    transition: 0.2s;
 }
 
 #show-more-topics {

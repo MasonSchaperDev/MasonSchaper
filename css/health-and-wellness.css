@@ -247,6 +247,7 @@ html, body {
     height: 350px;
     width: 450px;
     position: relative;
+    padding-right: 40%;
 }
 
 .container-10c {
@@ -274,10 +275,6 @@ html, body {
     margin: 10px;
 }
 
-.tools-column p {
-    
-}
-
 .tools-column h4 {
     font-size: 20px;
 }
@@ -285,6 +282,41 @@ html, body {
 .tools-column a {
     text-decoration: none;
     color: #0074ad;
+    vertical-align: text-bottom;
+}
+
+#view-more-tools {
+    margin: 30px 0px 0px 0px;
+    color:#0074ad;
+    text-decoration: underline;
+}
+
+#view-more-tools:hover {
+    color: #0d1c3d;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.container-11c {
+    margin: 80px 0% 0% 10%;
+}
+
+#related-articles {
+    display: flex;
+}
+
+#related-articles h3 {
+    font-size: 20px;
+}
+
+#related-articles button {
+    font-size: 18px;
+    border: 1px solid #0074ad;
+    border-radius: 35px;
+    padding: 13px 20px 13px 20px;
+    color: #0074ad;
+    background-color: #f2f8fb;
+    margin: 20px 5px 0px 66%;
 }
 
 

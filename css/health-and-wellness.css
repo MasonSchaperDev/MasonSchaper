@@ -6,11 +6,12 @@ html, body {
 .container-4c {
     display: flex;
     margin: 0% 0% 3% 10%;
-
+    overflow: hidden;
+    
 }
 
-#health-and-wellness {
-    grid-template-columns: repeat(12, 1fr);
+#health-and-wellness p {
+    width: 80%;
 }
 
 .container-4c h1 {
@@ -24,8 +25,8 @@ html, body {
 
 .container-4c img {
     pointer-events: none; 
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     z-index: -1;
     object-fit: cover;
 }
@@ -128,7 +129,7 @@ html, body {
 
 .container-8c {
     display: flex;
-    margin: 160px 0px 80px 10%;
+    margin: 80px 0px 80px 10%;
 }
 
 .container-8c button {
@@ -147,6 +148,12 @@ html, body {
     transition: 0.5s;
 }
 
+#care-for-yourself img {
+    width: 40px;
+    height: 40px;
+    margin: 12px 10px 0px 0px;
+}
+
 .container-8c p {
     font-size: 20px;
 }
@@ -157,6 +164,7 @@ html, body {
 
 #allergy-season {
     width: 60%;
+    margin-top: 100px;
 }
 
 #care-for-yourself {
@@ -164,28 +172,120 @@ html, body {
 }
 
 .container-9c {
-    padding: 0px 0px 0px 10%;
+    padding: 60px 0px 0px 10%;
     display: flex;
     background-color: #f2f8fb;
 }
 
 #search-for-classes {
-    width: 60%;
+    width: 70%;
+}
+
+#search-for-classes a {
+    color: #0074ad;
+}
+
+#search-for-classes p {
+    margin-bottom: 30px;
+    width: 70%;
 }
 
 #search-for-class-header {
     display: flex;
 }
 
+#search-for-class-header img {
+    margin-right: 10px;
+}
+
 #class-search-column {
-    
+    margin: 0px 20px 20px 0px;
+}
+
+#class-search-column h5 {
+    margin: 0px 0px 5px 0px;
+}
+
+#class-search-column input {
+    width: 400px;
+    height: 50px;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+#class-search-column select {
+    width: 400px;
+    height: 55px;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+#class-search-row {
+    display: flex;
+}
+
+#class-search-row button {
+    font-size: 18px;
+    border: 1px solid #0d1c3d;
+    border-radius: 35px;
+    padding: 13px 15px 13px 15px;
+    color: #0d1c3d;
+    background-color: #f2f8fb;
+    margin: 25px 5px 0px 0px;
+    height: 50px;
+}
+
+#class-search-row button:hover {
+    border: 2px solid #0074ad;
+}
+
+#class-search-row select:hover {
+    cursor: pointer;
 }
 
 #woman-exercising {
-    height: 400px;
-    width: 500px;
+    height: 350px;
+    width: 450px;
+    position: relative;
 }
 
+.container-10c {
+    padding-left: 10%;
+}
+
+#tools-for-you-header {
+    display: flex;
+    font-size: 20px;
+}
+
+#tools-for-you-header h3 {
+    margin-left: 10px;
+}
+
+.tools-row {
+    display: flex;
+}
+
+.tools-column {
+    border: 1px solid #0d1c3d;
+    border-radius: 6px;
+    padding: 10px 10px 20px 10px;
+    width: 28%;
+    margin: 10px;
+}
+
+.tools-column p {
+    
+}
+
+.tools-column h4 {
+    font-size: 20px;
+}
+
+.tools-column a {
+    text-decoration: none;
+    color: #0074ad;
+}
 
 
 

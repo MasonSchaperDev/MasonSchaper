@@ -3,15 +3,79 @@ html, body {
     margin: 0;
 }
 
-.container-4c {
+#alert-container {
+    background-color: #FBF5F4;
     display: flex;
+    padding: 10px 0px 10px 10%;
+    border: 1px solid #ccc;
+}
+
+#alert-container img {
+    margin-right: 10px;
+    padding-bottom: 20px;
+}
+
+#alert-container p {
+    font-size: 13px;
+}
+
+#alert-container a {
+    color: #0074ad;
+}
+
+#alert-container a:hover {
+    color: #003B71;
+}
+
+#view-alerts-container {
+    padding: 10px;
+    display: flex;
+}
+
+#view-alerts-container button {
+    border: 1px solid #000;
+    background-color: #FBF5F4;
+    border-radius: 30px;
+    font-size: 14px;
+    padding: 5px 15px 5px 15px;
+}
+
+#view-alerts-container button:hover {
+    text-decoration: underline;
+}
+
+#previous-button {
+    opacity: 40%;
+}
+
+
+#view-alerts-container p {
+    margin: 10px 10px 0px 10px;
+}
+
+#view-alerts-container a {
+    margin: 12px 10px 0px 10px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#alert-description {
+    width: 60%;
+}
+
+.container-4c {
     margin: 0% 0% 3% 10%;
     overflow: hidden;
-    
+}
+
+#health-and-wellness {
+    position: relative;
+    width: 45%;
 }
 
 #health-and-wellness p {
     width: 80%;
+    position: relative;
 }
 
 .container-4c h1 {
@@ -25,14 +89,16 @@ html, body {
 
 .container-4c img {
     pointer-events: none; 
-    width: 50%;
-    height: 50%;
     z-index: -1;
     object-fit: cover;
+    position: absolute;
+    bottom: 0px;
+    top: 300px;
+    right: 0px;
 }
 
 .container-5c {
-    margin: 0% 0% 2% 10%;
+    margin: 13% 0% 2% 10%;
 }
 
 .container-5c button {
@@ -158,10 +224,6 @@ html, body {
     font-size: 20px;
 }
 
-.container-8c img {
-    
-}
-
 #allergy-season {
     width: 60%;
     margin-top: 100px;
@@ -247,7 +309,7 @@ html, body {
     height: 350px;
     width: 450px;
     position: relative;
-    padding-right: 40%;
+    right: 100px;
 }
 
 .container-10c {
@@ -271,7 +333,7 @@ html, body {
     border: 1px solid #0d1c3d;
     border-radius: 6px;
     padding: 10px 10px 20px 10px;
-    width: 28%;
+    width: 26%;
     margin: 10px;
 }
 
@@ -301,24 +363,216 @@ html, body {
     margin: 80px 0% 0% 10%;
 }
 
-#related-articles {
+#related-articles-header {
     display: flex;
 }
 
-#related-articles h3 {
-    font-size: 20px;
+#related-articles-header img {
+    margin-right: 10px;
 }
 
-#related-articles button {
+#related-articles-header h3 {
+    font-size: 26px;
+}
+
+#related-articles-header button {
     font-size: 18px;
     border: 1px solid #0074ad;
     border-radius: 35px;
-    padding: 13px 20px 13px 20px;
+    padding: 8px 18px 8px 18px;
     color: #0074ad;
     background-color: #f2f8fb;
-    margin: 20px 5px 0px 66%;
+    margin: 20px 5px 0px 57%;
 }
 
+#related-articles-header button:hover {
+    text-decoration: underline;
+    color: #0074ad;
+    transition: 0.5s;
+}
 
+#articles-container p {
+    padding: 10px;
+}
 
+#articles-container a {
+    text-decoration: none;
+    color: #000;
+}
 
+#articles-container a:hover {
+    text-decoration: underline;
+}
+
+#selected-topic {
+    font-weight: bold;
+    border-left: 3px solid #0074ad;
+}
+
+.related-articles-row {
+    display: flex;
+}
+
+.related-articles-column {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 332px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    position: relative;
+    bottom: 310px;
+    left: 300px;
+}
+
+.related-articles-column img {
+    width: 432px;
+    height: 200px;
+}
+
+.related-articles-column h5 {
+    font-size: 13px;
+    padding: 0px 10px 0px 10px;
+}
+
+.related-articles-column h2 {
+    font-size: 18px;
+    padding: 0px 10px 0px 10px;
+}
+
+#view-all-button {
+    font-size: 18px;
+    border: 1px solid #0074ad;
+    border-radius: 35px;
+    padding: 12px 18px 12px 18px;
+    color: #0074ad;
+    background-color: #fff;
+    bottom: 300px;
+    left: 680px;
+    position: relative;
+}
+
+select:hover {
+    border: 2px #0074ad solid;
+}
+
+#back-to-top {
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #0074ad;
+    border-radius: 35px;
+    padding: 12px 18px 12px 18px;
+    color: #0074ad;
+    background-color: #fff;
+    bottom: 210px;
+    left: 300px;
+    position: relative;
+}
+
+.container-12c {
+    padding: 40px 0px 80px 10%;
+    background-color: #f2f8fb;
+}
+
+#care-header {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+#care-row {
+    display: flex;
+}
+
+.care-column {
+    width: 30%;
+}
+
+.care-column-header {
+    display: flex;
+    font-size: 18px;
+}
+
+.care-column img {
+    margin-right: 10px;
+}
+
+.care-column button {
+    font-size: 18px;
+    border: 1px solid #0074ad;
+    border-radius: 35px;
+    padding: 12px 18px 12px 18px;
+    color: #0074ad;
+    background-color: #fff;
+}
+
+.care-column button:hover {
+    text-decoration: underline;
+}
+
+.lower-button {
+    margin: 16px 0px 0px 0px;
+}
+
+.container-13c {
+    padding: 3% 0% 0% 10%;
+    background-color: #003B71;
+}
+
+#glossary-row {
+    display: flex;
+}
+
+.glossary-column {
+    margin: 0px 70px 0px 0px;
+    color: #fff;
+}
+
+.glossary-column h5 {
+    font-size: 18px;
+}
+
+.glossary-column a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1642px) {
+    .container-4c img {
+        top: 360px;
+    }
+}
+
+@media screen and (max-width: 1470px) {
+    #health-and-wellness {
+        width: 30%;
+    }
+
+    #woman-exercising {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1320px) {
+    .container-4c {
+        text-align: center;
+        padding-left: 10%;
+        margin: 0;
+        width: unset;
+    }
+
+    .container-4c img {
+        display: none;
+        
+    }
+
+    #health-and-wellness {
+        width: 45%;
+    }
+
+    #health-and-wellness p {
+        width: 100%;
+    }
+}

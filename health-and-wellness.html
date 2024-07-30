@@ -84,13 +84,25 @@
             <button class="search-button-mobile">Search</button>
         </div>
     </div>
+<!--covid alert-->
+    <div id="alert-container">
+        <img src="images/alert-p2.svg"/>
+        <p id="alert-description">Due to the rise in COVID-19 activity in Hawaii, effective June 24, 2024, members, patients, and visitors are strongly encouraged to wear masks
+        covering the nose and mouth while indoors at Kaiser Permanente facilities. <a href="#">Learn more.</a></p>
+        <div id="view-alerts-container">
+            <button id="previous-button">< Previous alert</button>
+            <p>1 of 2</p>
+            <button>Next alert ></button>
+            <a href="">View all alerts</a>
+        </div>
+    </div>
 <!--health and wellness description-->
     <div class="container-4c">
         <div id="health-and-wellness">
             <h1>Health and Wellness</h1>
             <p>At Kaiser Permanente, we know total health and wellness go beyond the doctor's office. That's why we're here to help you find the high-quality care and resources you need.</p>
         </div>
-        <img src="images/friends-sitting-on-a-mountain.png"/>
+        <img src="images/IMG_0618.JPG">
     </div>
 <!--Jump to sections on page-->
     <div class="container-5c">
@@ -218,16 +230,10 @@
                     <h5>TOPIC</h5>
                     <select>
                         <option>Select topic</option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
+                        <option>Bones, joints, and muscles</option>
+                        <option>COPD</option>
+                        <option>Cancer</option>
+                        <option>Child and teen health</option>
                     </select>
                 </div>
                 <button>Search Classes</button>
@@ -290,12 +296,211 @@
     </div>
 <!--Related articles-->
     <div class="container-11c">
-        <div id="related-articles">
-            <img src="images/allergy-illustrative.svg"/>
+        <div id="related-articles-header">
+            <img src="images/article-illustrative.svg"/>
             <h3>Related Articles</h3>
             <button>Explore Libraries</button>
         </div>
 
+        <div id="articles-container">
+            <div id="view-by-topic">
+                <h4>View by topic:</h4>
+                <a href="#"></a><p id="selected-topic">All-topics</p>
+                <a href="#"><p>Fitness and exercise</p></a>
+                <a href="#"><p>Healthy eating</p></a>
+                <a href="#"><p>Mental health</p></a>
+                <a href="#"><p>Prevention diseases</p></a>
+            </div>
+
+            <div class="related-articles-row">
+                <div class="related-articles-column">
+                    <img src="images/AdobeStock_529095095_2560x600-two-athletes-eating-small-salads-at-the-gym.png"/>
+                    <h5>Health and wellness</h5>
+                    <h2>Eat like an athlete: A guide to nutrition planning</h2>
+                </div>
+
+                <div class="related-articles-column">
+                    <img src="images/KP_Naomi_Girma_Constant_Meditate_3676_2560x600-Soccer-player-Naomi-Girma-meditating-outdoors.png"/>
+                    <h5>Health and wellness</h5>
+                    <h2>6 ways athletes can prioritize mental health</h2>
+                </div>
+
+                <div class="related-articles-column">
+                    <img src="images/647090176_Getty_RF_2560x600-2-friends-smiling-walking-up-stairs-holding-weights.png"/>
+                    <h5>Health and wellness</h5>
+                    <h2>What you need to know about the latest weight-loss drugs</h2>
+                </div>
+            </div>
+
+            <div class="related-articles-row">
+                <div class="related-articles-column">
+                    <img src="images/AdobeStock_453579212_2560x600-2-adult-swimming-in-pool-with-a-kickboard.png"/>
+                    <h5>Health and wellness</h5>
+                    <h2>4 keys workouts for staying active as you age</h2>
+                </div>
+
+                <div class="related-articles-column">
+                    <img src="images/168838638_Getty_RF-outside-play.png"/>
+                    <h5>Health and wellness</h5>
+                    <h2>9 outdoors activities to help you work up a sweat</h2>
+                </div>
+
+                <div class="related-articles-column">
+                    <img src="images/AdobeStock_359858120_2560x600-parent-applying-sunscreen-on-the-arm-of-a-child.png"/>
+                    <h5>Health and wellness</h5>
+                    <h2>Mineral sunscreens? Moisturizers with SPF? A dermatologist's guide to sunscreen</h2>
+                </div>
+            </div>
+        </div>
+
+        <div id="article-buttons">
+            <button id="view-all-button">View all Healthy Living articles</button>
+            <button id="back-to-top">Back to top</button>
+        </div>
     </div>
+
+    <div class="container-12c">
+        <div id="care-header">
+            <h3>Connecting to care</h3>
+            <p>Call us 24/7 and talk with a licensed care clinician about your questions or concerns. Find your local phone number below. </p>
+        </div>
+
+        <div id="care-row">
+            <div class="care-column">
+                <div class="care-column-header">
+                    <img src="images/phone-illustrative.svg"/>
+                    <h4>Get 24/7 advice</h4>
+                </div>
+                <p>Talk with a licensed care clinician day or night.</p>
+                <button class="lower-button">Contact us</button>
+            </div>
+
+            <div class="care-column">
+                <div class="care-column-header">
+                    <img src="images/envelope-illustrative.svg"/>
+                    <h4>Email your care team</h4>
+                </div>
+                <p>Message your doctor’s office anytime with nonurgent health questions.</p>
+                <button>Email us</button>
+            </div>
+
+            <div class="care-column">
+                <div class="care-column-header">
+                    <img src="images/calendar-illustrative.svg"/>
+                    <h4>Make an appointment</h4>
+                </div>
+                <p>Meet with your doctor to discuss the right care for you.</p>
+                <button class="lower-button">Schedule a visit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-13c">
+        <div id="glossary-row">
+            <div class="glossary-column">
+                    <h5>Find care</h5>
+                <a href="#">
+                    <p>Get Care</p>
+                    <p>Find Doctors & Locations</p>
+                    <p>Health Classes</p>
+                    <p>Care When Traveling</p>
+                    <p>Timely Access to Care</p>
+                </a>
+            </div>
+
+            <div class="glossary-column">
+                <h5>Our organization</h5>
+                <a href="#">
+                    <p>About KP</p>
+                    <p>Patient Quality & Safety</p>
+                    <p>News</p>
+                    <p>Research</p>
+                    <p>Commitment to the Community</p>
+                    <p>Equity, Inclusion, & Diversity</p>
+                    <p>Annual Report</p>
+                    <p>Careers</p>
+                    <p>For the Media</p>
+                    <p>Price Transparency</p>
+                </a>
+            </div>
+
+            <div class="glossary-column">
+                <h5>Member support</h5>
+                <a href="#">
+                    <p>New Member Welcome</p>
+                    <p>Forms & Publications/p>
+                    <p>Support Center</p>
+                    <p>Help Paying your Bills</p>
+                    <p>Medical Information Requests</p>
+                    <p>Transparency in Coverage</p>
+                    <p>Request for Confidential Communications Forms</p>
+                    <p>HIPAA Authorization</p>
+                </a>
+            </div>
+
+            <div class="glossary-column">
+                <h5>Visit our other sites</h5>
+                <a href="#">
+                    <p>Individual & Family Plans</p>
+                    <p>Medicaid/Medi-cal</p>
+                    <p>Medicare</p>
+                    <p>Affordable Care Act</p>
+                    <p>For Businesses</p>
+                    <p>For Federal Employees</p>
+                    <p>Broker Support</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-footer">
+        <div class="column-group">
+            <div id="column-of-info">
+                <ul id="list-of-info">
+                    <li>Accessibility</li><br>
+                    <li>Nondiscrimination</li><br>
+                    <li>Help in your Language</li>
+                </ul>
+            </div>
+
+            <div id="column-of-info">
+                <ul id="list-of-info">
+                    <li>Website Privacy</li><br>
+                    <li>HIPAA Notice of Privacy Practices</li><br>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+
+            <div id="column-of-info">
+                <ul id="list-of-info">
+                    <li>Rights & Responsibilities</li><br>
+                    <li>Disaster Planning</li><br>
+                    <li>Technical Information</li>
+                </ul>
+            </div>
+
+            <div id="column-of-info">
+                <ul id="list-of-info">
+                    <li>Site Map</li><br>
+                    <li>Contact Site Manager</li><br>
+                    <li>HIPAA Authorization</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container-footer-child">
+            <p class="follow-us">Follow us on these external social media sites that will open in a new browser window.
+            </p>
+            <div class="social-media-icons">
+                <img src="images/twitter-white.svg" id="sm-icon"/>
+                <img src="images/facebook-white.svg" id="sm-icon"/>
+                <img src="images/youtube-white.svg" id="sm-icon"/>
+                <img src="images/pinterest-white.svg" id="sm-icon"/>
+                <img src="images/instagram-white.svg" id="sm-icon"/>
+            </div>
+            <p class="about-kp"></p>
+        </div>
+    </div>
+
 </body>
 </html>

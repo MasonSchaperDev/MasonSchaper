@@ -1,0 +1,54 @@
+CSS SELECTORS: selectors are patterns used to select the element you want to style.
+
+element: 
+p {
+    font-size: 10px;
+}
+
+#example {
+    font-size: 10px;
+}
+
+attribute:
+
+a[href="www.google.com"] {
+    background-color: #df009d;
+}
+
+pseudo:
+
+p:before {
+    font-size: 12px;
+}
+
+p:after {
+    font-size: 18px;
+}
+
+
+TYPOGRAPHY
+
+classifications
+- fonts: serif, sans-serif, script, monospace, decorative
+-font-face: defines every varable within a font 
+
+adding web fonts
+- html: <link href= "|insert web-font link|" rel="stylesheet">
+- css: @import url(|insert link|);
+
+variable fonts: can pack a full family of styles into one true-type file
+- change the style not the color
+- font scaling, font-variation
+
+edit variable font the following -->
+
+.text {
+    font-variation-settings: 'slnt' 5, 'ital' 5;
+    font-optical-sizing: 'opsz' 10;
+}
+
+text clipping
+
+    p {
+        overflow: hidden;
+    }

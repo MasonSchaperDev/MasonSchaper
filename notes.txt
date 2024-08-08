@@ -28,11 +28,7 @@ p:after {
 
 TYPOGRAPHY
 
-classifications
-- fonts: serif, sans-serif, script, monospace, decorative
--font-face: defines every varable within a font 
-
-adding web fonts
+inserting web fonts -->
 - html: <link href= "|insert web-font link|" rel="stylesheet">
 - css: @import url(|insert link|);
 
@@ -41,14 +37,139 @@ variable fonts: can pack a full family of styles into one true-type file
 - font scaling, font-variation
 
 edit variable font the following -->
-
 .text {
     font-variation-settings: 'slnt' 5, 'ital' 5;
     font-optical-sizing: 'opsz' 10;
 }
 
-text clipping
+text clipping:
+p {
+    overflow: hidden;
+    offset (absolute) positioning
+}
 
-    p {
-        overflow: hidden;
+2D rotation: add a perspective attribute then rotate it.
+p {
+    perspective: 200px;
+    transform: rotate (90deg);
+}
+
+complex 2D: transform: skew the text, then make an additional box to rotate it.
+p {
+    transform: skew(-40deg);
+    overflow: hidden;
+    offset(absolute) positioning
+}
+
+#box {
+    transform: rotate(90deg);
+}
+
+keyframe animations: using multiple keyframes to create an animation.
+@keyframe {
+    0% {
+        opacity: 0%
     }
+
+    30% {
+        opacity: 36%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+
+CONTENT
+
+list styles: specifies the type of list-item marker in a list.
+ul {
+    list-style-type: disc, square, circle; 
+}
+
+ol {
+    list-style-position: inside; (default position is outside)
+}
+
+adv. list styles:
+li {
+    list-style-image: url();
+}
+
+pure css accordions: used to show (and hide) HTML content.
+
+input:checked + .tab-label {
+    background: #000;
+}
+
+input:check + .tab-label {
+    transform: rotate(90deg);
+}
+
+pure css slider
+
+simple tables: 
+table {
+    widht: 800px;
+
+    box-shadow: 
+        -5px 5px 0px rgba(202,323,34);
+}
+
+adv. tables: tables with complicated data 
+.table-wrapper {
+    max-width: 820px;
+    min-width: 230px;[]
+}
+
+#details {
+    position sticky'
+    -webkit0-position: sticky;
+    left: 0;
+    background: #fff;
+}
+
+responsive tables: tables with media queries
+.table-repsonsive {
+    grid-column: span 2;
+    position: absolute;
+    z-index: 22;
+    top: 0;
+    background: #fff;
+}
+
+.table-repsonsive td:not(first-child) {
+    width: 300px;
+    padding: 5px 20px 5px 150px;
+    position: relative;
+    text-align: left;
+}
+
+.table-reponsive td:not(first-child):before {
+    opacity: 0.6;
+    content: '';
+    display: blocl;
+    left: 10px;
+}
+
+
+GRAPHICS
+
+background-repeat: can duplicate the image.
+
+img {
+    background-repeat: repeat-x; (or y)
+}
+
+background posiiton: moves background.
+
+img {
+    background-position: top left;
+}
+
+background-attachment: sets whether a background image's position is fixed 
+
+img {
+    background-attachment: scroll;
+}

@@ -45,7 +45,7 @@ edit variable font the following -->
 text clipping:
 p {
     overflow: hidden;
-    offset (absolute) positioning
+    position: absolute;
 }
 
 2D rotation: add a perspective attribute then rotate it.
@@ -58,7 +58,7 @@ complex 2D: transform: skew the text, then make an additional box to rotate it.
 p {
     transform: skew(-40deg);
     overflow: hidden;
-    offset(absolute) positioning
+    position: absolute;
 }
 
 #box {
@@ -120,11 +120,11 @@ table {
 adv. tables: tables with complicated data 
 .table-wrapper {
     max-width: 820px;
-    min-width: 230px;[]
+    min-width: 230px;
 }
 
 #details {
-    position sticky'
+    position: sticky;
     -webkit0-position: sticky;
     left: 0;
     background: #fff;
@@ -152,7 +152,6 @@ responsive tables: tables with media queries
     display: blocl;
     left: 10px;
 }
-
 
 GRAPHICS
 
@@ -187,11 +186,11 @@ gradients: set 3 colors to make a gradient.
 multiple bgs: multiple layers of bg imgs.
 .bg {
     width: 100%;
-  height: 400px;
-  background-image: url(firefox.png), url(bubbles.png),
+    height: 400px;
+    background-image: url(firefox.png), url(bubbles.png),
     linear-gradient(to right, rgb(30 75 115 / 100%), rgb(255 255 255 / 0%));
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position:
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position:
     bottom right,
     left,
     right;

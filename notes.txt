@@ -68,7 +68,7 @@ p {
 keyframe animations: using multiple keyframes to create an animation.
 @keyframe {
     0% {
-        opacity: 0%
+        opacity: 0%;
     }
 
     30% {
@@ -111,7 +111,7 @@ pure css slider
 
 simple tables: 
 table {
-    widht: 800px;
+    width: 800px;
 
     box-shadow: 
         -5px 5px 0px rgba(202,323,34);
@@ -149,7 +149,7 @@ responsive tables: tables with media queries
 .table-reponsive td:not(first-child):before {
     opacity: 0.6;
     content: '';
-    display: blocl;
+    display: block;
     left: 10px;
 }
 
@@ -227,5 +227,59 @@ grid-parents:
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 100px;
     grid-gap: 1rem;
-    
+}
+
+
+TRANSITIONS/TRANSFORMS/ANIMATIONS
+
+dropshadow transition
+transition {
+    filter: drop-shadow(16px, 16px);
+}
+
+2d transforms - translate: moves objects, scale: resizes objects, skew: reshapes objects.
+.translate-ex {
+    transform: translateX(-200px);
+    transform: translateY(200px);
+    transform: translate(1, 3);
+}
+
+.scale-ex {
+    transform: scale(2);
+}
+
+.skew-ex {
+    transform: skew(25deg);
+}
+
+3d-transforms: use of the Z axis.
+
+.3d {
+    transform: scaleZ(2);
+    transform: translateZ(100px);
+}
+
+basic animation 
+
+.animated {
+    @keyframes spin {
+        from { 
+            transform: rotateY(-260deg);
+        }
+
+        to {
+            transform rotateY(500deg);
+        } 
+    }
+}
+
+.animated:hover {
+    animation: spin 2s infinite, ease-in;
+}
+
+animation fill mode 
+
+.fill {
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
 }

@@ -148,7 +148,7 @@ responsive tables: tables with media queries
 
 .table-reponsive td:not(first-child):before {
     opacity: 0.6;
-    content: '';
+    content: 'hi';
     display: block;
     left: 10px;
 }

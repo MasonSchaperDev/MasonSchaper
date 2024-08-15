@@ -211,6 +211,17 @@ img {
     contrast(30%);
 }
 
+responsive images
+.responsive {
+    grid-template-columns: 1fr;
+}
+
+@media screen and (max-widtH: 800px) {
+    .responsive {
+        grid-template-column: 1fr 1fr;
+    }
+}
+
 
 LAYOUT  
 
@@ -227,6 +238,13 @@ grid-parents:
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 100px;
     grid-gap: 1rem;
+}
+
+grid page layout: grid webpage layout
+.webpage {
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 150px 40vh;
+
 }
 
 
@@ -259,9 +277,57 @@ transition {
     transform: translateZ(100px);
 }
 
+3d-cards
+.card {
+    width: 200px;
+    height: 200px;
+}
+
+.card-inner {
+    position: relative;
+}
+
+.card-face {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+card-inner:hover {
+    transform: rotateY(180deg);
+}
+
+carousels
+.carousel-scene {
+    position: relative;
+    perspective 1000px;
+}
+
+.carousel {
+    position: absolute;
+    transform-style: perserve-3d;
+}
+
+cell:nth-child(1) {
+    transform: rotateY(72deg) translateZ(160px);
+}
+
+cell:nth-child(2) {
+    transform: rotateY(144deg) translateZ(160px);
+}
+
+cell:nth-child(3) {
+    transform: rotateY(216deg) translateZ(160px);
+}
+
+cell:nth-child(4) {
+    transform: rotateY(288deg) translateZ(160px);
+}
+
+
 basic animation 
 
 .animated {
+    //example 
     @keyframes spin {
         from { 
             transform: rotateY(-260deg);
@@ -283,3 +349,7 @@ animation fill mode
     animation-fill-mode: forwards;
     animation-delay: 2s;
 }
+
+
+PRACTICAL APPLICATION
+

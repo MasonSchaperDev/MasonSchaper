@@ -112,7 +112,6 @@ pure css slider
 simple tables: 
 table {
     width: 800px;
-
     box-shadow: 
         -5px 5px 0px rgba(202,323,34);
 }
@@ -134,7 +133,7 @@ responsive tables: tables with media queries
 .table-repsonsive {
     grid-column: span 2;
     position: absolute;
-    z-index: 22;
+    z-index: 2;
     top: 0;
     background: #fff;
 }
@@ -299,7 +298,7 @@ card-inner:hover {
 carousels
 .carousel-scene {
     position: relative;
-    perspective 1000px;
+    perspective: 1000px;
 }
 
 .carousel {

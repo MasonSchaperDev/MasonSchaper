@@ -547,6 +547,10 @@ select:hover {
     color: #fff;
 }
 
+.glossary-column a:hover {
+    text-decoration: underline;
+}
+
 .glossary-column h5 {
     font-size: 18px;
 }

@@ -401,12 +401,12 @@
     .container-footer-child {
     margin-left: 15%;
     }
-    .follow-us {
+    #follow-us {
     color: #fff;
     font-size: 14px;
     margin-bottom: 25px;
     }
-    #sm-icon {
+    .sm-icon {
     margin-right: 10px;
     }
     .about-kp {

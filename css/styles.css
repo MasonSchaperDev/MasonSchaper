@@ -120,12 +120,12 @@
     text-decoration: none;
     color: #fff;
     }
-    #hamburger-icon {
+    .hamburger-icon {
     margin: auto 0;
     display: none;
     cursor: pointer;
     }
-    #hamburger-icon div {
+    .hamburger-icon div {
     width: 35px;
     height: 3px;
     background-color: #fff;
@@ -190,7 +190,7 @@
     margin-right: 10%;
     margin-bottom: 10px;
     }
-    .search-bar {
+    #search-bar {
     font-size: 18px;
     border: #3c81c2;
     border-radius: 5px;
@@ -266,7 +266,7 @@
     display: flex;
     background-color: rgb(240, 240, 240);
     }
-    .more-resources {
+    #more-resources {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -341,14 +341,14 @@
     display: flex;
     flex-wrap: wrap;
     }
-    #child-container-8 {
+    .child-container-8 {
     padding-left: 30px;
     }
-    #icon-desc {
+    .icon-desc {
     margin-left: 30px;
     width: 300px;
     }
-    #browse-button {
+    .browse-button {
     border: 1px solid #3c81c2;
     border-radius: 16px;
     font-size: 14px;
@@ -386,13 +386,13 @@
     flex-wrap: wrap;
     margin-left: 8%;
     }
-    #column-of-info {
+    .column-of-info {
     padding: 20px;
     border: 0px solid #757575;
     box-sizing: border-box;
     margin-left: 60px;
     }
-    #list-of-info {
+    .list-of-info {
     list-style: none;
     color: #fff;
     font-size: 14px;
@@ -437,7 +437,6 @@
         .more-resources {
             text-align: center;
         }
-    
     }
     
     @media screen and (max-width: 1730px) {

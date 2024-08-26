@@ -3,7 +3,7 @@ font-family: "Gotham 4r",Verdana;
 margin: 0;
 }
 
-.top-menu-container {
+#top-menu-container {
 background-color: #0d1c3d;
 display: flex;
 justify-content: space-between;

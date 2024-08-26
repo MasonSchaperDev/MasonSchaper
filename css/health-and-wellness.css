@@ -277,23 +277,22 @@ html, body {
     width: 200px;
 }
 
-
-#class-search-column {
+.class-search-column {
     margin: 0px 20px 20px 0px;
 }
 
-#class-search-column h5 {
+.class-search-column h5 {
     margin: 0px 0px 5px 0px;
 }
 
-#class-search-column input {
+.class-search-column input {
     width: 400px;
     height: 50px;
     font-size: 18px;
     padding-left: 10px;
 }
 
-#class-search-column select {
+.class-search-column select {
     width: 416px;
     height: 55px;
     font-size: 18px;

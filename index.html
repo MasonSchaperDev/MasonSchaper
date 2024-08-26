@@ -63,22 +63,22 @@
                 </ul>
             </div>
     
-            <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="hamburger-icon" onclick="toggleMobileMenu(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
                 <ul class="mobile-menu">
                     <li><a href="#">Learn</a></li>
-                    <li><a href="#">Shop Plans</a></li>
+                    <li><a href="shop-plans.html">Shop Plans</a></li>
                     <li><a href="#">Doctors & Locations</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
+                    <li><a href="health-and-wellness.html">Health & Wellness</a></li>
                     <li><a href="#">Get Care</a></li>
                     <li><a href="#">Pay Bills</a></li>
                 </ul>
             </div>
     
             <div class="search-container">
-                <input type="text" placeholder="Explore topics, care, coverage" class="search-bar"/>
+                <input type="text" placeholder="Explore topics, care, coverage" id="search-bar"/>
                 <button class="search-button">Search</button>
                 <button class="search-button-mobile">Search</button>
             </div>
@@ -99,7 +99,7 @@
     </div>
 <!--more resources-->
     <div class="container-5">
-        <h2 class="more-resources"><img src="images/more-resources.svg"/>More Resources</h2>
+        <h2 id="more-resources"><img src="images/more-resources.svg"/>More Resources</h2>
     </div>
 <!--explore apps, podcasts, etc-->
     <div class="container-6">
@@ -107,7 +107,6 @@
     </div>
 
     <div class="container-7">
-
         <div class="column-container">
             <div class="column">
                 <img src="images/group-of-people-putting-a-plant-in-soil.png"/>
@@ -149,20 +148,20 @@
 <!--encyclopedia-->
     <div class="container-8">
         <div class="column-encyclopedia-container">
-            <div id="child-container-8">
-                <h1 id="icon-desc">Health conditions from A to Z</h1>
-                <button id="browse-button">Browse the Health Encyclopedia</button>
+            <div class="child-container-8">
+                <h1 class="icon-desc">Health conditions from A to Z</h1>
+                <button class="browse-button">Browse the Health Encyclopedia</button>
             </div>
             
-            <div id="child-container-8">
+            <div class="child-container-8">
                 <img src="images/hourglass.svg" class="magnifying-glass-icon"/>
             </div>
         </div>
 
         <div class="column-encyclopedia-container">
-            <div id="child-container-8">
-                <h1 id="icon-desc">Learn more about your medicine</h1>
-                <button id="browse-button">Browse the Drug Encyclopedia</button>
+            <div class="child-container-8">
+                <h1 class="icon-desc">Learn more about your medicine</h1>
+                <button class="browse-button">Browse the Drug Encyclopedia</button>
             </div>
         
             <div id="child-container-8">
@@ -175,58 +174,58 @@
         <img src="images/kp-logo-white.png" class="kp-logo-mini"/>
     </div>
 <!--footer-->
-    <div class="container-footer">
-        <div class="column-group">
-            <div id="column-of-info">
-                <ul id="list-of-info">
-                    <li>Accessibility</li><br>
-                    <li>Nondiscrimination</li><br>
-                    <li>Help in your Language</li>
-                </ul>
-            </div>
-
-            <div id="column-of-info">
-                <ul id="list-of-info">
-                    <li>Website Privacy</li><br>
-                    <li>HIPAA Notice of Privacy Practices</li><br>
-                    <li>Terms & Conditions</li>
-                </ul>
-            </div>
-
-            <div id="column-of-info">
-                <ul id="list-of-info">
-                    <li>Rights & Responsibilities</li><br>
-                    <li>Disaster Planning</li><br>
-                    <li>Technical Information</li>
-                </ul>
-            </div>
-
-            <div id="column-of-info">
-                <ul id="list-of-info">
-                    <li>Site Map</li><br>
-                    <li>Contact Site Manager</li><br>
-                    <li>HIPAA Authorization</li>
-                </ul>
-            </div>
+<div class="container-footer">
+    <div class="column-group">
+        <div class="column-of-info">
+            <ul class="list-of-info">
+                <li>Accessibility</li><br>
+                <li>Nondiscrimination</li><br>
+                <li>Help in your Language</li>
+            </ul>
         </div>
 
-        <div class="container-footer-child">
-            <p class="follow-us">Follow us on these external social media sites that will open in a new browser window.
-            </p>
-            <div id="social-media-icons">
-                <img src="images/twitter-white.svg" class="sm-icon"/>
-                <img src="images/facebook-white.svg" class="sm-icon"/>
-                <img src="images/youtube-white.svg" class="sm-icon"/>
-                <img src="images/pinterest-white.svg" class="sm-icon"/>
-                <img src="images/instagram-white.svg" class="sm-icon"/>
-            </div>
-            <p id="about-kp"></p>
+        <div class="column-of-info">
+            <ul class="list-of-info">
+                <li>Website Privacy</li><br>
+                <li>HIPAA Notice of Privacy Practices</li><br>
+                <li>Terms & Conditions</li>
+            </ul>
+        </div>
+
+        <div class="column-of-info">
+            <ul class="list-of-info">
+                <li>Rights & Responsibilities</li><br>
+                <li>Disaster Planning</li><br>
+                <li>Technical Information</li>
+            </ul>
+        </div>
+
+        <div class="column-of-info">
+            <ul class="list-of-info">
+                <li>Site Map</li><br>
+                <li>Contact Site Manager</li><br>
+                <li>HIPAA Authorization</li>
+            </ul>
         </div>
     </div>
-    <script>
-        function toggleMobileMenu(menu) {
-            menu.classList.toggle('open');
-        }
-    </script>
+
+    <div class="container-footer-child">
+        <p class="follow-us">Follow us on these external social media sites that will open in a new browser window.
+        </p>
+        <div id="social-media-icons">
+            <a href="https://x.com/?lang=en"><img src="images/twitter-white.svg" class="sm-icon"/></a>
+            <a href="https://www.facebook.com/"><img src="images/facebook-white.svg" class="sm-icon"/></a>
+            <a href="https://www.youtube.com/"><img src="images/youtube-white.svg" class="sm-icon"/></a>
+            <a href="https://pinterest.com/"><img src="images/pinterest-white.svg" class="sm-icon"/></a>
+            <a href="https://www.instagram.com/"><img src="images/instagram-white.svg" class="sm-icon"/></a>
+        </div>
+        <p id="about-kp"></p>
+    </div>
+</div>
+<script>
+    function toggleMobileMenu(menu) {
+        menu.classList.toggle('open');
+    }
+</script>
 </body>
 </html>

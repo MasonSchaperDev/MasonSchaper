@@ -17,11 +17,14 @@ margin: 0;
     font-size: 35px;
     margin: 0;
     color: #0d1c3d;
-    
 }
 
 #call-this-number p {
     margin: 5px;
+}
+
+.text-blue a {
+    text-decoration: none;
 }
 
 .container-5b {
@@ -298,7 +301,7 @@ button:hover {
     }
 
     .container-6b {
-        padding-left: 25%;
+        padding-left: 15%;
         padding-right: 0;
     }
 

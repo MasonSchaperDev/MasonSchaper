@@ -108,6 +108,8 @@ select:hover {
     background-color: #0074ad;
 }
 
+/* Media Queries */
+
 @media screen and (max-width: 1160px) {
     #registration-container {
         margin-left: 10%;

@@ -102,7 +102,7 @@ html, body {
     z-index: -1;
     object-fit: cover;
     position: absolute;
-    bottom: 250px;
+    bottom: 170px;
     right: 0px;
 }
 
@@ -485,6 +485,15 @@ select:hover {
     bottom: 210px;
     left: 300px;
     position: relative;
+}
+
+#back-to-top a {
+    text-decoration: none;
+    color: #0074ad;
+}
+
+#back-to-top a:hover {
+    text-decoration: underline;
 }
 
 .container-12c {

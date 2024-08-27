@@ -12,7 +12,7 @@
     color: #fff;
     margin-left: 10%;
     }
-    #menu {
+    .menu {
     border: 1px solid #fff;
     border-radius: 4px;
     padding: 5px;
@@ -36,14 +36,14 @@
     display: inline-block;
     list-style: none;
     }
-    #underline-link {
+    .underline-link {
     text-decoration: none;
     color: #fff;
     }
-    #underline-link:hover {
+    .underline-link:hover {
     text-decoration: underline;
     }
-    #window-icon {
+    .window-icon {
     top: 6px;
     position: relative;
     color: #fff;
@@ -116,7 +116,7 @@
     text-decoration: underline;
     transition: color 1s;
     }
-    #white-hover-link {
+    .white-hover-link {
     text-decoration: none;
     color: #fff;
     }
@@ -139,13 +139,7 @@
     right: 400px;
     width: 100%;
     }
-    .open .bar1 {
-    transition: opacity 1s;
-    }
-    .open .bar2 {
-    transition: opacity 1s;
-    }
-    .open .bar3 {
+    .open .bar {
     transition: opacity 1s;
     }
     .open .mobile-menu {
@@ -179,8 +173,7 @@
     transition: 1s;
     }
     .container-3 a:link {
-    text-decoration: none;
-    color: #000000;
+        text-decoration: none;
     }
     .container-3 a:hover {
     text-decoration: none;
@@ -190,7 +183,7 @@
     margin-right: 10%;
     margin-bottom: 10px;
     }
-    #search-bar {
+    .search-bar {
     font-size: 18px;
     border: #3c81c2;
     border-radius: 5px;
@@ -223,14 +216,14 @@
     align-items: center;
     display: flex;
     }
-    .friends-sitting {
+    #friends-sitting {
     border: solid #757575 1px;
     border-radius: 3px;
     margin-top: 20px;
     position: relative;
     margin-left: 13%;
     }
-    .todays-suggestions {
+    #todays-suggestions {
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
@@ -244,12 +237,12 @@
     bottom: 180px;
     color: #0d1c3d;
     }
-    .todays-suggestions h2 {
+    #todays-suggestions h2 {
     margin-left: 50px;
     margin: 0;
     padding: 30px 0px 30px 0px;
     }
-    .todays-suggestions button {
+    #todays-suggestions button {
     text-decoration: none;
     border: 1px solid #3c81c2;
     background-color: #e6f2f7;
@@ -401,7 +394,7 @@
     .container-footer-child {
     margin-left: 15%;
     }
-    #follow-us {
+    .follow-us {
     color: #fff;
     font-size: 14px;
     margin-bottom: 25px;
@@ -417,17 +410,17 @@
     width: 1200px;
     margin-bottom: 0;
     }
-    /* Media Querries */
+    /* Media Queries */
     
     @media screen and (max-width: 1700px) {
         .container-4 {
             display: unset;
             padding-left: 18%;
         }
-        .friends-sitting {
+        #friends-sitting {
             margin-left: 0;
         }
-        .todays-suggestions {
+        #todays-suggestions {
             position: unset;
             padding-left: 18%;
         }
@@ -440,7 +433,7 @@
     }
     
     @media screen and (max-width: 1730px) {
-        .todays-suggestions {
+        #todays-suggestions {
             box-sizing: border-box;
             flex: 1;
         }
@@ -453,7 +446,7 @@
             position: relative;
             display: unset;
         }
-        .todays-suggestions {
+        #todays-suggestions {
         flex-wrap: wrap;
         margin-bottom: 20px;
         }
@@ -477,7 +470,7 @@
         .option-list {
             display: none;
         }
-        #hamburger-icon {
+        .hamburger-icon {
             display: block;
             position: absolute;
             left: 94%;
@@ -492,7 +485,7 @@
         .search-button-mobile {
             display: unset;
         }
-        .friends-sitting {
+        #friends-sitting {
             display: none;
         }
         br {
@@ -520,7 +513,7 @@
     }
     
     @media screen and (max-width: 807px) {
-        #hamburger-icon {
+        .hamburger-icon {
             left: 92%;
         }
         .column-encyclopedia-container {

@@ -1,5 +1,5 @@
 html, body {
-    font-family: "Gotham 4r",Verdana;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     overflow-x: hidden;
 }
@@ -54,7 +54,6 @@ html, body {
 #previous-button {
     opacity: 40%;
 }
-
 
 #view-alerts-container p {
     margin: 10px 10px 0px 10px;

@@ -1,0 +1,244 @@
+Classes
+
+class name {
+	constructor(parameters) {
+		this._parameters = parameters;
+	}
+
+	get parameters() {
+		return this._parameters;
+	} //getter
+
+	set parameters(newParameters) {
+		This._parameters = this._newParameters;
+	} //setter
+
+	toggleStatus() {
+		// add functions here
+	} // method
+} 
+
+Class name2 extends name { //connects the parent class
+constructor(parameters) {
+		super(parameter); // call super to plug in the parameters from the parent class
+	}
+}
+
+Modules
+
+Message Mixer:
+
+Caesar Cipher - in which the characters of the input message are shifted alphabetically by a given amount.
+
+Symbol Cipher - in which select characters from the input message are replaced with visually similar symbols.
+
+Reverse Cypher - in which each word of the input message is reversed in place.
+
+.require() // used to import files
+
+Example: const encryptors = require(“./encryptors.js”);;
+
+Import and export: export a function on a file and import it into another.
+
+Named exports/imports have more than one parameter using “{}”.
+
+Example:
+
+export {getValue, getOtherValue);
+
+import {getValue, GetOtherValue} from ‘path/to/main.js’;
+
+Unnamed export/imports only have one parameter.
+
+Example:
+
+export getValue;
+
+import getValue from ‘./main.js’;
+
+Promises
+
+A promise can be in 1 of 3 states:
+
+Pending: the initial state.
+Fulfilled: the operation was a success and has resolved a value.
+Rejected: The operation was a fail.
+
+.then() will return a promise with the same settled value as the promise it was called on if no appropriate handler was provided.
+
+example:
+
+prom
+.then((resolvedValue) => {
+   console.log(resolvedValue);
+})
+.then(null, (rejectionReason) => {
+   console.log(rejectionReason);
+
+// in the example above, we have a function that rejects the request and accepts it.
+
+.catch() : instances schedules a function to be called when the promise is rejected
+
+const promise1 = new Promise((resolve, reject) => {
+  throw new Error('Uh-oh!');
+});
+
+promise1.catch((error) => {
+  console.error(error);
+});
+// Expected output: Error: Uh-oh!
+
+
+Chaining Multiple Promises: depend on each other to execute or that must be executed in a certain order, also known as composition.
+
+
+firstPromiseFunction()
+.then((firstResolveVal) => {
+  return secondPromiseFunction(firstResolveVal);
+})
+.then((secondResolveVal) => {
+  console.log(secondResolveVal);
+
+// example above, firstPromiseFunction returns a promise then invoking .then() with an anonymous function. Then the successhandler (secondResolveVal) returns the new value of firstResolveVal.
+
+Promise all() : only used when every argument in a promise resolves and if any promises in the argument array rejects, the single promise returned with Promise all() will be rejected as well.
+
+
+
+Async
+
+
+Async keyword: Each time when an async function is called, it returns a new Promise which will be resolved with the value returned by the async function, or rejected with an exception uncaught within the async function
+
+
+async function {
+// func body	
+}
+My func();
+
+Await keyword: The await keyword can only be used inside an async function. await is an operator: it returns the resolved value of a promise.
+
+
+function resolveAfter2Seconds() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 2000); // resolves after 2 seconds
+  });
+}
+
+async function asyncCall() {
+  console.log('calling');
+  const result = await resolveAfter2Seconds();
+  console.log(result);
+  // Expected output: "resolved"
+}
+
+asyncCall();
+
+
+
+Independent Promises : async function contains multiple promises which are not dependent on the results of one another to execute
+
+
+Here are the steps:
+
+Make an async function
+Declare your variables
+Log the variables in a phrase using ${ await variable}
+Invoke your function
+
+Example:
+
+let {cookBeans, steamBroccoli, cookRice, bakeChicken} = require('./library.js');
+
+async function serveDinner() {
+ const vegetablePromise = steamBroccoli();
+ const starchPromise = cookRice();
+ const proteinPromise = bakeChicken();
+ const sidePromise = cookBeans();
+ console.log(`Dinner is served. We're having ${await vegetablePromise}, ${await starchPromise}, ${await proteinPromise}, and ${await sidePromise}.`);
+}
+
+serveDinner();
+
+
+HTTP Requests 
+
+GET requests
+
+The fetch() function : Creates a request object that contains relevant information that an API needs. Sends that request object to the API endpoint provided. Returns a promise that ultimately resolves to a response object, which contains the status of the promise with information the API sent back.
+
+
+Boilerplate for fetch() : 
+
+fetch(endpoint, {cache: 'no-cache'}).then(response => {
+	// body
+ })
+
+// the cache: ‘no-cache’ is used to support a specific browser
+
+The throw method (goes inside a fetch function) : The throw statement throws a user-defined exception. Execution of the current function will stop (the statements after throw won't be executed), and control will be passed to the first catch block in the call stack. If no catch block exists among caller functions, the program will terminate.
+
+Throw new Error (‘Request Failed!’); // this will stop the current function and revert back to the first block.
+
+.then() method : used with promises to handle asynchronous operations. It accepts two callback functions: one for handling a promise’s resolved value and one for handling its rejection. It returns a new promise, allowing for method chaining.
+
+Example:
+
+.then (parameter => { //callback function
+	//body
+}).then (paramater2 => { // callback function
+	
+})
+
+POST requests 
+
+fetch("https://jsonplaceholder.typicode.com/todos", { // add keys to the fetch function
+  method: "POST",
+  body: JSON.stringify({
+    userId: 1,
+    title: "Fix my bugs",
+    completed: false
+  }),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8"
+  }
+});
+
+// the body holds the data to be sent to the server and added to the JSONPlaceholder todos API. Also, the headers hold the type of content you want to send to the server, which in this case is JSON data.
+
+
+
+// you’re able to attach multiple .then() methods to each other by adding another one at the end of the method. You can also add call-back functions inside the .then() methods.
+
+Async GET requests
+
+Example:
+const getSuggestions = async () => { 
+ const wordQuery = inputField.value;
+ const endpoint = `${url}${queryParams}${wordQuery}`;
+ try {
+   const response = await fetch(endpoint, {cache: 'no-cache'})
+   if (response.ok) {
+     const jsonResponse = await response.json();
+     renderResponse(jsonResponse);
+   }
+ }
+ catch (error) {
+   console.log(error);
+ }
+}
+
+Async POST requests
+
+async function postData(url = '', data = {}) {
+ const response = await fetch(url, {
+   method: 'POST',
+   headers: {
+     'Content-Type': 'application/json'
+   },
+   body: JSON.stringify(data)
+ });
+ return response.json(); // parses JSON response into native JavaScript objects
+}

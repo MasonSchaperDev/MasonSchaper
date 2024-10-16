@@ -1,0 +1,328 @@
+ BOILERPLATE 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+
+ What is the difference between inline and block-level elements in CSS?
+
+In CSS, elements are typically categorized into inline and block-level elements, each with distinct
+
+behavior in terms of layout and formatting.
+
+
+Block-level elements:
+
+
+Display Behavior: These elements take up the full width available (by default), creating a "block" that
+
+starts on a new line.
+
+Layout: They stack vertically, one on top of the other, with vertical spacing (margins) between them.
+
+Width and Height: You can set width and height properties on block-level elements.
+
+Examples:
+
+<div>, <p>,
+
+<h1>, <ul>, <ol>, <li>, <section>, <article>.
+
+Block-level Example:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Block-Level Example</title>
+
+<style>
+
+.block {
+
+background-color: lightcoral;
+
+width: 100%;
+
+height: 50px;
+
+margin: 10px 0;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="block">Block 1</div>
+
+<div class="block">Block 2</div>
+
+</body>
+
+
+</html>
+
+In this example, the two <div> elements with the class block will be displayed
+
+one below the other, each taking up the full width of the viewport with 10
+
+pixels of vertical margin between them.
+
+
+
+Inline elements:
+
+Display Behavior: These elements take up only as much width as necessary
+
+(they don't start on a new line).
+
+Layout: They flow within the surrounding text or elements horizontally,
+
+without creating line breaks.
+
+Width and Height: You cannot set width and height properties on inline
+
+elements directly; they are determined by their content.
+
+Examples: <span>, <a>, <strong>, <em>, <img>, <b>, <i>.
+
+
+Inline Example:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+
+content="width=device-width, initial-scale=1.0">
+
+<title>Inline Example</title>
+
+<style>
+
+.inline {
+
+background-color: lightgreen;
+
+padding: 5px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<p>This is a <span class="inline">inline
+
+element</span> within a paragraph.</p>
+
+<p>Another <a href="#" class="inline">inline
+
+link</a> here.</p>
+
+</body>
+
+
+</html>
+
+In this example:
+
+
+The <span> and <a> elements with the class inline
+
+are displayed inline, meaning they flow
+
+within the paragraph text without causing
+
+line breaks.
+
+The padding applied to the inline elements
+
+will still affect their spacing, but the
+
+elements themselves will not cause line
+
+breaks.
+
+Key Differences
+
+Line Breaks:
+
+
+Block-Level: Always starts on a new line.
+
+Inline: Does not start on a new line; flows
+
+with surrounding content.
+
+Width and Height:
+
+
+Block-Level: Can have width and height set
+
+explicitly.
+
+Inline: Width and height are determined by
+
+the content; cannot be set directly.
+
+Layout Behavior:
+
+
+Block-Level: Stacks vertically with vertical margins.
+
+Inline: Stacks horizontally within the flow of text or other inline elements.
+
+Content Flow:
+
+
+Block-Level: Creates a block that affects
+
+the layout and flow of other elements.
+
+Inline: Does not affect the layout of surrounding elements beyond the space it
+
+occupies.
+
+Understanding these differences helps in designing web pages with appropriate layouts
+
+and spacing, leveraging CSS to control how elements are displayed and interact with
+
+each other.
+
+
+
+
+Form elements: used to create an HTML form for user input.
+
+syntax:
+<form>
+    <label for="name">Name</label>
+    <input type="text" id="name"/>
+</form>
+
+// we have a text type input with a label of 'name'
+
+input field attributes:
+
+<input 
+    type=""
+    id="name"
+    placeholder="enter name"
+    value="john"
+    name="name"
+/>
+
+
+select boxes: represents a control that provides a menu of options.
+
+syntax:
+<select name="product" id="product">
+    <option value=""> </option>
+    <option value=""> </option>
+    <option value=""> </option>
+</select>
+
+
+text area: represents a multi-line plain-text editing control,
+useful when you want to allow users to enter a sizeable amount of free-form text.
+
+syntax:
+<textarea name="mess"> </textarea>
+<input type="submit" value="Submit"/>
+
+
+
+datalist: contains a set of <option> elements that
+represent the permissible or recommended options available to choose from within other controls.
+
+syntax:
+<datalist id=languages>
+    <option value="js"> </option>
+    <option value="js"> </option>
+    <option value="js"> </option>
+    <option value="js"> </option>
+    <option value="js"> </option>
+</datalist>
+
+
+audio:
+
+syntax:
+<audio controls>
+    <source src="" type="audio/mp3"/>
+</audio>
+
+
+video: embeds a media player which supports video playback into the document.
+
+syntax:
+<video controls width="250">
+  <source src="/media/cc0-videos/flower.webm" type="video/webm" />
+</video>
+
+
+img map: is used with <area> elements to define an image map (a clickable link area).
+
+syntax: 
+<img src="" alt="" usemap="computermap"/>
+
+<map name="computermap">
+    <area
+        shape="rect"
+        coords="32,44,244,232"
+        href="computer.html"
+        alt="computer"
+    />
+</map>
+
+
+iframe: represents a nested browsing context, embedding another HTML page into the current one.
+
+syntax:
+<iframe src="index.html" frameboarder="0">
+
+</iframe>
+
+
+meter: represents either a scalar value within a known range or a fractional value.
+
+syntax:
+<meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50">
+    at 50/100
+</meter>

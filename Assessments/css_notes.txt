@@ -1,0 +1,401 @@
+CSS SELECTORS: selectors are patterns used to select the element you want to style.
+
+element: The element selector selects HTML elements based on the element name.
+syntax:
+
+p {
+    font-size: 10px;
+}
+
+
+id selector: The id selector uses the id attribute of an HTML element to select a specific element.
+The id of an element is unique within a page, so the id selector is used to select one unique element! Use '#' to define it.
+syntax: 
+
+#example {
+    font-size: 10px;
+}
+
+
+class selector: The class selector selects HTML elements with a specific class attribute.
+To select elements with a specific class, write a period (.) character, followed by the class name.
+
+.example {
+    color: #fff;
+}
+
+
+universal selector: The universal selector "*" selects all HTML elements on the page.
+
+* {
+    background-color: #fff;
+}
+
+
+attribute: Attribute selectors give you different ways to select elements based on the presence of a certain attribute on an element.
+
+a[href="www.google.com"] {
+    background-color: #df009d;
+}
+/* this will select any element with an A-tag targeting google */
+
+
+pseudo: pseudo classes style specific parts of an element or value. 
+It also includes pseudo-elements, which select a 
+certain part of an element rather than the element itself. 
+Syntax pseudo class:
+
+p:link {
+    color: red;
+} // before link is visited, will be red
+
+p:visited {
+    color: blue;
+} // after link is visited, will be blue
+
+Syntax pseudo element:
+
+p::first-line {
+    font-weight: bold;
+}
+
+// always selects the first line of text inside an element,
+acting as if a span tag was wrapped around the first line and then selected, making the text bold.
+
+
+TYPOGRAPHY: scaling, family, size, etc.
+
+inserting web fonts (must be found through websites, once you grab the font you wish to use, you may insert the link through a link tag)-->
+syntax:
+- html: <link href= "|insert web-font link|" rel="stylesheet">
+- css: @import url(|insert link|);
+
+// this will allow you to insert a custom font-family, there are website such as google fonts to use:
+https://fonts.google.com/
+
+
+variable fonts: Variable fonts are an evolution of the OpenType (OpenType features are like secret compartments in fonts),
+variable font settings allows you to utilize new or custom axes beyond the five registered ones.
+
+variable font example -->
+.text {
+    font-variation-settings: 'slnt' 5, 'ital' 5; 
+}
+
+// the example above with slant the words by 5 degrees and make it italic. It also changes the angle of the letters with oblique.
+
+
+2D rotation: rotate an element by using the transform attribute with of rotate with whichever angle you desire.
+syntax:
+p {
+    transform: rotate (90deg);
+}
+// the paragraph will rotate 90 degrees clockwise.
+
+
+complex 2D: transform: skew the text (slanting), then in this example, I made an additional box to rotate it.
+syntax:
+p {
+    transform: skew(-40deg);
+    overflow: hidden;
+    position: absolute;
+}
+// skews it by -40 degrees while keeping it from affecting the rest of the page while rotating it by 90 degrees with the other box below
+
+
+#box {
+    transform: rotate(90deg);
+}
+
+keyframe animations: using multiple key frames to create an animation. This gives more control over the
+steps of the animation sequence than transitions.
+syntax:
+p {
+    @keyframe {
+        0% {
+            opacity: 0%;
+        }
+
+        30% {
+            opacity: 36%;
+        }
+
+        100% {
+            opacity: 100%;
+        }
+    }
+}
+// the paragraph will start by making the p tag less visible to 30% quickly and then it'll slowly turn invisible.
+
+
+CONTENT
+
+list styles: specifies the type of list-item marker in a list. There is the type and position. For the type, you can set it to a disc, square, or circle. 
+While the position can be set to outside or inside (outside is the default).
+ul {
+    list-style-type: disc; // styles the dots into a disc shape.
+    list-style-position: inside; // moves them on the inside of the border.
+    list-style-image: url(); // specify the image.
+}
+// you can also do it on one line like this:
+
+ul {
+    list-style: square inside url();
+}
+
+
+pure css accordions: a menu or bar that opens up with usually an arrow or a plus sign (+-, < >).
+syntax:
+
+// here's the HTML to create the base for this.
+<button class="accordion">Section 1</button>
+<div class="panel">
+  <p>hey</p>
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="panel">
+  <p>hi</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel">
+  <p>hello</p>
+</div>
+
+// Style the buttons that open/close the menu.
+.accordion {
+  background-color: #eee;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+// Add a background color to the button when it's click on using a pseudo class.
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+// Style the accordion panel and hide the panel by default so it can be closed.
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+
+
+GRAPHICS
+
+background-repeat: can repeat an image horizontally and vertically. Meaning it duplicates next to one-another.
+syntax:
+img {
+    background-repeat: repeat-x; // this will duplicate the background image across the viewport horizontally.
+}
+
+
+background position: simply moves the background to a certain spot on the page.
+syntax:
+img {
+    background-position: top left; // sends it to the top left corner.
+}
+
+
+background-attachment: sets whether a background image's position is fixed or can be scrolled through.
+syntax:
+img {
+    background-attachment: scroll; // The background is fixed relative to the element itself and does not scroll with its contents.
+}
+
+
+gradients: set a few colors to make a gradient design.
+syntax:
+.colors {
+    linear-gradient: (red, green, blue); // the top is red, the middle is green, and the bottom is blue.
+}
+// you can also make it go from left-to-right
+
+.colors {
+    linear-gradient: (circle to left, red, blue, green); // the makes the gradients into a circle shape.
+}
+
+
+multiple bgs: multiple layers of bg images. These are layered atop one another with the first background
+you provide on top and the last background listed in the back.
+syntax:
+.bg {
+    width: 100%;
+    height: 400px;
+    background-image: url(firefox.png), url(bubbles.png), // the bubbles will be in the back, while the logo will be up-front.
+    linear-gradient(to right, rgb(30 75 115 / 100%), rgb(255 255 255 / 0%));
+    background-position:
+    bottom right,
+    left,
+    right;
+}
+
+
+border styles: border styles that improve the presentation of a border attribute.
+syntax:
+.border {
+    border-style: groove;
+    border-color: red blue yellow purple; // this will set the top border to red, left to blue, yellow to right, purple to bottom. 
+    border-img: url();
+}
+
+// as with most attributes, you can do this on one line
+.border {
+    border: 3px solid #fff; // 3px is width, solid shape, and white color.
+}
+
+
+img filter: applies graphical effects like blur or color shift to an element (saturation, brightness, contrast, etc). 
+syntax:
+img {
+    filter: brightness(1.3);
+    contrast(30%);
+}
+
+// above example makes the image 130% brighter with a 70% decrease of contrast 
+
+
+
+LAYOUT 
+
+Media Queries: The CSS media query is used to make the webpage more responsive according 
+to the different screens or media types. Media queries include a block of CSS only if a certain expression is true.
+
+Syntax: 
+@media not | only media type and (expression) {
+    // content
+}
+
+
+flex properties: sets how a flex item will grow or shrink to fit the space available in its flex container.
+.flex {
+    flex-basis: 200px; 
+    flex-grow: 1;
+    flex-shrink: 1; 
+}
+
+// one-line
+.flex {
+    flex: 1 1 200px; // grow, shrink, basis.
+}
+
+
+grid properties: sets all of the explicit and implicit grid properties in a single declaration.
+syntax:
+.grid {
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 100px;
+    grid-gap: 1rem;
+}
+// here are the many different syntax of the grid attribute.
+
+// grid-template values
+    grid: none;
+    grid: "a" 100px "b" 1fr;
+    grid: [linename1] "a" 100px [linename2];
+    grid: "a" 200px "b" min-content;
+    grid: "a" minmax(100px, max-content) "b" 20%;
+    grid: 100px / 200px;
+    grid: minmax(400px, min-content) / repeat(auto-fill, 50px);
+
+// grid-template-rows
+    grid: 200px / auto-flow;
+    grid: 30% / auto-flow dense;
+    grid: repeat(3, [line1 line2 line3] 200px) / auto-flow 300px;
+    grid: [line1] minmax(20em, max-content) / auto-flow dense 40%;
+
+// grid-template-columns
+    grid: auto-flow / 200px;
+    grid: auto-flow dense / 30%;
+    grid: auto-flow 300px / repeat(3, [line1 line2 line3] 200px);
+    grid: auto-flow dense 40% / [line1] minmax(20em, max-content);
+
+// Global values
+    grid: inherit;
+    grid: initial;
+    grid: revert;
+    grid: revert-layer;
+    grid: unset;
+
+
+TRANSITIONS/TRANSFORMS/ANIMATIONS
+
+dropshadow transition: applies a drop shadow effect to the input image. 
+syntax:
+transition {
+    filter: drop-shadow(16px red);
+}
+// makes a red shadow with a length of 16 x 16px.
+
+
+2d transforms - translate: moves objects, scale: resizes objects, skew: reshapes objects.
+syntax:
+.translate-ex {
+    transform: translateX(-200px);
+    transform: translateY(200px);
+    transform: translate(1, 3);
+}
+
+.scale-example {
+    transform: scale(2); // makes the object 200% bigger.
+}
+
+.skew-example {
+    transform: skew(25deg); // slanting an img by 25 degrees.
+}
+
+
+3d-transforms: use of the Z axis. the Z axis is make it the object rotate towards or away from you.
+syntax:
+.3d {
+    transform: scaleZ(90 deg);
+    transform: translateZ(100px);
+}
+
+// the above example will make the object become a bit smaller due to its movement and scale being a positive number.
+
+
+
+ANIMATION
+
+basic animation: you can make key frames to set an attribute from each percentage of the motion or make your animation go from 1 part to another.
+syntax:
+.animated {
+    @keyframes spin {
+        from { 
+            transform: rotateY(-260deg);
+        }
+
+        to {
+            transform rotateY(500deg);
+        } 
+    }
+}
+
+// example above will start a Y angle of -260 degrees and move to 500 degrees.
+
+
+// this is a more simple animation tag, we set the type, delay, duration, and function.
+.animated:hover {
+    animation: spin 2s infinite, ease-in; // type of spin, delay of 2s, infinite duration, and an ease-in function.
+}
+
+animation fill mode: The animation-fill-mode CSS property sets how a CSS animation applies styles to its target before and after it runs.
+syntax: 
+.fill {
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+
+// the forward setting will allow it to retain it's values set by the last keyframe encountered during execution.
+
+

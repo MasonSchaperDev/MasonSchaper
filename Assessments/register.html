@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Mason Schaper">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/register.css">
+    <title>Kaiser Permanente</title>
+</head>
+
+<body>
+<!--top menu with logo-->
+    <div id="top-menu-container">
+        <img src="images/kp-logo-white.png" id="kaiser-logo"/>
+    </div>
+<!--registration fill out form-->
+    <div id="registration-container">
+        <div id="registration-header">
+            <p>Registration</p>
+            <p>Step 1 of 5: Tell us about yourself</p>
+        </div>
+        <p id="all-fields-required">All fields are required unless marked optional</p>
+        <div id="fill-out-fields-container">
+            <div class="fill-out-fields-row">
+                <div class="fill-out-fields-column">
+                    <div class="fill-out-field">
+                        <h5>First name</h5>
+                        <input type="text";/>
+                        <p>Enter your first name</p>
+                    </div>
+
+                    <div class="fill-out-field">
+                        <h5>Last name</h5>
+                        <input type="text";/>
+                        <p>Enter your last name</p>
+                    </div>
+
+                    <div class="fill-out-field">
+                        <h5>Date of birth</h5>
+                        <input type="text";/>
+                        <p>Use format mm/dd/yyyy</p>
+                    </div>
+
+                    <div class="fill-out-field">
+                        <h5>Address line 1</h5>
+                        <input type="text";/>
+                        <p>Enter address used to enroll with Kaiser Permanente</p>
+                    </div>
+
+                    <div class="fill-out-field">
+                        <h5>Address line 2</h5>
+                        <input type="text";/>
+                        <p>Add any additional address information</p>
+                    </div>
+                </div>
+
+                <div class="fill-out-fields-column-2">
+                    <div class="fill-out-field">
+                        <h5>City</h5>
+                        <input type="text";/>
+                    </div>
+
+                    <div class="fill-out-field">
+                        <h5>State</h5>
+                        <select name="states" id="states-menu">
+                            <option value="blank"></option>
+                            <option value="AL">AL</option>
+                            <option value="AK">AK</option>
+                            <option value="AZ">AZ</option>
+                            <option value="AR">AR</option>
+                            <option value="CA">CA</option>
+                            <option value="CO">CO</option>
+                            <option value="CT">CT</option>
+                            <option value="DC">DC</option>
+                            <option value="DE">DE</option>
+                            <option value="FL">FL</option>
+                            <option value="GA">GA</option>
+                            <option value="HI">HI</option>
+                            <option value="ID">ID</option>
+                            <option value="IL">IL</option>
+                            <option value="IN">IN</option>
+                            <option value="IA">IA</option>
+                            <option value="KS">KS</option>
+                            <option value="KY">KY</option>
+                            <option value="LA">LA</option>
+                            <option value="ME">ME</option>
+                            <option value="MD">MD</option>
+                            <option value="MA">MA</option>
+                            <option value="MI">MI</option>
+                            <option value="MN">MN</option>
+                            <option value="MS">MS</option>
+                            <option value="MO">MO</option>
+                            <option value="MT">MT</option>
+                            <option value="NE">NE</option>
+                            <option value="NV">NV</option>
+                            <option value="NH">NH</option>
+                            <option value="NJ">NJ</option>
+                            <option value="NM">NM</option>
+                            <option value="NY">NY</option>
+                            <option value="NC">NC</option>
+                            <option value="ND">ND</option>
+                            <option value="OH">OH</option>
+                            <option value="OK">OK</option>
+                            <option value="OR">OR</option>
+                            <option value="PA">PA</option>
+                            <option value="RI">RI</option>
+                            <option value="SC">SC</option>
+                            <option value="SD">SD</option>
+                            <option value="TN">TN</option>
+                            <option value="TX">TX</option>
+                            <option value="UT">UT</option>
+                            <option value="VT">VT</option>
+                            <option value="VA">VA</option>
+                            <option value="WA">WA</option>
+                            <option value="WV">WV</option>
+                            <option value="WI">WI</option>
+                            <option value="WY">WY</option>
+                        </select>
+                    </div>
+
+                    <div class="fill-out-field">
+                        <h5>Zip code</h5>
+                        <input type="text";/>
+                        <p>Enter your zip code</p>
+                    </div>
+
+                    <div class="fill-out-field">
+                        <h5>Medical Record Number (MRN)(optional)</h5>
+                        <input type="text";/>
+                        <p>Enter your MRN</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--back and continue buttons-->
+        <div id="buttons-container">
+            <button id="back-button">&#8592 Back</button>
+            <button id="continue-button">Continue &#8594</button>
+        </div>
+    </div>
+</body>
+</html>

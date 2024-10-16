@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Mason Schaper">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/health-and-wellness.css">
+    <title>Kaiser Permanente</title>
+</head>
+
+<body>
+<!--top-menu-->
+    <div class="container">
+        <nav class="nav-bar">
+            <div class="drop-down-menus">
+                <label for="regions">Region</label>
+                <select name="regions" class="menu">
+                    <option value="S.California">S.California</option>
+                    <option value="N.California">N.California</option>
+                    <option value="Northwest">Northwest</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Mid-Atlantic">Mid-Atlantic</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Colorado">Colorado</option>
+                </select>
+
+                <label for="Language">Language</label>
+                <select name="languages" class="menu">
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                </select>
+            </div>
+
+            <div class="employers-and-brokers">
+                <ul>
+                    <li><a href="#" class="underline-link">Employers</a></li>
+                    <img src="images/open-new-window.svg" class="window-icon"/>
+                    <li><a href="#" class="underline-link">Brokers</a></li>
+                    <img src="images/open-new-window.svg" class="window-icon"/>
+                </ul>
+            </div>
+        </nav>
+    </div>
+<!--sign-up/log-in-->     
+    <div class="container-2">
+        <img src="images/kp-logo-white.png" id="logo"/>
+        <div class="login-options">
+            <button class="register">Register</button>
+            <button class="sign-in"><img src="images/profile-circle.svg" class="profile-icon">Sign In</button>
+        </div>
+    </div>
+<!--list of options-->
+    <div class="container-3">
+        <div class="option-list">
+            <ul>
+                <li><a href="#" class="white-hover-link">Learn</a></li>
+                <li><a href="shop-plans.html" class="white-hover-link">Shop Plans</a></li>
+                <li><a href="#" class="white-hover-link">Doctors & Locations</a></li>
+                <li><a href="#" class="white-hover-link">Health & Wellness</a></li>
+                <li><a href="#" class="white-hover-link">Get Care</a></li>
+                <li><a href="#" class="white-hover-link">Pay Bills</a></li>
+            </ul>
+        </div>
+
+        <div class="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <ul class="mobile-menu">
+                <li><a href="#">Learn</a></li>
+                <li><a href="shop-plans.html">Shop Plans</a></li>
+                <li><a href="#">Doctors & Locations</a></li>
+                <li><a href="#">Health & Wellness</a></li>
+                <li><a href="#">Get Care</a></li>
+                <li><a href="#">Pay Bills</a></li>
+            </ul>
+        </div>
+
+        <div class="search-container">
+            <input type="text" placeholder="Explore topics, care, coverage" class="search-bar">
+            <button class="search-button">Search</button>
+            <button class="search-button-mobile">Search</button>
+        </div>
+    </div>
+<!--covid alert-->
+    <div id="alert-container">
+        <img src="images/alert-p2.svg"/>
+        <p id="alert-description">Due to the rise in COVID-19 activity in Hawaii, effective June 24, 2024, members, patients, and visitors are strongly encouraged to wear masks
+        covering the nose and mouth while indoors at Kaiser Permanente facilities. <a href="#">Learn more.</a></p>
+        <div id="view-alerts-container">
+            <button id="previous-button">&#8592 Previous alert</button>
+            <p id="one-of-two">1 of 2</p>
+            <button>Next alert &#8594</button>
+            <a href="">View all alerts</a>
+        </div>
+    </div>
+<!--health and wellness description-->
+    <div class="container-4c">
+        <div id="health-and-wellness">
+            <h1>Health and Wellness</h1>
+            <p>At Kaiser Permanente, we know total health and wellness go beyond the doctor's office. That's why we're here to help you find the high-quality care and resources you need.</p>
+        </div>
+        <img src="images/group-of-4-outside.jpg"/>
+        <img src="images/group-of-4-mobile.jpg" id="mobile-image"/>
+    </div>
+<!--Jump to sections on page-->
+    <div class="container-5c">
+        <h2>Jump to Section</h2>
+        <div id="sections"> 
+            <button>Healthy living spotlight</button>
+            <button>Managing your health</button>
+            <button>Health tools</button>
+            <button>Programs and classes</button>
+            <button>Health articles</button>
+        </div>
+    </div>
+<!--Healthy living options-->
+    <div class="container-6c">
+        <div id="healthy-spotlight">
+            <img src="images/sun-illustrative.svg"/>
+            <h2>Healthy living spotlight</h2>
+        </div>
+
+        <div id="row">
+            <div class="column-container">
+                <div class="column">
+                    <a href="#">
+                    <img src="images/young-woman-looking-at-her-phone.png"/>
+                    <h4>Self-care apps</h4>
+                    <p>Download wellness apps to support your health needs.</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="column-container">
+                <div class="column">
+                    <a href="#">
+                    <img src="images/group-of-three-people-cooking-in-kitchen.png"/>
+                    <h4>Health classes and programs</h4>
+                    <p>Find in-person, over-the-phone, and online wellness options.</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="column-container">
+                <div class="column">
+                    <a href="#">
+                    <img src="images/businesswoman-talking-on-smart-phone.png"/>
+                    <h4>Wellness coaching</h4>
+                    <p>One on one support by phone with a wellness coach.</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="column-container">
+                <div class="column">
+                    <a href="#">
+                    <img src="images/person-lifting-weights-in-a-gym.png"/>
+                    <h4>Fitness and exercise deal</h4>
+                    <p>Find discounts and tools to help you stay active.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--browse topics for healthy living-->
+    <div class="container-7c">
+        <img src="images/two-doctors-talking.png"/>
+        <div id="browse-topics">
+            <h2>Browser these topics for healthier living</h2>
+            <button>Mental health</button>
+            <button>Women's health</button>
+            <button>Diabetes</button>
+            <button>COVID-19</button>
+            <button>Maternity</button>
+            <button>Heart health</button>
+            <button>Addiction</button>
+            <button>Cancer</button>
+            <button>Fitness & exercise</button>
+            <button>Healthy eating</button>
+            <div id="show-more">
+                <span>+</span>
+                <span>Show more (11)</span>
+            </div>
+        </div>
+
+        <div id="show-more-topics">
+            <button>Social health</button>
+            <button>Flu</button>
+            <button>Life care planning</button>
+            <button>Birth control</button>
+            <button>Caregiving</button>
+            <button>Parenting</button>
+            <button>Stress</button>
+            <button>Sleep</button>
+            <button>Relationships</button>
+            <button>Mindfullness</button>
+            <button>Senior health</button>
+        </div>  
+    </div>
+<!--allergy section-->
+    <div class="container-8c">
+        <div id="allergy-season">
+            <div id="care-for-yourself">
+                <img src="images/allergy-illustrative.svg"/>
+                <h2>Care for yourself this allergy season</h2>
+            </div>
+            <p>Don't let allergy season slow you down. Managing allergies is an important part of your health and can help you avoid other conditions.
+            Learn how to protect yourself and your loved ones and how to cope with any allergy symptoms.</p>
+            <button>Make a plan to manage your allergies</button>
+        </div>
+        <img src="images/man-holding-child-outside.png"/>
+    </div>
+<!--Search for classes/programs-->
+    <div class="container-9c">
+        <div id="search-for-classes">
+            <div id="search-for-class-header">
+                <img src="images/search-illustrative.svg"/>
+                <h2>Search for classes and programs</h2>
+            </div>
+            <p>As a Kaiser Permanente member, you can sign up for in-person, over-the-phone, and online wellness programs and classes designed to help you achieve your health goals.</p>
+            <div id="class-search-row">
+                <div class="class-search-column">
+                    <h5>LOCATION</h5>
+                    <input type="text"/>
+                </div>
+
+                <div class="class-search-column">
+                    <h5>TOPIC</h5>
+                    <select>
+                        <option>Select topic</option>
+                        <option>Bones, joints, and muscles</option>
+                        <option>COPD</option>
+                        <option>Cancer</option>
+                        <option>Child and teen health</option>
+                    </select>
+                </div>
+                <button>Search Classes</button>
+            </div>
+           
+            <a href>Learn about the health class directory</a>
+        </div>
+        <img src="images/woman-exercising-with-dumbbells.png" id="woman-exercising"/>
+    </div>
+<!--Tools for you-->
+    <div class="container-10c">
+        <div id="tools-for-you-header">
+            <img src="images/gears-illustrative.svg"/>
+            <h3>Tools for you</h3>
+        </div>
+
+        <div class="tools-row">
+            <div class="tools-column">
+                <h4>Health Encyclopedia</h4>
+                <p>Search from over 4,000 health topics on to learn which care is best for you.</p>
+                <a href="#">Explore health topics</a>
+            </div>
+
+            <div class="tools-column">
+                <h4>Food for Health recipe library</h4>
+                <p>Browse 600+ healthy meals to make at home.</p>
+                <a href="#">View recipes</a>
+            </div>
+
+            <div class="tools-column">
+                <h4>Support groups and classes</h4>
+                <p>Find online or in-person programs in your area.</p>
+                <a href="#">Explore classes</a>
+            </div>
+        </div>
+
+        <div class="tools-row">
+            <div class="tools-column">
+                <h4>Symptom checker</h4>
+                <p>Learn what your symptoms could mean.</p>
+                <a href="#">Search your symptoms</a>
+            </div>
+
+            <div class="tools-column">
+                <h4>Pharmacy services</h4>
+                <p>Fill and manage your medications.</p>
+                <a href="#">Manage your prescriptions</a>
+            </div>
+
+            <div class="tools-column">
+                <h4>Self-care apps</h4>
+                <p>Improve your sleep, mood, and more.</p>
+                <a href="#">Explore the apps</a>
+            </div>
+        </div>
+        <div id="view-more-tools">
+            <span>+</span>
+            <span>View all tools for you</span>
+        </div>
+    </div>
+<!--Related articles-->
+    <div class="container-11c">
+        <div id="related-articles-header">
+            <img src="images/article-illustrative.svg"/>
+            <h3>Related Articles</h3>
+            <button>Explore Libraries</button>
+        </div>
+
+        <div id="articles-container">
+            <div id="view-by-topic">
+                <h4>View by topic:</h4>
+                <a href="#"></a><p id="selected-topic">All-topics</p>
+                <p><a href="#">Fitness and exercise</a></p>
+                <p><a href="#">Healthy eating</a></p>
+                <p><a href="#">Mental health</a></p>
+                <p><a href="#">Prevention diseases</a></p>
+            </div>
+
+            <div class="related-articles-row">
+                <div class="related-articles-column">
+                    <img src="images/two-athletes-eating-small-salads-at-the-gym.png"/>
+                    <h5>Health and wellness</h5>
+                    <h2>Eat like an athlete: A guide to nutrition planning</h2>
+                </div>
+
+                <div class="related-articles-column">
+                    <img src="images/soccer-player-naomi-girma-meditating-outdoors.png"/>
+                    <h5>Health and wellness</h5>
+                    <h2>6 ways athletes can prioritize mental health</h2>
+                </div>
+
+                <div class="related-articles-column">
+                    <img src="images/friends-smiling-walking-up-stairs-holding-weights.png"/>
+                    <h5>Health and wellness</h5>
+                    <h2>What you need to know about the latest weight-loss drugs</h2>
+                </div>
+            </div>
+
+            <div class="related-articles-row">
+                <div class="related-articles-column">
+                    <img src="images/2-adult-swimming-in-pool-with-a-kickboard.png"/>
+                    <h5>Health and wellness</h5>
+                    <h2>4 keys workouts for staying active as you age</h2>
+                </div>
+
+                <div class="related-articles-column">
+                    <img src="images/outside-play.png"/>
+                    <h5>Health and wellness</h5>
+                    <h2>9 outdoors activities to help you work up a sweat</h2>
+                </div>
+
+                <div class="related-articles-column">
+                    <img src="images/applying-sunscreen-on-the-arm-of-a-child.png"/>
+                    <h5>Health and wellness</h5> 
+                    <h2>Mineral sunscreens? Moisturizers with SPF? A dermatologist's guide to sunscreen</h2>
+                </div>
+            </div>
+        </div>
+
+        <div id="article-buttons">
+            <button id="view-all-button">View all Healthy Living articles</button>
+            <button id="back-to-top"><a href="#">Back to top</a></button>
+        </div>
+    </div>
+
+    <div class="container-12c">
+        <div id="care-header">
+            <h3>Connecting to care</h3>
+            <p>Call us 24/7 and talk with a licensed care clinician about your questions or concerns. Find your local phone number below. </p>
+        </div>
+
+        <div id="care-row">
+            <div class="care-column">
+                <div class="care-column-header">
+                    <img src="images/phone-illustrative.svg"/>
+                    <h4>Get 24/7 advice</h4>
+                </div>
+                <p>Talk with a licensed care clinician day or night.</p>
+                <button class="lower-button">Contact us</button>
+            </div>
+
+            <div class="care-column">
+                <div class="care-column-header">
+                    <img src="images/envelope-illustrative.svg"/>
+                    <h4>Email your care team</h4>
+                </div>
+                <p>Message your doctor’s office anytime with nonurgent health questions.</p>
+                <button>Email us</button>
+            </div>
+
+            <div class="care-column">
+                <div class="care-column-header">
+                    <img src="images/calendar-illustrative.svg"/>
+                    <h4>Make an appointment</h4>
+                </div>
+                <p>Meet with your doctor to discuss the right care for you.</p>
+                <button class="lower-button">Schedule a visit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-13c">
+        <div id="glossary-row">
+            <div class="glossary-column">
+                <h5>Find care</h5>
+                <p><a href="#">Get Care</a></p>
+                <p><a href="#">Find Doctors & Locations</a></p>
+                <p><a href="#">Health Classes</a></p>
+                <p><a href="#">Care When Traveling</a></p>
+                <p><a href="#">Timely Access to Care</a></p>
+            </div>
+
+            <div class="glossary-column">
+                <h5>Our organization</h5>
+                <p><a href="#">About KP</a></p>
+                <p><a href="#">Patient Quality & Safety</a></p>
+                <p><a href="#">News</a></p>
+                <p><a href="#">Research</a></p>
+                <p><a href="#">Commitment to the Community</a></p>
+                <p><a href="#">Equity, Inclusion, & Diversity</a></p>
+                <p><a href="#">Annual Report</a></p>
+                <p><a href="#">Careers</a></p>
+                <p><a href="#">For the Media</a></p>
+                <p><a href="#">Price Transparency</a></p>
+            </div>
+
+            <div class="glossary-column">
+                <h5>Member support</h5>
+                <p><a href="#">New Member Welcome</a></p>
+                <p><a href="#">Forms & Publications</a></p>
+                <p><a href="#">Support Center</a></p>
+                <p><a href="#">Help Paying your Bills</a></p>
+                <p><a href="#">Medical Information Requests</a></p>
+                <p><a href="#">Transparency in Coverage</a></p>
+                <p><a href="#">Request for Confidential Communications Forms</a></p>
+                <p><a href="#">HIPAA Authorization</a></p>
+            </div>
+
+            <div class="glossary-column">
+                <h5>Visit our other sites</h5>
+                <p><a href="#">Individual & Family Plans</a></p>
+                <p><a href="#">Medicaid/Medi-cal</a></p>
+                <p><a href="#">Medicare</a></p>
+                <p><a href="#">Affordable Care Act</a></p>
+                <p><a href="#">For Businesses</a></p>
+                <p><a href="#">For Federal Employees</a></p>
+                <p><a href="#">Broker Support</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-footer">
+        <div class="column-group">
+            <div class="column-of-info">
+                <ul class="list-of-info">
+                    <li>Accessibility</li><br>
+                    <li>Nondiscrimination</li><br>
+                    <li>Help in your Language</li>
+                </ul>
+            </div>
+
+            <div class="column-of-info">
+                <ul class="list-of-info">
+                    <li>Website Privacy</li><br>
+                    <li>HIPAA Notice of Privacy Practices</li><br>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+
+            <div class="column-of-info">
+                <ul class="list-of-info">
+                    <li>Rights & Responsibilities</li><br>
+                    <li>Disaster Planning</li><br>
+                    <li>Technical Information</li>
+                </ul>
+            </div>
+
+            <div class="column-of-info">
+                <ul class="list-of-info">
+                    <li>Site Map</li><br>
+                    <li>Contact Site Manager</li><br>
+                    <li>HIPAA Authorization</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container-footer-child">
+            <p class="follow-us">Follow us on these external social media sites that will open in a new browser window.
+            </p>
+            <div id="social-media-icons">
+                <a href="https://www.x.com/"><img src="images/twitter-white.svg" class="sm-icon"/></a>
+                <a href="https://www.facebook.com/"><img src="images/facebook-white.svg" class="sm-icon"/></a>
+                <a href="https://www.youtube.com/"><img src="images/youtube-white.svg" class="sm-icon"/></a>
+                <a href="https://www.pinterest.com/"><img src="images/pinterest-white.svg" class="sm-icon"/></a>
+                <a href="https://www.instagram.com/"><img src="images/instagram-white.svg" class="sm-icon"/></a>
+            </div>
+            <p class="about-kp"></p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 const btnEl = document.getElementById("btn");
-const errorMessageEl = document.getElementById("input").value;
+const errorMessageEl = document.getElementById("errorMessage");
 const galleryEl = document.getElementById("gallery");
 
 async function fetchImage() {
@@ -11,7 +11,7 @@ async function fetchImage() {
         return;
     }
 
-    imgs = "";
+    let imgs = "";
 
     try {
         btnEl.style.display = "none";

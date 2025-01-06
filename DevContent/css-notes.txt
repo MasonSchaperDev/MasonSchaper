@@ -1,4 +1,6 @@
-CSS SELECTORS: selectors are patterns used to select the element you want to style.
+------------------------ SELECTORS START --------------------------
+
+selectors are patterns used to select the element you want to style.
 
 element: The element selector selects HTML elements based on the element name.
 syntax:
@@ -62,6 +64,10 @@ p::first-line {
 // always selects the first line of text inside an element,
 acting as if a span tag was wrapped around the first line and then selected, making the text bold.
 
+------------------------ SELECTORS END --------------------------
+
+
+------------------------ TYPOGRAPHY START --------------------------
 
 TYPOGRAPHY: scaling, family, size, etc.
 
@@ -107,28 +113,10 @@ p {
     transform: rotate(90deg);
 }
 
-keyframe animations: using multiple key frames to create an animation. This gives more control over the
-steps of the animation sequence than transitions.
-syntax:
-p {
-    @keyframe {
-        0% {
-            opacity: 0%;
-        }
-
-        30% {
-            opacity: 36%;
-        }
-
-        100% {
-            opacity: 100%;
-        }
-    }
-}
-// the paragraph will start by making the p tag less visible to 30% quickly and then it'll slowly turn invisible.
+------------------------ TYPOGRAPHY END --------------------------
 
 
-CONTENT
+------------------------ CONTENT START --------------------------
 
 list styles: specifies the type of list-item marker in a list. There is the type and position. For the type, you can set it to a disc, square, or circle. 
 While the position can be set to outside or inside (outside is the default).
@@ -188,9 +176,10 @@ syntax:
   overflow: hidden;
 }
 
+------------------------ CONTENT END --------------------------
 
 
-GRAPHICS
+------------------------ GRAPHICS START --------------------------
 
 background-repeat: can repeat an image horizontally and vertically. Meaning it duplicates next to one-another.
 syntax:
@@ -263,9 +252,10 @@ img {
 
 // above example makes the image 130% brighter with a 70% decrease of contrast 
 
+------------------------ GRAPHICS END --------------------------
 
 
-LAYOUT 
+------------------------ LAYOUT START --------------------------
 
 Media Queries: The CSS media query is used to make the webpage more responsive according 
 to the different screens or media types. Media queries include a block of CSS only if a certain expression is true.
@@ -274,7 +264,6 @@ Syntax:
 @media not | only media type and (expression) {
     // content
 }
-
 
 flex properties: sets how a flex item will grow or shrink to fit the space available in its flex container.
 .flex {
@@ -287,7 +276,6 @@ flex properties: sets how a flex item will grow or shrink to fit the space avail
 .flex {
     flex: 1 1 200px; // grow, shrink, basis.
 }
-
 
 grid properties: sets all of the explicit and implicit grid properties in a single declaration.
 syntax:
@@ -336,8 +324,10 @@ syntax:
     explanation: When the viewport is the smallest it can be, the font-size will have a minimum size-cap of 1rem, same thing with the biggest size but the opposite. 
     The 'val' or the preferred value is the value you want in between the min and max.
 
+------------------------ LAYOUT END --------------------------
 
-TRANSITIONS/TRANSFORMS/ANIMATIONS
+
+------------------------ TRANSITIONS/TRANSFORMS START --------------------------
 
 dropshadow transition: applies a drop shadow effect to the input image. 
 syntax:
@@ -373,12 +363,15 @@ syntax:
 
 // the above example will make the object become a bit smaller due to its movement and scale being a positive number.
 
+------------------------ TRANSITIONS/TRANSFORMS END --------------------------
 
 
-ANIMATION
+------------------------ ANIMATIONS START --------------------------
 
 basic animation: you can make key frames to set an attribute from each percentage of the motion or make your animation go from 1 part to another.
 syntax:
+animation: spin 3s linear; // grabbing the keyframe name which is called 'spin'.
+
 .animated {
     @keyframes spin {
         from { 
@@ -391,10 +384,40 @@ syntax:
     }
 }
 
-// example above will start a Y angle of -260 degrees and move to 500 degrees.
+keyframe animations: using multiple key frames to create an animation. This gives more control over the
+steps of the animation sequence than transitions.
+syntax:
+p {
+    @keyframe {
+        0% {
+            opacity: 100%;
+        }
 
+        30% {
+            opacity: 36%;
+        }
 
-// this is a more simple animation tag, we set the type, delay, duration, and function.
+        100% {
+            opacity: 0%;
+        }
+    }
+}
+// the paragraph will start by making the p tag less visible to 30% quickly and then it'll slowly turn invisible.
+
+div {
+  animation-name: example;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+// this is a shorthand animation tag, we set the type, delay, duration, and function all in one line.
+
+syntax: animation: name, duration, timing-function, delay, iteration count, direction;
+
+// example:
 .animated:hover {
     animation: spin 2s infinite, ease-in; // type of spin, delay of 2s, infinite duration, and an ease-in function.
 }
@@ -408,4 +431,4 @@ syntax:
 
 // the forward setting will allow it to retain it's values set by the last keyframe encountered during execution.
 
-
+------------------------ ANIMATIONS END --------------------------

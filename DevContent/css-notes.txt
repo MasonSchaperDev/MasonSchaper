@@ -314,15 +314,131 @@ syntax:
     grid: revert-layer;
     grid: unset;
 
-// clamp
+clamp
     syntax:
     font-size: (min, val, max); // the min and max are
 
     example: 
         font-size: (1rem, 2.5vw, 2rem);
-
+    
     explanation: When the viewport is the smallest it can be, the font-size will have a minimum size-cap of 1rem, same thing with the biggest size but the opposite. 
     The 'val' or the preferred value is the value you want in between the min and max.
+
+
+Clip: defines a visible portion of an element. The clip property applies only to absolutely positioned elements.
+
+    Syntax:
+        /* Keyword value */
+        clip: auto;
+        
+        /* <shape> values */
+        clip: rect(1px, 10em, 3rem, 2ch);
+        
+        /* Global values */
+        clip: inherit;
+        clip: initial;
+        clip: revert;
+        clip: revert-layer;
+        clip: unset;
+
+    Example:
+        HTML:
+            <p class="dotted-border">
+              <img src="macarons.png" alt="Original graphic" />
+              <img id="top-left" src="macarons.png" alt="Graphic clipped to upper left" />
+              <img id="middle" src="macarons.png" alt="Graphic clipped towards middle" />
+              <img
+                id="bottom-right"
+                src="macarons.png"
+                alt="Graphic clipped to bottom right" />
+            </p>
+
+        CSS:
+            .dotted-border {
+              border: dotted;
+              position: relative;
+              width: 390px;
+              height: 400px;
+            }
+            
+            #top-left,
+            #middle,
+            #bottom-right {
+              position: absolute;
+              top: 0;
+            }
+            
+            #top-left { // this will zoom into the top-left corner of the image.
+              left: 400px; // this will move the view of the image to the far left
+              clip: rect(0, 130px, 90px, 0); // by inputting 0 to the top and left side, it wont crop anything from that space.
+            }
+            
+            #middle { // this will zoom into the middle of the image.
+              left: 270px;
+              clip: rect(100px, 260px, 190px, 130px);
+            }
+            
+            #bottom-right { // this will zoom into the bottom-right of the image.
+              left: 140px;
+              clip: rect(200px, 390px, 290px, 260px);
+            }
+
+Clip Path: creates a clipping region that sets what part of an element should be shown. 
+Parts that are inside the region are shown, while those outside are hidden.
+
+    Example:
+        HTML:
+        <div class="main">
+            <h1>black</h1>
+            <h1>white</h1>
+        </div>
+
+        CSS:
+        body {
+          margin: 0;
+          padding: 0;
+          background-color: #c8d6e5;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .main {
+          position: relative;
+          width: 800px;
+        }
+        
+        h1 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%); // brings to center
+          margin: 0; 
+          padding: 0;
+          width: 100%;
+          text-align: center;
+          font-size: 220px;
+          text-transform: uppercase;
+        }
+        
+        h1:nth-child(2) {
+          color: white;
+          transition: 0.5s;
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%); // clips out a portion of the white text and reveals the black text.
+          background-color: #c8d6e5;
+        }
+        
+        h1:nth-child(2):hover {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);  // when you hover over the black text, the black will take over the white.
+        }
+        
+        h1:nth-child(1):hover ~ h1 {
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); // when you hover over the white text, the white will take over the black.
+        }
+
+    Example Explanation: this will create a line of text that says either 'white' or 'black' depending on where the cursor hovers to.
+                
 
 ------------------------ LAYOUT END --------------------------
 

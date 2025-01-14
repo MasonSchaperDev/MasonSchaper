@@ -804,7 +804,6 @@ Example:
 Example:
   // HTML
   <p class="example"></p>
-  <p class="example"></p>
 
   // JAVASCRIPT
   const element = document.querySelectorAll(".example");
@@ -862,8 +861,6 @@ Event Listener:
 
   // when the element is clicked, an alert will pop out saying: "Hello World!".
 
-  Example with arrow function:
-
 2. removeEventListener: removes event handlers that have been attached to an 
 AddEventListener method.
 
@@ -883,7 +880,6 @@ AddEventListener method.
     // Removes the event handler when you click the button.
 
 ------------ Events ------------- END
-
 
 ------------ Timeouts/Intervals ------------- START
 
@@ -962,7 +958,6 @@ it does have asynchronous abilities.
     // wait 3 seconds and the word 'hi' will be logged to the console. 
 
 ------------ Promises ------------- END
-
 
 <!--------------START FETCH METHOD ------------>
 The fetch method in JavaScript is used to make HTTP requests to servers and fetch resources such as text, JSON, or files. It is part of the modern JavaScript Fetch API and provides a more powerful and flexible alternative to the older XMLHttpRequest.
@@ -1072,7 +1067,6 @@ By combining fetch with async/await, you can make the code even cleaner and easi
 
 ------------ Try/Catch ------------- END
 
-
 ------------ Asynchronous JS ------------- START
 
 FETCH // AWAIT // ASYNC
@@ -1150,7 +1144,6 @@ Error Handling: Works seamlessly with try...catch for robust error management.
 
 ------------ Asynchronous JS ------------- END
 
-
 ------------ OOP - Constructors & Prototypes ------------- START
 
 Components of OOP:
@@ -1196,7 +1189,6 @@ _______________________________
       this.eyeColor = eyecolor;
       this.nationality = nationality; // this is added to the function
     }
-
 __________________________
 
 - Classes:
@@ -1274,7 +1266,6 @@ __________________________
 
 ------------ OOP - Constructors & Prototypes ------------- END
 
-
 ------------ Modules and Tooling ------------- START
 
 WHAT ARE MODULES? -> Modules are just JS files that we can import into other JS files. We can import and export things like variables, functions,
@@ -1321,7 +1312,6 @@ This example is essentially the same output as the commonJS modules example.
     console.log(message); // expected output: 'Hello'
 
 ------------ Modules and Tooling ------------- END
-
 
 ------------ Iterators, Generators, & Data Structures ------------- START
 
@@ -1470,7 +1460,7 @@ Here’s a breakdown of the most common iteration methods:
   10
   --------------------------
 
-  These are just a few examples of how JavaScript handles iterations. The choice of iteration method depends on your use case—whether you’re working with arrays, objects, or a simple numeric loop.
+These are just a few examples of how JavaScript handles iterations. The choice of iteration method depends on your use case—whether you’re working with arrays, objects, or a simple numeric loop.
     
 _______________________________
 

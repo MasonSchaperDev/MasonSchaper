@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f9;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#reset {
+    background-color: #b0aeae;
+    margin-top: 10px;
+}
+
+#reset:hover {
+    background-color: #555;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+.reviews {
+    margin-top: 30px; 
+}
+
+.review {
+    background: #f9f9f9;
+}
+
+.review {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.review h3 {
+    margin: 0 0 5px;
+}
+
+.review p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.review-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.review-buttons button {
+    padding: 5px 10px;
+    background: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review-buttons button:hover {
+    background: #d0d0d0;
+}

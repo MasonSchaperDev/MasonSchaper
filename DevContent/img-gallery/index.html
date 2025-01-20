@@ -99,35 +99,46 @@
             <h4>Click to see full image</h4>
 
             <div class="modal">
-                <img src="https://placehold.co/400"/>
+                <img src="" alt="view-full-img"/>
                 <button class="close-button">Close</button>
             </div>
         </div>
-        
+
     <!-- Javascript -->
 
     <script>
         const modal = document.querySelector('.modal');
-        const openModal = document.querySelectorAll('.image-click');
-        const closeButton = document.querySelector('button');
+        const modalImage = modal.querySelector('img');
+        const gallery = document.querySelector('.gallery');
 
-        let isModalOpen = false;
+        // functions
         
-        openModal.forEach (openModal => {
-            openModal.addEventListener('click', () => {
-                if (!isModalOpen) {
-                    modal.style.display = "flex";
-                    isModalOpen = true;
-                } 
-            });
-        });
-
-        closeButton.addEventListener('click', () => {
-            if (isModalOpen) {
-                modal.style.display = "none";
-                isModalOpen = false;
+        const openModal = (e) => {
+            if (e.target.tagName === 'IMG') {
+                modalImage.src = e.target.src;
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
             }
-        });
+        };
+
+        const closeModal = () => {
+            modal.style.display = 'none';
+            modalImage.src = '';
+            document.body.style.overflow = '';
+        };
+        
+
+        const handleKeydown = (esc) => {
+            if (esc.key === 'Escape') {
+                openModal();
+            }
+        };
+
+        // event listeners
+
+        gallery.addEventListener('click', openModal);
+        modal.addEventListener('click', closeModal);
+        window.addEventListener('keydown', handleKeydown);
     </script>
     </body>
 </html>

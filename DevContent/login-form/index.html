@@ -1,0 +1,160 @@
+<!-- user and pass is required to submit the form -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin-top: 40px;
+            padding: 0;
+            align-items: center;
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7f7;
+            flex-direction: column;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 440px;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-size: 30px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #error {
+            color: rgb(255, 0, 0);
+            display: none;
+            margin-left: 24%;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #000;
+        }
+
+        .required-info-container input {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #check-box-container {
+            display: flex;
+        }
+
+        #check-box-container input {
+            width: 15px;
+        }
+
+        #check-box-container label {
+            padding-bottom: 5px;
+            color: #383838;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #0184f7;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer
+        }
+        
+        a, p {
+            text-decoration: none;
+            text-align: center;
+        }
+
+        a {
+            color: #0184f7;
+        }
+        
+        button:hover {
+            background-color: #026ecd;
+        }
+
+        a:hover {
+            color: #026ecd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <p id="error">Incorrect Username or Password</p>
+        <form id="login-form">
+
+            <div class="required-info-container">
+                <label for="username">Username</label>
+                <input id="username" type="text" placeholder="Enter your username" required/>
+        
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Enter your Password" required/>
+            </div>
+
+            <div id="check-box-container">
+                <input type="checkbox" id="remember"/>
+                <label for="remember">Remember Me</label>
+            </div>
+
+            <button id="login" onclick="loginUser()">Log in</button>
+            <p><a href="#">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="#">Register</a></p>
+        </form>
+    </div>
+
+    <script>
+        const loginInfo = {
+            username: 'bob1',
+            password: '2000',
+        };
+
+        // function
+
+        function loginUser() {
+            const error = document.getElementById('error');
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === loginInfo.username && password === loginInfo.password) {
+                window.location.href = "home.html?user=" + encodeURIComponent(username);
+            } else {
+                error.style.display = 'flex';
+            }
+        }
+
+        // event listeners
+
+        document.addEventListener('keydown', (event) => {
+            if(event.key === 'Enter') {
+                loginUser();
+            }
+        });
+
+        document.getElementById('login').addEventListener('click', () => {
+            loginUser();
+        });
+
+    </script>
+</body>
+</html>

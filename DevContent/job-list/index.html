@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <img src="images/react-logo.png"/>
+        <h1>Job Board</h1>
+        <div id="menu-items">
+            <a href="index.html">Current Job Listings</a>
+            <a href="all-jobs-listings.html">All Job Listings</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div id="job-listings-container">
+        <h1>Job Listings</h1>
+        <div id="job-listings"></div>
+    </div>
+
+    <div class="footer">
+        <div class="child-container">
+            <h3>Job Seekers</h3>
+            <p><a href="#">Search Jobs</a></p>
+            <p><a href="#">Browse Jobs</a></p>
+            <p><a href="#">Search Salaries</a></p>
+            <p><a href="#">Career Advice</a></p>
+            <p><a href="#">Trust and Safety</a></p>
+        </div>
+
+        <div class="child-container">
+            <h3>Small & Medium Businesses</h3>
+            <p><a href="#">Post Jobs</a></p>
+            <p><a href="#">Resumes</a></p>
+            <p><a href="#">How it Works</a></p>
+            <p><a href="#">Plans</a></p>
+            <p><a href="#">Job Sites</a></p>
+        </div>
+
+        <div class="child-container">
+            <h3>Enterprise Businesses</h3>
+            <p><a href="#">Employer Reviews</a></p>
+            <p><a href="#">Customer Service</a></p>
+            <p><a href="#">FAQs</a></p>
+            <p><a href="#">Request a Consultation</a></p>
+        </div>
+
+        <div class="child-container">
+            <h3>Partner With Us</h3>
+            <p><a href="#">Job Board Software</a></p>
+            <p><a href="#">ATS Integrations</a></p>
+        </div>
+
+        <div class="child-container">
+            <h3>Company</h3>
+            <p><a href="#">About Us</a></p>
+            <p><a href="#">Contact</a></p>
+            <p><a href="#">Investors</a></p>
+            <p><a href="#">Blog</a></p>
+            <p><a href="#">Engineering</a></p>
+        </div>
+    </div>
+
+    <div class="social-media-container">
+        <a href=""><img src="images/facebook-logo.png"/></a>
+        <a href=""><img src="images/instagram-logo.png"/></a>
+        <a href=""><img src="images/x-logo.png"/></a>
+    </div>
+
+    <script id="job-data" type="application/json">
+        {
+            "jobs":  [
+                {
+                    "id": 1,
+                    "title": "Senior Front-end Developer",
+                    "type": "Full-time",
+                    "description": "We're seeking a talented Senior Front-end Developer located in Los Angeles. The skill set we're looking for is HTML, CSS, and JS. We are looking for some reliable, confident and has a positive outlook within the working environment",
+                    "location": "Los Angeles, CA",
+                    "salary": "$90k-$100k",
+                    "company": {
+                        "name": "Google",
+                        "description": "Google LLC is an American multinational corporation and technology company focusing on online advertising, search engine technology, cloud computing, computer software, quantum computing, e-commerce, consumer electronics, and artificial intelligence (AI).",
+                        "contactEmail": "press@google.com",
+                        "contactPhone": "525-121-2346"
+                    }
+                },
+        
+                {
+                    "id": 2,
+                    "title": "Junior Full-stack Developer",
+                    "type": "Part-time",
+                    "description": "We're accepting junior developers located in Denver. The skill set we're looking for is HTML, CSS, PHP, NODE, AND JS. We are looking for some reliable, confident and has a positive outlook within the working environment",
+                    "location": "Denver, CO",
+                    "salary": "$84k-$93k",
+                    "company": {
+                        "name": "IDesignTek",
+                        "description": "IDesignTek is a leading technology company specializing in web development and digital solutions",
+                        "contactEmail": "support@idesigntek.com",
+                        "contactPhone": "555-111-6666"
+                    }
+                },
+        
+                {
+                    "id": 3,
+                    "title": "Junior UX Developer",
+                    "type": "Full-time",
+                    "description": "We're accepting junior UX developers located in Seattle. We are looking for somebody who has a good understanding of a website's standards, structure, and design. We are looking for some reliable, confident and has a positive outlook within the working environment",
+                    "location": "Seattle, WA",
+                    "salary": "$84k-$100k",
+                    "company": {
+                        "name": "Meta",
+                        "description": "Meta Platforms doing business as Meta and formerly named Facebook is an American multinational technology conglomerate based in Menlo Park, California.",
+                        "contactEmail": "support@meta.com",
+                        "contactPhone": "777-909-9213"
+                    }
+                },
+        
+                {
+                    "id": 4,
+                    "title": "Senior UX Developer",
+                    "type": "Part-time",
+                    "description": "We're looking for experienced UX developers located in Boston, MA. We are looking for somebody who has a very good understanding of a website's standards, structure, design, and can exceed expectations.",
+                    "location": "Boston, MA",
+                    "salary": "$74k-$80k",
+                    "company": {
+                        "name": "Instagram",
+                        "description": "Instagram is an American photo and video sharing social networking service owned by Meta Platforms.",
+                        "contactEmail": "support@instagram.com",
+                        "contactPhone": "435-131-3466"
+                    }
+                },
+        
+                {
+                    "id": 5,
+                    "title": "Senior Back-end Developer",
+                    "type": "Full-time",
+                    "description": "We're looking for Back-end developers located in Boston, MA. We require a candidate who's skilled in languages such as Java, Ruby, and other languages. We are looking for some reliable, confident and has a positive outlook within the working environment",
+                    "location": "Boston, MA",
+                    "salary": "$124k-$150k",
+                    "company": {
+                        "name": "Pay Pal",
+                        "description": "PayPal is a digital payment system that allows users to send and receive money online",
+                        "contactEmail": "support@paypal.com",
+                        "contactPhone": "490-940-4484"
+                    }
+                },
+        
+                {
+                    "id": 6,
+                    "title": "Senior Front-end Developer",
+                    "type": "Remote",
+                    "description": "We're looking for Back-end developers located in Houston, TX. We require a candidate who's very skilled in languages such HTML, CSS, JS, and can exceed expectations.",
+                    "location": "Houston, TX",
+                    "salary": "$114k-$140k",
+                    "company": {
+                        "name": "Microsoft",
+                        "description": "Microsoft Corporation is an American multinational technology conglomerate headquartered in Redmond, Washington.",
+                        "contactEmail": "support@microsoft.com",
+                        "contactPhone": "404-900-1779"
+                    }
+                },
+        
+                {
+                    "id": 7,
+                    "title": "Junior Back-end Developer",
+                    "type": "Remote",
+                    "description": "We're looking for Back-end developers located in Boise, ID. We require a candidate who has a decent understanding in languages such as Java, Ruby, and other languages.",
+                    "location": "Boise, ID",
+                    "salary": "$84k-$90k",
+                    "company": {
+                        "name": "Instacart",
+                        "description": "Maplebear Inc. doing business as Instacart, is an American delivery company based in San Francisco that operates a grocery delivery and pick-up service in the United States and Canada accessible via a website and mobile app.",
+                        "contactEmail": "support@instacart.com",
+                        "contactPhone": "494-900-0089"
+                    }
+                },
+        
+                {
+                    "id": 8,
+                    "title": "Janitor",
+                    "type": "Part-time",
+                    "description": "We're looking for a Janitor located in Sacramento, CA. We require a candidate who loves to clean up after others.",
+                    "location": "Sacramento, CA",
+                    "salary": "$24k-$30k",
+                    "company": {
+                        "name": "Target",
+                        "description": "Target Corporation is an American retail corporation that operates a chain of discount department stores and hypermarkets, headquartered in Minneapolis, Minnesota.",
+                        "contactEmail": "support@target.com",
+                        "contactPhone": "784-298-8390"
+                    }
+                },
+        
+                {
+                    "id": 9,
+                    "title": "Junior Front-end Developer",
+                    "type": "Full-time",
+                    "description": "We're looking for Back-end developers located in Honolulu, HW. We require a candidate who has a decent understanding in languages such as HTML, CSS, and JS.",
+                    "location": "Honolulu, HW",
+                    "salary": "$84k-$90k",
+                    "company": {
+                        "name": "Amazon",
+                        "description": "Amazon is an American multinational technology company engaged in e-commerce, cloud computing, online advertising, digital streaming, and artificial intelligence.",
+                        "contactEmail": "support@amazon.com",
+                        "contactPhone": "994-737-8010"
+                    }
+                },
+        
+                {
+                    "id": 10,
+                    "title": "Senior Front-end Developer",
+                    "type": "Remote",
+                    "description": "We're looking for Back-end developers located in Boise, ID. We require a candidate who has a very good understanding in languages such as HTML, CSS, JS, and can exceed expectations.",
+                    "location": "Las Vegas, NV",
+                    "salary": "$114k-$140k",
+                    "company": {
+                        "name": "Facebook",
+                        "description": "Facebook is a social media and social networking service owned by the American technology conglomerate Meta.",
+                        "contactEmail": "support@facebook.com",
+                        "contactPhone": "929-209-9238"
+                    }
+                },
+        
+                {
+                    "id": 11,
+                    "title": "Junior UX Developer",
+                    "type": "Part-time",
+                    "description": "We're looking for UX developers located in Little Rock. We require a candidate who has a decent understanding of the structure and design of a website.",
+                    "location": "Little Rock, AK",
+                    "salary": "$64k-$70k",
+                    "company": {
+                        "name": "Home Depot",
+                        "description": "Home Depot, is an American multinational home improvement retail corporation that sells tools, construction products, appliances, and services, including fuel and transportation rentals.",
+                        "contactEmail": "support@homedepot.com",
+                        "contactPhone": "101-303-9393"
+                    }
+                },
+        
+                {
+                    "id": 12,
+                    "title": "Senior Back-end Developer",
+                    "type": "Remote",
+                    "description": "We're looking for Back-end developers located in Boise, ID. We require a candidate who has a very good understanding in languages such as Java, Ruby, and other languages.",
+                    "location": "Atlanta, GA",
+                    "salary": "$104k-$120k",
+                    "company": {
+                        "name": "Apple",
+                        "description": "Apple Inc. is an American multinational corporation and technology company headquartered in Cupertino, California, in Silicon Valley.",
+                        "contactEmail": "support@apple.com",
+                        "contactPhone": "194-020-3939"
+                    }
+                }
+            ]
+        }
+    </script>
+
+    <script>
+        let limit = 3;
+        let isAllJobs = false;
+
+        const jobListings = document.getElementById('job-listings');
+        const jsonData = JSON.parse(document.getElementById('job-data').textContent);
+
+        function loadJobs() {
+            jobListings.innerHTML = ''; // Clear previous content
+
+            jsonData.jobs.slice(0, limit).forEach(job => {
+                const jobElement = document.createElement('div');
+                jobElement.classList.add('job');
+
+                const shortDescription = job.description.substring(0, 100);
+                const fullDescription = job.description;
+
+                jobElement.innerHTML = `
+                    <h2>${job.title}</h2>
+                    <p><strong>Type: </strong>${job.type}</p>
+                    <p><strong>Location: </strong>${job.location}</p>
+                    <p><strong>Salary: </strong>${job.salary}</p>
+                    <p><strong>Company: </strong>${job.company.name}</p>
+                    <p class="job-description">
+                      <span class="text-short">${shortDescription}...</span>
+                      <span class="text-full" style="display:none;">${fullDescription}</span>
+                      <br/>
+                    <button class="toggle-btn">More</button>
+                    <a href="single-job.html" class="view-job">View Job</a>
+                    </p>
+                `;
+                jobListings.appendChild(jobElement);
+            });
+
+            document.querySelectorAll('.toggle-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const jobDescription = this.parentElement;
+                    const shortText = jobDescription.querySelector('.text-short');
+                    const fullText = jobDescription.querySelector('.text-full');
+
+                    if (fullText.style.display === 'none') {
+                        shortText.style.display = 'none';
+                        fullText.style.display = 'inline';
+                        this.textContent = 'Less';
+                    } else {
+                        shortText.style.display = 'inline';
+                        fullText.style.display = 'none';
+                        this.textContent = 'More';
+                    }
+                });
+            });
+        }
+
+        loadJobs(); // Loads the jobs on page render
+    </script>
+</body>
+</html>

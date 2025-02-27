@@ -122,6 +122,18 @@ Example:
 Both of the above examples will log this string:
   “Hello, I’m John. Nice to meet you.”
 
+
+3. Spread Operator: 
+
+// will print numbers 1-10
+const arr1 = [1, 2, 3, 4];
+const arr2 = [7, 8, 9, 10];
+const arr3 = [5, 6];
+
+const numbers = [...arr1, 5, 6, ...arr2];
+console.log(numbers);
+
+
 ------------ JS Objects ------------ END
 
 ------------ Functions ------------ START
@@ -193,6 +205,29 @@ The return statement specifies the value a function should return. If omitted, t
 function square(num) {
   return num * num;
 }
+
+
+<!--------------- scope chain - global scope first, second scope --->
+
+const myName = 'Robbie Sherre';
+
+function first() {
+  const age = 58;
+  
+  if (age >= 58) {
+    const decade = 5;
+    var millenial = true;
+  }
+  
+  function second() {
+    const job = 'Programmer';
+    console.log(`${myName} is a ${age}-year old ${job}`)
+  }
+  second();
+}
+first();
+
+<!----------------- scope chain end ----->
 
 console.log(square(4)); // Output: 16
 Scope
@@ -355,43 +390,51 @@ console.log(timestamp); // Output: Current timestamp
 The String below is an example string to demonstrate the following methods.
   let x = 'Hi sir';
 
+<--- toUpperCase method --->
 x = x.toUpperCase(); 
   Explanation:
   converts every letter in a string to uppercase.
   Expected output -> HI SIR;
 
+<--- toLowerCase method --->
 x = x.toLowerCase();
   Explanation:
   converts every letter in a string to lowercase.
   Expected output -> hi sir;
 
+<--- charAt method --->
 x = x.charAt(0); 
   Explanation:
   will grab a specific letter in a string. 
   In this instance, it will grab the letter at index.
   Expected output -> H
 
+<--- indexOf method --->
 let x = "Hi sir";
 let index = x.indexOf("i"); // come back to this one 
   Explanation:
   When you input a letter between quotes into the indexOf method, it will search for the first time the letter is used in the string and return it's index.
   Expected output -> 1
 
+<--- substring method --->
 x = x.substring(0, 2); 
   Explanation:
   will only print ‘hi’, the first value is the starting point while the second value is the end point.
   It will start at index 0, and grab each letter in the string until it reaches index 2.
   Expected output -> Hi 
 
+<--- slice method --->
 x = x.slice(4); 
   Explanation:
   this will extract a fraction of the string starting from index 0 (including spaces), and can be returned as a new string. 
   Expected output -> ir
 
+<--- trim method --->
 x = x.trim();
   Explanation:
   This simply removes any extra space from both ENDS of a string.
 
+<--- replace method --->
 let x = "Hi sir"; // using double quotes here because single quotes causes an error.
 x = x.replace("sir", "John"); 
   Explanation:
@@ -400,12 +443,20 @@ x = x.replace("sir", "John");
   In this case, we are replacing ‘sir’ with ‘John’.
   Expected output -> Hi John
 
+<--- includes method --->
 x = x.includes("hello"); 
   Explanation:
   This is checking if a specific part of a string is found within a string (case-sensitive).
   The method will return true or false depending if the string is found or not.
   In this case, x doesn’t include "hello" so it will return false.
   Expected output -> false
+
+<--- filter method --->
+const words = ["spray", "elite", "exuberant", "destruction", "present"];
+const result = words.filter((word) => word.length > 6);
+
+console.log(result);
+// Expected output: Array ["exuberant", "destruction", "present"]
 
 ------------ String Methods ------------ END
 

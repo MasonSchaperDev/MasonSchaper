@@ -123,14 +123,14 @@ Both of the above examples will log this string:
   “Hello, I’m John. Nice to meet you.”
 
 
-3. Spread Operator: 
+3. Spread Operator: allows an iterable, such as an array or string, to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected
 
 // will print numbers 1-10
 const arr1 = [1, 2, 3, 4];
 const arr2 = [7, 8, 9, 10];
 const arr3 = [5, 6];
 
-const numbers = [...arr1, 5, 6, ...arr2];
+const numbers = [...arr1, 5, 6, ...arr2]; // mergin arr 1, arr 2 into 1 array with spread
 console.log(numbers);
 
 
@@ -205,7 +205,6 @@ The return statement specifies the value a function should return. If omitted, t
 function square(num) {
   return num * num;
 }
-
 
 <!--------------- scope chain - global scope first, second scope --->
 
@@ -454,6 +453,14 @@ x = x.includes("hello");
 <--- filter method --->
 const words = ["spray", "elite", "exuberant", "destruction", "present"];
 const result = words.filter((word) => word.length > 6);
+  Explanation: 
+  
+
+<--- toString method --->
+let num = 2;
+let text = num.toString();
+  Explanation:
+  The toString() returns a number as a string. This will show the number 2 as text.
 
 console.log(result);
 // Expected output: Array ["exuberant", "destruction", "present"]
@@ -824,6 +831,19 @@ Array.reduce()
   Expected Output --> 10
 
   Explanation: In this example, the elements in the array add up together because the reduce method reduces the array to a single value.
+
+Array.find()
+  Example:
+    const array1 = [5, 12, 8, 130, 44];
+
+    const found = array1.find((element) => element > 10);
+    
+    console.log(found);
+    // Expected output: 12
+
+  Explanation: The find() method of Array instances returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
+
+
       
 ------------ Array Methods ------------- END
 

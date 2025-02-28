@@ -382,6 +382,59 @@ getTime() - Returns the timestamp (milliseconds since the Unix epoch).
 const timestamp = now.getTime();
 console.log(timestamp); // Output: Current timestamp
 
+
+<---- HOW TO GET CURRENT DATE ---->  
+
+// Get the current date and time
+let today = new Date();
+
+// Get the day of the week (0-6, where 0 is Sunday and 6 is Saturday)
+let day = today.getDay();
+
+// Array of day names
+let daylist = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+// Display the current day
+console.log("Today is: " + daylist[day] + ".");
+
+// Get the current hour, minute, and second
+let hour = today.getHours();
+let minute = today.getMinutes();
+let second = today.getSeconds();
+
+// Determine if it's AM or PM
+let prepand = (hour >= 12) ? " PM " : " AM ";
+
+// Convert 24-hour format to 12-hour format
+hour = (hour >= 12) ? hour - 12 : hour;
+
+// Check for special cases when hour is 0
+if (hour === 0 && prepand === ' PM ') {
+    if (minute === 0 && second === 0) {
+        hour = 12;
+        prepand = ' Noon';
+    } else {
+        hour = 12;
+        prepand = ' PM';
+    }
+}
+
+// Check for special cases when hour is 0
+if (hour === 0 && prepand === ' AM ') {
+    if (minute === 0 && second === 0) {
+        hour = 12;
+        prepand = ' Midnight';
+    } else {
+        hour = 12;
+        prepand = ' AM';
+    }
+}
+
+// Display the current time
+console.log("Current Time: " + hour + prepand + " : " + minute + " : " + second); 
+
+
+
 ---------- Date Methods -----------END
 
 ------------ String Methods ------------ START
@@ -454,7 +507,7 @@ x = x.includes("hello");
 const words = ["spray", "elite", "exuberant", "destruction", "present"];
 const result = words.filter((word) => word.length > 6);
   Explanation: 
-  
+  Filtering is a process that involves selecting or removing specific information from a larger set of data.
 
 <--- toString method --->
 let num = 2;
@@ -1528,7 +1581,13 @@ Here’s a breakdown of the most common iteration methods:
   console.log(sum);
   Output:
 
-  10
+8. splice (Array Method)
+  Modifies an array by removing or replacing existing elements and/or adding new elements in place. 
+
+  Example: 
+  
+  array.splice(start, deleteCount, item1, item2, ...);
+
   --------------------------
 
 These are just a few examples of how JavaScript handles iterations. The choice of iteration method depends on your use case—whether you’re working with arrays, objects, or a simple numeric loop.

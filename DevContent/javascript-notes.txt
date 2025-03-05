@@ -313,6 +313,16 @@ Flexibility: Handling inputs (parameters) and returning results.
 
 ------------ Functions ------------ END
 
+------------ Local Storage ------------ START
+
+Definition: localStorage is a web storage API that allows websites to store key-value pairs in a web browser persistently. Data stored in localStorage has no expiration time and remains available even after the browser is closed and reopened. It's accessible across all windows and tabs from the same origin. 
+
+Important things to know:
+- You can only pass Strings into localStorage
+- 
+
+------------ Local Storage ------------- END
+
 ---------- Date Methods -----------START
 
 JavaScript's Date object provides methods to work with dates and times, allowing you to create, manipulate, and format dates.

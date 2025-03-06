@@ -319,7 +319,34 @@ Definition: localStorage is a web storage API that allows websites to store key-
 
 Important things to know:
 - You can only pass Strings into localStorage
-- 
+- difference between retrieve (getItem) and store (setItem)
+
+A few examples -->
+
+//set item
+    localStorage.setItem("lastname", "Schaper");
+// retrieve item
+    document.getElementById('localstorage-ex').innerHTML = localStorage.getItem("lastname");
+   
+// storing an object using JSON.stringify
+const user = {
+    firstName: "Mason",
+    lastName: "Schaper",
+    age: 18
+};
+
+localStorage.setItem("user", JSON.stringify(user));
+
+// Retrieving and converting it back to an object using JSON.parse
+const storedUser = JSON.parse(localStorage.getItem("user"));
+
+// storing an array using JSON.stringify
+const favoriteColors = ["blue", "purple", "orange"];
+localStorage.setItem("favoriteColors", JSON.stringify(favoriteColors));
+
+// retrieve and convert it back to an array using JSON.parse
+const storedFavoriteColors = JSON.parse(localStorage.getItem("favoriteColors"));
+
 
 ------------ Local Storage ------------- END
 
@@ -442,8 +469,6 @@ if (hour === 0 && prepand === ' AM ') {
 
 // Display the current time
 console.log("Current Time: " + hour + prepand + " : " + minute + " : " + second); 
-
-
 
 ---------- Date Methods -----------END
 

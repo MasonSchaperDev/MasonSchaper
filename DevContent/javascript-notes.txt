@@ -419,6 +419,12 @@ getTime() - Returns the timestamp (milliseconds since the Unix epoch).
 const timestamp = now.getTime();
 console.log(timestamp); // Output: Current timestamp
 
+Find the current date --->
+
+let currentDate = new Date();
+
+console.log(currentDate);
+
 
 <---- HOW TO GET CURRENT DATE ---->  
 

@@ -134,7 +134,34 @@ const numbers = [...arr1, 5, 6, ...arr2]; // mergin arr 1, arr 2 into 1 array wi
 console.log(numbers);
 
 
+
 ------------ JS Objects ------------ END
+
+------------ this keyword ------------ START
+
+this keyword example --->
+
+  let person = {
+    name: "Bob",
+    greeting: function() {
+      console.log("Hello, " + this.name);
+    }
+  }
+  
+  person.greeting();
+
+this keyword in a shopping cart example --->
+
+  let cart = {
+      items: ["Refrigerator", "Microwave"],
+      showCart: function() {
+          console.log("Your cart: " + this.items.join(", "));
+      }
+  };
+
+  cart.showCart();
+
+------------ this keyword ------------ END
 
 ------------ Functions ------------ START
 
@@ -289,6 +316,22 @@ processUserInput(function (name) {
 });
 // Output: Hello, Alice!
 
+Greeting Callback function --->
+
+function message(name, callback) {
+  console.log("Hello " + name);
+  callback();
+}
+
+function greeting() {
+  console.log("See you soon");
+}
+
+message("Bob", greeting);
+// Output: Hello Bob
+
+See you soon
+
 *************
 
 Arrow Functions and this
@@ -312,6 +355,22 @@ Encapsulation: Isolating logic in functions to improve clarity.
 Flexibility: Handling inputs (parameters) and returning results.
 
 ------------ Functions ------------ END
+
+------------ Hoisting (avoid this) ------------ START
+
+console.log(calcTotal(500, 100));
+
+function calcTotal(price, tax) {
+  return price + tax;
+}
+
+console.log(bankTotal(200.80, 1400.10).toFixed(2));
+
+function bankTotal(checking, savings) {
+  return checking + savings;
+}
+
+------------ Hoisting ------------ END
 
 ------------ Local Storage ------------ START
 
@@ -881,6 +940,15 @@ Syntax:
 
 ------------ Array Methods ------------- START
 
+concat()
+let array1 = [1, 2, 3];
+
+let array2 = [4, 5, 6, 7, 8];
+
+let combinedArray = array1.concat(array2);
+
+console.log(combinedArray);
+
 Array.filter()
   Example:
     const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -926,7 +994,7 @@ Array.reduce()
 
   Explanation: In this example, the elements in the array add up together because the reduce method reduces the array to a single value.
 
-Array.find()
+find()
   Example:
     const array1 = [5, 12, 8, 130, 44];
 
@@ -938,6 +1006,12 @@ Array.find()
   Explanation: The find() method of Array instances returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
 
 
+push()
+let friends = ['Bob', 'Rob', 'Sam'];
+
+friends.push('Paul');
+
+console.log(friends);
       
 ------------ Array Methods ------------- END
 
@@ -1310,6 +1384,23 @@ Error Handling: Works seamlessly with try...catch for robust error management.
 ------------ Asynchronous JS ------------- END
 
 ------------ OOP - Constructors & Prototypes ------------- START
+
+<!-- The code defines a constructor function named Person, which is used to create multiple objects with the same structure. 
+//__proto__	A hidden property that links an object to its prototype.
+-->
+
+
+function Person(name, age, gender) {
+  this.name = name;
+  this.age = age;
+  this.gender = gender;
+}
+
+const person1 = new Person("Sandra", 45, "female");
+console.log(person1);
+
+const person2 = new Person("Autumn", 21, "female");
+console.log(person2);
 
 Components of OOP:
 - Constructor Functions: 

@@ -49,6 +49,36 @@ single quotes ('), double quotes ("), or backticks (``).
 
 ------------ Variables ------------ END
 
+------------ Destructing Objects ------------ START
+
+// Destructing objects
+const person = {
+  name: "Brenda",
+  age: 25,
+  gender: "female"
+};
+
+const {name, age, gender} = person; // extracting the values of the object
+
+console.log(`${name} is a ${age} year old ${gender} person in our group.`);
+
+// nested destructing objects
+
+const student = {
+  name: "Bob",
+  details: {
+    age: 20,
+    course: "Computer Science"
+  }
+};
+
+const {name, details: {age, course}} = student; // nested
+
+console.log(`${name} is taking a ${course} course and is ${age} years old.`);
+
+------------ Destructing Objects ------------ END
+
+
 ------------ JS Objects ------------ START
 
 A JavaScript Object is a collection of key-value pairs where the keys are called properties (or methods if they are functions). 

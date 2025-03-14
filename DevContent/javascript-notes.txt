@@ -386,6 +386,19 @@ Flexibility: Handling inputs (parameters) and returning results.
 
 ------------ Functions ------------ END
 
+------------ Rest API ------------- START
+
+
+
+------------ Rest API ------------- END
+
+------------ Object-oriented JS ------------- START
+
+
+
+------------ Object-oriented JS ------------- END
+
+
 ------------ Hoisting (avoid this) ------------ START
 
 console.log(calcTotal(500, 100));
@@ -436,8 +449,20 @@ localStorage.setItem("favoriteColors", JSON.stringify(favoriteColors));
 // retrieve and convert it back to an array using JSON.parse
 const storedFavoriteColors = JSON.parse(localStorage.getItem("favoriteColors"));
 
-
 ------------ Local Storage ------------- END
+
+------------ Session Storage --------------------- start ->
+
+// Store Data
+sessionStorage.setItem('username', 'Varms'); // 1st is key, 2nd is value. setItem(key, value) → Stores data in sessionStorage.
+
+let userData = sessionStorage.getItem('username');
+console.log(userData);
+
+sessionStorage.removeItem('username');
+sessionStorage.clear();
+
+------------ Session Storage --------------------- end ->
 
 ---------- Date Methods -----------START
 
@@ -1305,6 +1330,109 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
     console.error('Error creating post:', error);
   });
 
+async await function -->
+
+async function fetchData() {
+    try {
+        let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+        let data = await response.json();
+        console.log('Fetched Data:', data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+fetchData();
+
+2nd Example ------>
+
+// fetch data from an external json file, 
+
+async function fetchData() {
+  try {
+    let response = await fetch('data.json');
+    let data = await response.json(); // convert response to json
+    console.log('Fetched data: ', data);
+  } catch (error) {
+    console.error('Error: ', error);
+  }
+}
+
+fetchData();
+
+3rd Example ------->
+
+async function getPost() {
+  try {
+    let response = await fetch('api.json'); // calls the REstFul API
+    let data = await response.json(); // Converts the API response into a JS object
+    console.log('Post Data:', data);
+  } catch (error) {
+    console.error('Error: ', error);
+  }
+}
+
+getPost();
+
+
+POST request ----->
+
+// RESTapi POST Request
+
+async function createPost() {
+  try {
+    let response = await fetch('api.json', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+        },
+          body: JSON.stringify({
+            title: "Mason\'s New Post", 
+            body: "This is Mason's content.",
+            userId: 1
+          }),
+    });
+    let data = await response.json(); 
+    console.log('Post Created:', data);
+  } catch (error) {
+    console.error('Error: ', error);
+  }
+}
+
+createPost();
+
+-------------
+
+function greet(greeting, ...names) {
+  console.log(`${greeting}, ${names.join(", ")}!`);
+}
+
+greet('Hello', 'Bob, Sandra, Andrew');
+w
+<!--------- JOIN METHOD -------->
+// why .join is useful
+
+function loginActions(user, ...actions) {
+  console.log(`${user} actions performed: ${actions.join(", ")}`);
+}
+
+loginActions("Robbie", "Login", "View Dash", "Logout");
+
+async function greet() { // greet() is an async function that returns a string "Hello, world!".
+  return 'Hello World';\
+}
+
+-------------
+
+async function myMessage() { // is also an async function that awaits the result of greet().
+  let message = await greet(); // awaiting the result of the greet function 
+  console.log(message); // Once greet() resolves, its result is stored in message, which is then logged to the console.
+}
+
+myMessage();
+
+------------
+
 *** Key Notes:
 The fetch method does not reject on HTTP errors (like 404 or 500). It only rejects on network errors. 
 You need to manually check the response.ok property.
@@ -1419,6 +1547,36 @@ Error Handling: Works seamlessly with try...catch for robust error management.
 //__proto__	A hidden property that links an object to its prototype.
 -->
 
+class Person {
+  constructor(name) {
+    this.name = name; // asigns the constructor parameter to the name instance property
+  }
+  
+  greet() {
+    console.log(`Hello my name is ${this.name}`);
+  }
+  
+  greetArrow = () => {
+    console.log(`Hello, ${this.name}`);
+  };
+}
+
+const person1 = new Person("Bob");
+
+person1.greet();
+person1.greetArrow();
+
+
+const person = {
+  name: 'Bob',
+  greet: function() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+-----
+
+person.greet();
 
 function Person(name, age, gender) {
   this.name = name;

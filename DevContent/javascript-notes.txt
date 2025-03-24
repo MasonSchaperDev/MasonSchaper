@@ -163,8 +163,6 @@ const arr3 = [5, 6];
 const numbers = [...arr1, 5, 6, ...arr2]; // mergin arr 1, arr 2 into 1 array with spread
 console.log(numbers);
 
-
-
 ------------ JS Objects ------------ END
 
 ------------ this keyword ------------ START
@@ -657,6 +655,19 @@ x = x.includes("hello");
   The method will return true or false depending if the string is found or not.
   In this case, x doesn’t include "hello" so it will return false.
   Expected output -> false
+
+<--- some method --->
+
+The some() method executes a callback function once for each element in the array until it finds one where the callback returns a truthy value.
+If such an element is found, some() immediately returns true. Otherwise, if the callback returns a falsy value for all elements, some() returns false. 
+  Example:
+  const array = [1, 2, 3, 4, 5];
+
+  const hasEvenNumber = array.some(element => element % 2 === 0);
+  console.log(hasEvenNumber); // Output: true
+  
+  const hasGreaterThanFive = array.some(element => element > 5);
+  console.log(hasGreaterThanFive); // Output: false
 
 <--- filter method --->
 const words = ["spray", "elite", "exuberant", "destruction", "present"];

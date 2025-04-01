@@ -639,6 +639,16 @@ x = x.trim();
   Explanation:
   This simply removes any extra space from both ENDS of a string.
 
+<--- parse int --->
+  parseInt("10.33"); // result -> 10
+  Explanation: 
+  converting a non integer number to an int
+
+<--- parse float --->
+  parseFloat(10); // result -> 10.00
+  Explanation:
+  converting a non float (with out a decimal) to a float (with a decimal).
+
 <--- replace method --->
 let x = "Hi sir"; // using double quotes here because single quotes causes an error.
 x = x.replace("sir", "John"); 

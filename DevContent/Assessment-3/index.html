@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Kaiser Permanente</title>
+</head>
+
+<body>
+<!--top-menu-->
+    <div class="container">
+        <nav class="nav-bar">
+            <div class="drop-down-menus">
+                <label for="regions">Region</label>
+                <select name="regions" id="menu">
+                    <option value="S.California">S.California</option>
+                    <option value="N.California">N.California</option>
+                    <option value="Northwest">Northwest</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Mid-Atlantic">Mid-Atlantic</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Colorado">Colorado</option>
+                </select>
+
+                <label for="Language">Language</label>
+                <select name="languages" id="menu">
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                </select>
+            </div>
+
+            <div class="employers-and-brokers">
+                <ul>
+                    <li><a href="#" id="underline-link">Employers</a></li>
+                    <img src="images/open-new-window.svg" id="window-icon">
+                    <li><a href="#" id="underline-link">Brokers</a></li>
+                    <img src="images/open-new-window.svg" id="window-icon">
+                </ul>
+            </div>
+        </nav>
+    </div>
+<!--sign-up/log-in-->     
+    <div class="container-2">
+        <img src="images/kp-logo-white.png" id="logo">
+        <div class="login-options">
+            <button class="register">Register</button>
+            <button class="sign-in"><img src="images/profile-circle.svg" class="profile-icon">Sign In</button>
+        </div>
+    </div>
+<!--list of options-->
+    <div class="container-3">
+        <div class="option-list">
+            <ul>
+                <li><a href="#" id="white-hover-link">Learn</a></li>
+                <li><a href="file:///Users/masonschaper/Desktop/Assessment-4/shop-plans.html#" id="white-hover-link">Shop Plans</a></li>
+                <li><a href="#" id="white-hover-link">Doctors & Locations</a></li>
+                <li><a href="#" id="white-hover-link">Health & Wellness</a></li>
+                <li><a href="#" id="white-hover-link">Get Care</a></li>
+                <li><a href="#" id="white-hover-link">Pay Bills</a></li>
+            </ul>
+        </div>
+
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">Shop Plans</a></li>
+                <li><a href="#">Doctors & Locations</a></li>
+                <li><a href="#">Health & Wellness</a></li>
+                <li><a href="#">Get Care</a></li>
+                <li><a href="#">Pay Bills</a></li>
+            </ul>
+        </div>
+
+        <div class="search-container">
+            <input type="text" placeholder="Explore topics, care, coverage" class="search-bar">
+            <button class="search-button">Search</button>
+            <button class="search-button-mobile">Search</button>
+        </div>
+    </div>
+<!--today's suggestions-->
+    <div class="container-4">
+        <img src="images/friends-sitting-on-a-mountain.png" class="friends-sitting">
+        <div class="todays-suggestions">
+            <h2>Today's suggestions:</h2>
+                <button>COVID-19 vaccine</button>
+                <button>Medicaid renewal</button> <br>
+                <button>Find a doctor</button>
+                <button>Mental health services</button> <br>
+                <button>Pharmacy</button>
+                <button>Shop plans</button> 
+        </div>
+    </div>
+
+    <div class="container-5">
+        <h2 class="more-resources"><img src="images/more-resources.svg">More Resources</h2>
+    </div>
+<!-- explore resources-->
+    <div class="container-6">
+        <p>Explore a wide range of apps, podcasts, articles, and resources to help you thrive in mind, body, and spirit.
+        </p>
+    </div>
+
+    <div class="container-7">
+        <a href="#" id="column-container">
+            <div class="column">
+                <img src="images/group-of-people-putting-a-plant-in-soil.png">
+                <h4>Community</h4>
+                <h2>Celebrate Earth Day every day</h2>
+                <p>Every action counts as we address climate change and its impact on health. Lets take steps together
+                    for a healthy environment for all.</p>
+            </div>
+        </a>
+
+        <a href="#" id="column-container">
+            <div class="column">
+                <img src="images/people-sitting-in-a-circle-l-dt.png">
+                <h4>Mental health</h4>
+                <h2>Supporting your teenager's mental health</h2>
+                <p>Handling mental health with your teen can be challenging. Discover resources to help you and your
+                    child find a path to wellness.</p>
+            </div>
+        </a>
+
+        <a href="#" id="column-container">
+            <div class="column">
+                <img src="images/member-ordering-a-prescription-on-their-phone-at-home.png">
+                <h4>Pharmacy</h4>
+                <h2>Manage your pharmacy expenses</h2>
+                <p>Sign in and use our convenient drug cost estimator to view expenses, download reports for taxes, and
+                    more.</p>
+            </div>
+        </a>
+
+        <a href="#" id="column-container">
+            <div class="column">
+                <img src="images/person-using-a-tablet.png">
+                <h4>Social health</h4>
+                <h2>Get resources you need</h2>
+                <p>Good health is more than just health care. Browse resources for food, housing, and more to help you
+                    thrive in all aspects of your well-being.</p>
+            </div>
+        </a>
+    </div>
+<!--encyclopedia-->
+    <div class="container-8">
+        <div class="column-encyclopedia-container">
+            <div id="column-encyclopedia">
+                <div id="child-container-8">
+                    <h1 id="icon-desc">Health conditions from A to Z</h1>
+                    <button id="browse-button">Browse the Health Encyclopedia</button>
+                </div>
+            </div>
+
+            <div id="column-encyclopedia">
+                <div id="child-container-8">
+                    <img src="images/hourglass.svg" class="magnefying-glass-icon">
+                </div>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div id="column-encyclopedia">
+                <div id="child-container-8">
+                    <h1 id="icon-desc">Learn more about your medicine</h1>
+                    <button id="browse-button">Browse the Drug Encyclopedia</button>
+                </div>
+            </div>
+
+            <div id="column-encyclopedia">
+                <div id="child-container-8">
+                    <img src="images/drugs-icons.svg" class="magnefying-glass-icon">
+                </div>
+            </div>
+        </div>
+    </div>
+<!--logo-->
+    <div class="container-9">
+        <img src="images/kp-logo-white" class="kp-logo-mini">
+    </div>
+<!--footer-->
+    <div class="container-footer">
+        <div class="column-group">
+            <div id="column-of-info">
+                <ul id="list-of-info">
+                    <li>Accessibility</li><br>
+                    <li>Nondiscrimination</li><br>
+                    <li>Help in your Language</li>
+                </ul>
+            </div>
+
+            <div id="column-of-info">
+                <ul id="list-of-info">
+                    <li>Website Privacy</li><br>
+                    <li>HIPAA Notice of Privacy Practices</li><br>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+
+            <div id="column-of-info">
+                <ul id="list-of-info">
+                    <li>Rights & Responsibilities</li><br>
+                    <li>Disaster Planning</li><br>
+                    <li>Technical Information</li>
+                </ul>
+            </div>
+
+            <div id="column-of-info">
+                <ul id="list-of-info">
+                    <li>Site Map</li><br>
+                    <li>Contact Site Manager</li><br>
+                    <li>HIPAA Authorization</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container-footer-child">
+            <p class="follow-us">Follow us on these external social media sites that will open in a new browser window.
+            </p>
+            <div class="social-media-icons">
+                <img src="images/twitter-white.svg" id="sm-icon">
+                <img src="images/facebook-white.svg" id="sm-icon">
+                <img src="images/youtube-white.svg" id="sm-icon">
+                <img src="images/pinterest-white.svg" id="sm-icon">
+                <img src="images/instagram-white.svg" id="sm-icon">
+            </div>
+            <p class="about-kp"></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu(menu) {
+            menu.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

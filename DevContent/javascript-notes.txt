@@ -1,7 +1,7 @@
 ------------ Data Types ------------ START
 1. Boolean --> Checks if a value based on it's condition if it's true or false.
 === checks both the value and type of x against 0. It's the preferred way to ensure the condition is correctly evaluated.
-
+ 
 Proper function declaration ->
 
 Syntax:

@@ -1,0 +1,51 @@
+<!-- thoughts app, add a limit of 5 thoughts to an array that renders these "thoughts" initially there are 0 thoughts -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Thoughts App</h2>
+            <input type="text" id="thought-input" placeholder="What's on your mind?"/>
+            <button id="add-thought" onclick="addThought()">Add Thought</button>
+            <p id="limit-message" style="color: red"></p>
+            <div id="thoughts"></div>
+        </div>
+
+        <script>
+            const maxThoughts = 5;
+            const thoughts = [];
+
+            function renderThoughts() {
+                const thoughtsContainer = document.getElementById('thoughts');
+                thoughtsContainer.innerHTML = thoughts.map(t => `<div class=""> ${t}</div>`).join('');
+            }
+
+            function addThought() {
+                const input = document.getElementById("thought-input");
+                const message = document.getElementById("limit-message");
+
+                if (thoughts.length >= maxThoughts) {
+                    message.textContent = "You've reached the limit of 5 thoughts.";
+                    return;
+                }
+            
+                 if (input.value.trim()) {
+                    thoughts.push(input.value.trim())
+                    input.value = '';
+                    message.textContent = '';
+                    renderThoughts();
+                 }
+                }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<!--menu items: burger, pasta, salad, pizza. store it (no localstorage), div elements: order-summary and , 
+function order summary, do the math, function add to order, remove from order, menu items.--->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .order-summary {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 300px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Restaurant Menu</h2>
+    <div id="menu"></div>
+    <h3>Order Summary</h3>
+    <div id="order-summary" class="order-summary">
+        <p>No Menu Items Selected.</p>
+    </div>
+
+    <script>
+        const menuItems = [
+            { name: "Burger", price: 8.99 },
+            { name: "Pizza", price: 12.99 },
+            { name: "Pasta", price: 10.99 },
+            { name: "Salad", price: 6.99 }
+        ];
+
+        const order = [];
+        const menuDiv = document.getElementById('menu');
+        const orderSummaryDiv = document.getElementById('order-summary');
+
+        function updateOrderSummary() {
+            /*if (order.length === 0) {
+                orderSummaryDiv.innerHTML = '<p>No Menu Items Selected.</p>';
+                return; // returning p tag 
+            } */
+
+            orderSummaryDiv.innerHTML = order.length === 0 ? '<p>No Menu Items Selected.</p>' : generateOrderSummary();
+        }
+            
+        function generateOrderSummary() {
+            let total = 0;
+            let summaryHTML = "<ul>";
+            order.forEach(item => {
+                summaryHTML += `<li>${item.name} - ${item.price.toFixed(2)} <button onclick="removeFromOrder('${item.name}')">Remove</button></li>`;
+                total += item.price;
+            });
+            summaryHTML += `</ul> <p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+            orderSummaryDiv.innerHTML = summaryHTML;
+        }
+
+        function addToOrder(name, price) {
+            order.push({name, price});
+            updateOrderSummary();
+        }
+
+        function removeFromOrder(name) {
+            const index = order.findIndex(item => item.name === name);
+            if (index !== -1) {
+                order.splice(index, 1);
+                updateOrderSummary();
+            }
+        }
+
+        menuItems.forEach(item => {
+            const itemDiv = document.createElement("div");
+            itemDiv.classList.add("menu-item");
+            itemDiv.innerHTML = `
+            ${item.name} - $${item.price.toFixed(2)} <button onclick="addToOrder('${item.name}', ${item.price})">Add To Order</button>`;
+            menuDiv.appendChild(itemDiv);
+        });
+    </script>
+</body>
+</html>

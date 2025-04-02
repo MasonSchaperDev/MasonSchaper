@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="localstorage-ex"></p>
+
+<script>
+//set item
+    localStorage.setItem("lastname", "Schaper");
+// retrieve item
+    document.getElementById('localstorage-ex').innerHTML = localStorage.getItem("lastname");
+   
+// storing an object using JSON.stringify
+const user = {
+    firstName: "Mason",
+    lastName: "Schaper",
+    age: 18
+};
+
+localStorage.setItem("user", JSON.stringify(user));
+
+// Retrieving and converting it back to an object using JSON.parse
+const storedUser = JSON.parse(localStorage.getItem("user"));
+
+// storing an array using JSON.stringify
+const favoriteColors = ["blue", "purple", "orange"];
+localStorage.setItem("favoriteColors", JSON.stringify(favoriteColors));
+
+// retrieve and convert it back to an array using JSON.parse
+const storedFavoriteColors = JSON.parse(localStorage.getItem("favoriteColors"));
+
+</script>
+</body>
+</html>

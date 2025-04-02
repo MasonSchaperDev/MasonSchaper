@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration SPA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    .form-container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input, select, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    #userIdDisplay {
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>User Registration</h2>
+    <form id="registrationForm">
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password"  placeholder="Password">
+      <input type="text" id="firstName" placeholder="First Name">
+      <input type="text" id="lastName" placeholder="Last Name">
+      <select id="gender" required>
+        <option>Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <input type="text" id="location" placeholder="location">
+      <button type="submit">Register and Generate User ID</button>
+    </form>
+    <div id="userIdDisplay"></div>
+  </div>
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const gender = document.getElementById('gender').value;
+    const location = document.getElementById('location').value.trim();
+
+    if (!username || !password || !firstName || !lastName || !gender || !location) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    const userId = `user_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
+    document.getElementById('userIdDisplay').textContent = `Your unique User ID is, ${userId}`;
+  });
+  </script>
+</body>
+</html>
+
+<!--add event listener for registration form, -->

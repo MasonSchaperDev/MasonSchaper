@@ -447,6 +447,9 @@ localStorage.setItem("favoriteColors", JSON.stringify(favoriteColors));
 // retrieve and convert it back to an array using JSON.parse
 const storedFavoriteColors = JSON.parse(localStorage.getItem("favoriteColors"));
 
+// local storage remove item will simply remove the object inside of local storage.
+localStorage.removeItem("user");
+
 ------------ Local Storage ------------- END
 
 ------------ Session Storage --------------------- start ->

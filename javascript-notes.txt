@@ -1,0 +1,2084 @@
+------------ Data Types ------------ START
+1. Boolean --> Checks if a value based on it's condition if it's true or false.
+=== checks both the value and type of x against 0. It's the preferred way to ensure the condition is correctly evaluated.
+ 
+Proper function declaration ->
+
+Syntax:
+
+  function checkValue() {
+  let x = 0;
+  if (x === 0) { // Using === (Strict Equality)
+    return true;
+  }
+  return false;
+}
+
+console.log(checkValue()); // Output: true
+  
+  // Expected Output --> True
+
+2. String --> sequence of characters enclosed within either 
+single quotes ('), double quotes ("), or backticks (``).
+  Syntax:
+  let x = "string";
+
+3. Number --> Any type of number, decimal, fraction, etc (1, 2.3, 1/2).
+  Syntax:
+  let x = 0;
+
+------------ Data Types ------------ END
+
+------------ Variables ------------ START
+
+1. const - variable with a value that doesn't change.
+  Example: 
+  const x = 0;
+  x = 1; 
+  console.log(x);
+  
+  // this will cause an error because you can't change a const variable.
+
+2. let - variable with a value that can change.
+  Example:
+  let x = 0;
+  x = 1; 
+  console.log(x);
+  
+  // Expected output --> 1
+
+------------ Variables ------------ END
+
+------------ Destructing Objects ------------ START
+
+// Destructing objects
+const person = {
+  name: "Brenda",
+  age: 25,
+  gender: "female"
+};
+
+const {name, age, gender} = person; // extracting the values of the object
+
+console.log(`${name} is a ${age} year old ${gender} person in our group.`);
+
+// nested destructing objects
+
+const student = {
+  name: "Bob",
+  details: {
+    age: 20,
+    course: "Computer Science"
+  }
+};
+
+const {name, details: {age, course}} = student; // nested
+
+console.log(`${name} is taking a ${course} course and is ${age} years old.`);
+
+------------ Destructing Objects ------------ END
+
+
+------------ JS Objects ------------ START
+
+A JavaScript Object is a collection of key-value pairs where the keys are called properties (or methods if they are functions). 
+Objects allow you to group and organize data together.
+
+Key Features:
+Keys (properties) are usually strings or symbols.
+Values can be any type: strings, numbers, arrays, other objects, or functions.
+Objects are a fundamental way to store structured data in JavaScript.
+Example of a JavaScript Object:
+
+// Creating an object to represent a person
+let person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+  isEmployed: true,
+  hobbies: ["reading", "traveling", "coding"],
+  address: {
+    city: "New York",
+    country: "USA"
+  },
+  // Method (a function inside an object)
+  getFullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Accessing properties
+console.log(person.firstName); // Output: John
+console.log(person["age"]); // Output: 30
+
+// Accessing a nested object
+console.log(person.address.city); // Output: New York
+
+// Calling a method
+console.log(person.getFullName()); // Output: John Doe
+
+Explanation:
+Properties:
+firstName, lastName, age, isEmployed, hobbies, and address are object properties.
+
+Nested Object:
+The address property is an object itself, containing city and country.
+
+Method:
+getFullName is a function inside the object, and it uses the this keyword to reference other properties of the same object.
+Objects are widely used in JavaScript for tasks like:
+
+Representing complex data structures.
+Creating and manipulating configurations.
+Storing related data in key-value pairs.
+----------------------------------------------
+
+// You can input the object's properties into a string using the methods below:
+1. Concatenation: the operation of combining elements together into a string. After a closing quote,
+you input the variable in between a pair of plus signs, connecting it to the other part of the string.
+
+Example:
+  let sentence = “Hello, I’m “ + name + “. Nice to meet you.”;
+  console.log(sentence);
+
+2. Template literals: template literals are used to input information from objects into a string.
+To do this, you must put the information into curly braces with a money sign going before the curly braces.
+Instead of using quotes on the string, you must use backtick (`) characters.
+
+Example:
+  let sentence = `Hello, I’m ${name}. Nice to meet you.`;
+  console.log(sentence);
+
+Both of the above examples will log this string:
+  “Hello, I’m John. Nice to meet you.”
+
+
+3. Spread Operator: allows an iterable, such as an array or string, to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected
+
+// will print numbers 1-10
+const arr1 = [1, 2, 3, 4];
+const arr2 = [7, 8, 9, 10];
+const arr3 = [5, 6];
+
+const numbers = [...arr1, 5, 6, ...arr2]; // mergin arr 1, arr 2 into 1 array with spread
+console.log(numbers);
+
+------------ JS Objects ------------ END
+
+------------ this keyword ------------ START
+
+this keyword example --->
+
+  let person = {
+    name: "Bob",
+    greeting: function() {
+      console.log("Hello, " + this.name);
+    }
+  }
+  
+  person.greeting();
+
+this keyword in a shopping cart example --->
+
+  let cart = {
+      items: ["Refrigerator", "Microwave"],
+      showCart: function() {
+          console.log("Your cart: " + this.items.join(", "));
+      }
+  };
+
+  cart.showCart();
+
+------------ this keyword ------------ END
+
+------------ Functions ------------ START
+
+In JavaScript, a function is a reusable block of code designed to perform a particular task. 
+Functions allow you to structure your code, make it modular, and avoid repetition.
+
+Defining a Function
+There are several ways to define functions in JavaScript:
+
+1. Function Declaration:
+A traditional way to define a function. It can be called before its definition due to hoisting.
+
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet('Alice')); // Output: Hello, Alice!
+
+*************
+
+2. Function Expression:
+A function assigned to a variable. It is not hoisted, so it must be defined before being used.
+
+const greet = function (name) {
+  return `Hello, ${name}!`;
+};
+
+console.log(greet('Bob')); // Output: Hello, Bob!
+
+*************
+  
+3. Arrow Function:
+A concise way to write functions, introduced in ES6. It does not have its own this or arguments.
+
+const greet = (name) => `Hello, ${name}!`;
+
+console.log(greet('Charlie')); // Output: Hello, Charlie!
+
+*************
+
+4. Anonymous Function:
+A function without a name. Often used as a callback.
+
+setTimeout(function () {
+  console.log('This is an anonymous function!');
+}, 1000);
+
+*************
+
+5. IIFE (Immediately Invoked Function Expression):
+A function that runs immediately after it is defined.
+
+(function () {
+  console.log('This function runs immediately!');
+})();
+Parameters and Arguments
+Functions can take inputs (parameters) and return outputs. If a parameter is not provided, it is undefined by default.
+
+function add(a, b = 0) {
+  return a + b;
+}
+
+console.log(add(5, 10)); // Output: 15
+console.log(add(5));     // Output: 5 (b defaults to 0)
+Return Statement
+The return statement specifies the value a function should return. If omitted, the function returns undefined.
+
+function square(num) {
+  return num * num;
+}
+
+<!--------------- scope chain - global scope first, second scope --->
+
+const myName = 'Robbie Sherre';
+
+function first() {
+  const age = 58;
+  
+  if (age >= 58) {
+    const decade = 5;
+    var millenial = true;
+  }
+  
+  function second() {
+    const job = 'Programmer';
+    console.log(`${myName} is a ${age}-year old ${job}`)
+  }
+  second();
+}
+first();
+
+<!--------- scope chain end ----->
+
+console.log(square(4)); // Output: 16
+Scope
+Functions have their own local scope:
+
+Variables defined inside a function are not accessible outside it.
+Functions can access variables from the outer (global) scope.
+
+const globalVar = 'Global';
+
+function testScope() {
+  const localVar = 'Local';
+  console.log(globalVar); // Output: Global
+  console.log(localVar);  // Output: Local
+}
+
+testScope();
+console.log(localVar); // Error: localVar is not defined
+Default Parameters
+You can set default values for function parameters.
+
+function greet(name = 'Guest') {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet()); // Output: Hello, Guest!
+console.log(greet('Alice')); // Output: Hello, Alice!
+Rest Parameters
+Use ... to accept a variable number of arguments as an array.
+
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4)); // Output: 10
+Anonymous vs. Named Functions
+Anonymous: A function without a name. Useful for callbacks.
+Named: A function with a name, helpful for debugging.
+
+const anonymous = function () {
+  console.log('I am anonymous!');
+};
+
+function named() {
+  console.log('I am named!');
+}
+
+*************
+
+Callback Functions
+A function passed as an argument to another function to be executed later.
+
+function processUserInput(callback) {
+  const name = 'Alice';
+  callback(name);
+}
+
+processUserInput(function (name) {
+  console.log(`Hello, ${name}!`);
+});
+// Output: Hello, Alice!
+
+Greeting Callback function --->
+
+function message(name, callback) {
+  console.log("Hello " + name);
+  callback();
+}
+
+function greeting() {
+  console.log("See you soon");
+}
+
+message("Bob", greeting);
+// Output: Hello Bob
+
+See you soon
+
+*************
+
+Arrow Functions and this
+Arrow functions do not bind their own this. Instead, they inherit this from the surrounding scope.
+
+const person = {
+  name: 'Bob',
+  greet: function () {
+    setTimeout(() => {
+      console.log(`Hi, I’m ${this.name}`);
+    }, 1000);
+  },
+};
+
+person.greet(); // Output: Hi, I’m Bob
+Summary
+Functions in JavaScript are essential for:
+
+Modularity: Breaking down code into smaller, reusable parts.
+Encapsulation: Isolating logic in functions to improve clarity.
+Flexibility: Handling inputs (parameters) and returning results.
+
+------------ Functions ------------ END
+
+------------ Hoisting (avoid this) ------------ START
+
+console.log(calcTotal(500, 100));
+
+function calcTotal(price, tax) {
+  return price + tax;
+}
+
+console.log(bankTotal(200.80, 1400.10).toFixed(2));
+
+function bankTotal(checking, savings) {
+  return checking + savings;
+}
+
+------------ Hoisting ------------ END
+
+------------ Local Storage ------------ START
+
+Definition: localStorage is a web storage API that allows websites to store key-value pairs in a web browser persistently. Data stored in localStorage has no expiration time and remains available even after the browser is closed and reopened. It's accessible across all windows and tabs from the same origin. 
+
+Important things to know:
+- You can only pass Strings into localStorage
+- difference between retrieve (getItem) and store (setItem)
+
+A few examples -->
+
+//set item
+    localStorage.setItem("lastname", "Schaper");
+// retrieve item
+    document.getElementById('localstorage-ex').innerHTML = localStorage.getItem("lastname");
+   
+// storing an object using JSON.stringify
+const user = {
+    firstName: "Mason",
+    lastName: "Schaper",
+    age: 18
+};
+
+localStorage.setItem("user", JSON.stringify(user));
+
+// Retrieving and converting it back to an object using JSON.parse
+const storedUser = JSON.parse(localStorage.getItem("user"));
+
+// storing an array using JSON.stringify
+const favoriteColors = ["blue", "purple", "orange"];
+localStorage.setItem("favoriteColors", JSON.stringify(favoriteColors));
+
+// retrieve and convert it back to an array using JSON.parse
+const storedFavoriteColors = JSON.parse(localStorage.getItem("favoriteColors"));
+
+// local storage remove item will simply remove the object inside of local storage.
+localStorage.removeItem("user");
+
+
+// I found a solution for when you want to make a login function because I had trouble with this:
+
+const message = document.getElementById('message');
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  const saved = localStorage.getItem('loginInfo');
+  const savedSession = localStorage.getItem('loginInfoSession');
+
+  if (!saved || saved === '') {
+      message.textContent = 'No Registered Users Found';
+      document.getElementById('message').style.color = 'red';
+      return;
+  }
+
+  const savedInfo = JSON.parse(saved);
+
+  if (username === savedInfo.username && password === savedInfo.password) {
+      document.getElementById('message').textContent = 'Logged in Successfully.';
+      document.getElementById('message').style.color = 'green';
+      const userData = {username, password};
+      localStorage.setItem('loginInfoSession', JSON.stringify(userData));
+      setTimeout(() => {
+          window.location.href = "index.html";
+      }, 2000);
+  } else {
+      message.textContent = 'Incorrect Username or Password';
+      document.getElementById('message').style.color = 'red';
+  }
+
+------------ Local Storage ------------- END
+
+------------ Btoa method ------------- START
+
+Definition: The btoa() method of the Window interface creates a Base64-encoded ASCII string from a binary string.
+
+Example ->
+const encodedData = window.btoa("Hello, world"); // encode a string
+const decodedData = window.atob(encodedData); // decode the string
+
+Base64, by design, expects binary data as its input. In terms of JavaScript strings, this means strings in which the code point of each character occupies only one byte. So if you pass a string into btoa() containing characters that occupy more than one byte, you will get an error, because this is not considered binary data:
+
+more ->
+Copy to Clipboard
+const ok = "a";
+console.log(ok.codePointAt(0).toString(16)); //   61: occupies < 1 byte
+
+const notOK = "✓";
+console.log(notOK.codePointAt(0).toString(16)); // 2713: occupies > 1 byte
+
+console.log(window.btoa(ok)); // YQ==
+console.log(window.btoa(notOK)); // error
+
+------------ Btoa method ------------- END
+
+------------ Session Storage --------------------- START ->
+
+// Store Data
+sessionStorage.setItem('username', 'Varms'); // 1st is key, 2nd is value. setItem(key, value) → Stores data in sessionStorage.
+
+let userData = sessionStorage.getItem('username');
+console.log(userData);
+
+sessionStorage.removeItem('username');
+sessionStorage.clear();
+
+------------ Session Storage --------------------- END ->
+
+---------- Date Methods -----------START
+
+JavaScript's Date object provides methods to work with dates and times, allowing you to create, manipulate, and format dates.
+
+Creating a Date Object
+
+You can create a Date object using the new Date() constructor:
+
+1. Current Date and Time:
+Creates a Date object with the current date and time.
+
+const now = new Date();
+console.log(now);
+// Output: Current date and time (e.g., Wed Nov 18 2024 15:00:00 GMT+0000)
+
+2. Specific Date and Time:
+Pass arguments to set a specific date and time:
+
+const specificDate = new Date(2024, 10, 18, 15, 30, 0); // Months are 0-indexed
+console.log(specificDate);
+// Output: Mon Nov 18 2024 15:30:00 GMT+0000
+
+Syntax: new Date(year, month, day, hours, minutes, seconds, milliseconds)
+Year: Required.
+Month: 0-indexed (January is 0, December is 11).
+Other arguments are optional and default to 0.
+
+3. Using a Timestamp:
+Pass the number of milliseconds since January 1, 1970 (Unix epoch).
+
+const timestampDate = new Date(1699900000000);
+console.log(timestampDate);
+// Output: Date corresponding to the timestamp
+
+4. Using a Date String:
+Parse a date string:
+
+const stringDate = new Date("2024-11-18T15:30:00");
+console.log(stringDate);
+// Output: Mon Nov 18 2024 15:30:00 GMT+0000
+
+--------------------------------
+
+Common Methods
+Getting Date Information
+getFullYear() - Returns the year.
+
+const year = now.getFullYear();
+console.log(year); // Output: 2024
+getMonth() - Returns the month (0-indexed).
+
+const month = now.getMonth();
+console.log(month); // Output: 10 (November)
+getDate() - Returns the day of the month.
+
+const day = now.getDate();
+console.log(day); // Output: 18
+getDay() - Returns the day of the week (0 = Sunday, 6 = Saturday).
+
+const weekday = now.getDay();
+console.log(weekday); // Output: 1 (Monday)
+getHours(), getMinutes(), getSeconds(), getMilliseconds() - Return corresponding time components.
+
+const hours = now.getHours();
+console.log(hours); // Output: Current hour
+getTime() - Returns the timestamp (milliseconds since the Unix epoch).
+
+const timestamp = now.getTime();
+console.log(timestamp); // Output: Current timestamp
+
+Find the current date --->
+
+let currentDate = new Date();
+
+console.log(currentDate);
+
+
+<---- HOW TO GET CURRENT DATE ---->  
+
+// Get the current date and time
+let today = new Date();
+
+// Get the day of the week (0-6, where 0 is Sunday and 6 is Saturday)
+let day = today.getDay();
+
+// Array of day names
+let daylist = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+// Display the current day
+console.log("Today is: " + daylist[day] + ".");
+
+// Get the current hour, minute, and second
+let hour = today.getHours();
+let minute = today.getMinutes();
+let second = today.getSeconds();
+
+// Determine if it's AM or PM
+let prepand = (hour >= 12) ? " PM " : " AM ";
+
+// Convert 24-hour format to 12-hour format
+hour = (hour >= 12) ? hour - 12 : hour;
+
+// Check for special cases when hour is 0
+if (hour === 0 && prepand === ' PM ') {
+    if (minute === 0 && second === 0) {
+        hour = 12;
+        prepand = ' Noon';
+    } else {
+        hour = 12;
+        prepand = ' PM';
+    }
+}
+
+// Check for special cases when hour is 0
+if (hour === 0 && prepand === ' AM ') {
+    if (minute === 0 && second === 0) {
+        hour = 12;
+        prepand = ' Midnight';
+    } else {
+        hour = 12;
+        prepand = ' AM';
+    }
+}
+
+// Display the current time
+console.log("Current Time: " + hour + prepand + " : " + minute + " : " + second); 
+
+---------- Date Methods -----------END
+
+------------ String Methods ------------ START
+
+The String below is an example string to demonstrate the following methods.
+  let x = 'Hi sir';
+
+<--- toUpperCase method --->
+x = x.toUpperCase(); 
+  Explanation:
+  converts every letter in a string to uppercase.
+  Expected output -> HI SIR;
+
+<--- toLowerCase method --->
+x = x.toLowerCase();
+  Explanation:
+  converts every letter in a string to lowercase.
+  Expected output -> hi sir;
+
+<--- charAt method --->
+x = x.charAt(0); 
+  Explanation:
+  will grab a specific letter in a string. 
+  In this instance, it will grab the letter at index.
+  Expected output -> H
+
+<--- indexOf method --->
+let x = "Hi sir";
+let index = x.indexOf("i"); // come back to this one 
+  Explanation:
+  When you input a letter between quotes into the indexOf method, it will search for the first time the letter is used in the string and return it's index.
+  Expected output -> 1
+
+<--- substring method --->
+x = x.substring(0, 2); 
+  Explanation:
+  will only print ‘hi’, the first value is the starting point while the second value is the end point.
+  It will start at index 0, and grab each letter in the string until it reaches index 2.
+  Expected output -> Hi 
+
+<--- slice method --->
+x = x.slice(4); 
+  Explanation:
+  this will extract a fraction of the string starting from index 0 (including spaces), and can be returned as a new string. 
+  Expected output -> ir
+
+<--- trim method --->
+x = x.trim();
+  Explanation:
+  This simply removes any extra space from both ENDS of a string.
+
+<--- parse int --->
+  parseInt("10.33"); // result -> 10
+  Explanation: 
+  converting a non integer number to an int
+
+<--- parse float --->
+  parseFloat(10); // result -> 10.00
+  Explanation:
+  converting a non float (with out a decimal) to a float (with a decimal).
+
+<--- replace method --->
+let x = "Hi sir"; // using double quotes here because single quotes causes an error.
+x = x.replace("sir", "John"); 
+  Explanation:
+  replaces one string with another string. 
+  The first value will be the target and the second value is what you want to replace the target with.
+  In this case, we are replacing ‘sir’ with ‘John’.
+  Expected output -> Hi John
+
+<--- includes method --->
+x = x.includes("hello"); 
+  Explanation:
+  This is checking if a specific part of a string is found within a string (case-sensitive).
+  The method will return true or false depending if the string is found or not.
+  In this case, x doesn’t include "hello" so it will return false.
+  Expected output -> false
+
+<--- some method --->
+
+The some() method executes a callback function once for each element in the array until it finds one where the callback returns a truthy value.
+If such an element is found, some() immediately returns true. Otherwise, if the callback returns a falsy value for all elements, some() returns false. 
+  Example:
+  const array = [1, 2, 3, 4, 5];
+
+  const hasEvenNumber = array.some(element => element % 2 === 0);
+  console.log(hasEvenNumber); // Output: true
+  
+  const hasGreaterThanFive = array.some(element => element > 5);
+  console.log(hasGreaterThanFive); // Output: false
+
+<--- filter method --->
+const words = ["spray", "elite", "exuberant", "destruction", "present"];
+const result = words.filter((word) => word.length > 6);
+  Explanation: 
+  Filtering is a process that involves selecting or removing specific information from a larger set of data.
+
+<--- toString method --->
+let num = 2;
+let text = num.toString();
+  Explanation:
+  The toString() returns a number as a string. This will show the number 2 as text.
+
+console.log(result);
+// Expected output: Array ["exuberant", "destruction", "present"]
+
+------------ String Methods ------------ END
+
+------------ Math Methods ------------ START
+
+What are Math Methods? -> Static methods for calculating 
+functions and cannot be used with the 'new' operator. 
+
+Math.sqrt(9); 
+Explanation:
+  calculates the square root of 9, which is 3.
+  Expected output -> 3
+
+Math.abs(-1); 
+Explanation:
+  turns a number into an absolute value (1). Meaning it will return positive no matter what.
+  Expected output -> 1
+
+Math.round(3.3);
+Explanation:
+  returns to the nearest integer, which is 3 in this case.
+  Expected output -> 3
+
+Math.ceil(4.3); 
+Explanation:
+  rounds a number UP to the nearest integer. 
+  Meaning in this case, it would return 5 instead of 4. 
+  Expected output -> 5
+
+Math.floor(3.9);
+Explanation:
+  rounds a number DOWN to the nearest integer.
+  Meaning in this case, it would return 4 instead of 5.
+  Expected output -> 4
+
+Math.pow(2, 3); 
+Explanation:
+  This will calculate 2 to the power of 3, which is equal to 8. 
+  The first number is the number that will be calculated and
+  the second number is what power it is set to (2^3).
+  2^3 is equal to 2 * 2 * 2.
+  Expected output -> 8 
+
+Math.random(); 
+Explanation:
+  By default, it generates a random number from 0 - 1. However, 
+  the numbers it can generate can be modified.
+
+EXAMPLE:
+
+Math.floor(Math.random() * 10 + 1);
+Explanation:
+  generates a random number from 1 - 10, 
+  the Math.floor method will make it so there are no random decimals.
+  The ‘* 10’ is setting the limit, 
+  meaning it can’t return anything that is greater than or equal to 10. 
+  However, by adding the ‘+ 1’. We are setting the limit to 11. 
+  Making it return a random number from 1-10.
+
+------------ Math Methods ------------ END
+
+------------ If Else ------------ START
+1. Basic If Else: Executes code based on a condition, 
+if the condition is true then the code inside of the 'if' block will run. 
+Otherwise, it will run 'else' block instead.
+
+Example:
+  if(1 + 1 === 2) {
+    console.log("correct"); // will log "correct" because the condition 1 + 1 === 2 is true
+  }
+
+  else {
+    console.log("wrong"); // logs if the above condition is false 
+  }
+
+2. Nested If Statements: You can place an if statement inside of another if statement.
+
+Example:
+  if (1 + 1 === 2) { // first condition
+    if (2 + 2 === 4) { // second condition
+      console.log("super correct");
+    }
+  }
+
+  else {
+    console.log("wrong");
+  }
+
+Example Explanation --> If the first condition is true, then it will check if the second condition is true.
+If the first condition is false, then it will move on to the 'else' block. 
+
+3. Else if: If statements are executed from top to bottom. 
+The first statement that is true, will execute. If the first if statement is false,
+you can add an 'else if' to create a new condition. 
+
+Example: 
+  let x = 0;
+  if (x === 1) { // condition is not true so it won't be used
+    console.log("doesn't match");
+  }
+
+  else if (x === 0) { // condition is true
+    console.log("match");
+  }
+
+Example Explanation --> Since the first if statement isn't true, it will move on to the 'else-if' statement that IS true.
+
+4. Switch Statements: An alternative to if-statements. Executes code based on matching cases.
+
+Syntax:
+  switch (expression) {
+    case value1:
+      // code block 1;
+      break; // cuts off the code so it doesn't form a loop.
+    case value2:
+      // code block 2;
+      break;
+    default:
+       // default output, typically an error message;
+  }
+
+Example:
+  let day = 5
+
+  switch (day) {
+    case 1:
+      dayName = "Monday";
+      break;
+    case 2:
+      dayName = "Tuesday";
+      break;
+    case 3:
+      dayName = "Wednesday";
+      break;
+    case 4:
+      dayName = "Thursday";
+      break;
+    case 5:
+      dayName = "Friday";
+      break;
+    case 6:
+      dayName = "Saturday";
+      break;
+    case 7:
+      dayName = "Sunday";
+      break;
+    default:
+      dayName = "Invalid day";
+  }
+
+console.log(dayName); 
+// Expected output --> Friday
+
+5. Ternary Operator: operator that takes three arguments as inputs and returns one output.
+
+Syntax:
+  const x = condition ? "if true" : "if false";
+
+Example:
+  let age = 20;
+
+  const canVote = age >= 18 ? "You can vote!" : "You can't vote."; // checking if person is equal to greater than 18. If they are 18 and above, they can vote.
+  console.log(canVote);
+
+  // Expected output --> You can vote!
+
+6. Nested Ternary Operator: Like If Statements, you can nest ternary operators.
+
+Example:
+  let grade = 95;
+  let results = (grade < 40) ? "Unsatisfactory" : // anything less than 40 is unsatisfactory
+                (grade < 60) ? "Average" : // anything less than 60 but above 39 is average
+                (grade < 80) ? "Good" : "Excellent"; anything less than 80 but above 59 is good, anything 80 and above is excellent. 
+  console.log(results);
+
+  // Expected output --> Excellent
+
+Example Explanation: There are multiple conditions based on the grade you get. 
+Anything less than 40 is Unsatisfactory, anything less than 60 is average, anything less than 80
+is good, and anything greater than or equal to 80 is excellent.
+
+------------ If Else ------------ END
+
+------------ Loops ------------ START
+
+1. for-loops: The for statement creates a loop with 3 optional expressions
+
+Statement 1: It is the initialization of the counter. It is executed once before the execution of the code block.
+Statement 2: It defines the condition for executing the code block
+Statement 3: It is the increment or decrement of the counter & executed after the code block has been executed.
+
+Syntax:
+  for (statement 1; statement 2; statement 3) {
+    // code
+  }
+
+Example: 
+  for (let i = 1; i <= 10; i++) {
+    console.log(i);
+  }
+
+// Expected output --> 1 2 3 4 5 6 7 8 9 10
+
+2. Nested for-loops
+
+Syntax:
+  for (statement 1; statement 2; statement 3) { // condition 1
+    for (statement 1; statement 2; statement 3) { // condition 2
+      // code
+    }
+  }
+
+  Example: 
+    for (let i = 1; i <= 10; i++) {
+      for (let j = 1; j <= 10; j++) {
+        console.log(`${i} x ${j} = ${i * j}`);
+      }
+    }
+
+  Example Explanation:
+    Outer loop: The outer loop, controlled by i, iterates from 1 to 10.
+
+    Inner loop: For each iteration of the outer loop, the inner loop, controlled by j,
+    also iterates from 1 to 10.
+
+    Expected Output --> (will display a multiplication table going all the way to multiples of 10).
+
+  3. For Of Loops: for traversing items of iterables (an object that can be looped over).
+
+  Syntax:
+    for (variable of iterable) {
+      // code block to be executed
+    }
+
+  Example:
+    const a = [ 1, 2, 3, 4, 5 ];
+
+    for (const item of a) {
+      console.log(item);
+    }
+
+  // Expected Output --> 1 2 3 4 5
+
+  4. For In Loops: iterates over the properties of an object.
+
+  Syntax:
+    for (key in object) {
+      // code
+    }
+
+  Example:
+    const car = {
+      make: "Toyota",
+      model: "Corolla",
+      year: 2020
+    };
+
+    for (let key in car) {
+      console.log(`${key}: ${car[key]}`);
+    }
+
+  // Expected Output --> 
+      make: Toyota
+      model: Corolla
+      year: 2020
+
+  5. While Loops: executes a block of code as long as a specified condition is true.
+
+  Syntax:
+    while(condition) {
+      // output
+    }
+
+  Example: 
+    let i = 0;
+
+    while(i <= 20) {
+      console.log('Number ' + i);
+      i++;
+    }
+
+    // Example Explanation: while 'i' is greater than or equal to 20,
+    it will add 1 to i until the condition is false (when it reaches 20). 
+    
+    Expected Output --> 'Number 0' 'Number 1' 'Number 2' 'Number 3' 'Number 4' 'Number 5' 
+    'Number 6' 'Number 7' 'Number 8' 'Number 9' 'Number 10' 'Number 11' 'Number 12' 'Number 13' 
+    'Number 14' 'Number 15' 'Number 16' 'Number 17' 'Number 18' 'Number 19' 'Number 20'
+
+  6. Do While Loops: The difference between this and a regular while loop is that this loop guarantees
+  that the block of code inside the loop will be executed at least once.
+
+    Syntax: 
+      do {
+        // output
+      } while (condition);
+
+    Example:
+      let i = 0;
+
+      do {
+        console.log('Number ' + i)
+        i++;
+      } while (i <= 10); // iterates through the loop until i is equal to 10
+
+    // Expected Output --> 'Number 0' 'Number 1' 'Number 2' 'Number 3' 'Number 4' 'Number 5' 
+    'Number 6' 'Number 7' 'Number 8' 'Number 9' 'Number 10'
+
+  7. For Each: built-in function that executes a provided function once for each array element.
+
+    Syntax: 
+      array.forEach(function(currentValue, index, arr), thisValue)
+
+    Example:
+      const array1 = ['a', 'b', 'c'];
+
+      array1.forEach((element) => console.log(element));
+
+    // Expected Output: 
+      'a' 'b' 'c'
+------------ Loops ------------ END
+
+------------ Array Methods ------------- START
+
+concat()
+let array1 = [1, 2, 3];
+
+let array2 = [4, 5, 6, 7, 8];
+
+let combinedArray = array1.concat(array2);
+
+console.log(combinedArray);
+
+Array.filter()
+  Example:
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    const evenNumbers = numbers.filter(function (number) { // the filter method will turn the numbers object into a function
+      return number % 2 === 0; // this will return true because the numbers count up to 10. 10 % 2 = 0.
+    });
+    console.log(evenNumbers);
+
+  Expected Output --> 2, 4, 6, 8, 10
+
+  Explanation: The filter method will provide a portion of the array that meets the function's
+  condition. In this example, anything divisible by 2 will be displayed.
+
+Array.map()
+  Example:
+    const array1 = [1, 4, 9, 16];
+
+    // Pass a function to map
+    const map1 = array1.map((x) => x * 2); // the parameter 'x' represents each number in the array, we are multiplying each number by 2.
+
+    console.log(map1);
+    
+  Expected output --> Array [2, 8, 18, 32]
+
+  Explanation: The map method will create a new array with the results of the function.
+  In this example, a new array was created with everything all of the values being multiplied by 2 because of the arrow function.
+
+Array.reduce()
+  Example: 
+    const array1 = [1, 2, 3, 4];
+
+    // 0 + 1 + 2 + 3 + 4
+    const initialValue = 0;
+    const sumWithInitial = array1.reduce( // this will reduce the array in a single value
+      (accumulator, currentValue) => accumulator + currentValue, 
+      initialValue,
+    );
+
+    console.log(sumWithInitial);
+
+  Expected Output --> 10
+
+  Explanation: In this example, the elements in the array add up together because the reduce method reduces the array to a single value.
+
+find()
+  Example:
+    const array1 = [5, 12, 8, 130, 44];
+
+    const found = array1.find((element) => element > 10);
+    
+    console.log(found);
+    // Expected output: 12
+
+  Explanation: The find() method of Array instances returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
+
+
+push()
+let friends = ['Bob', 'Rob', 'Sam'];
+
+friends.push('Paul');
+
+console.log(friends);
+      
+------------ Array Methods ------------- END
+
+
+------------ Events ------------- START
+
+DOM elements:
+
+1. GetElementByID: Selects an element by its id.
+
+Example:
+  // HTML
+  <p id="demo"></p>
+    
+  // JAVASCRIPT
+  const element = document.getElementById("demo");
+
+2. Query Selector: Selects the first matching element.
+
+Example: 
+  // HTML
+  <p class="example"></p>
+
+  // JAVASCRIPT
+  const element = document.querySelector(".example"); // must put a period if its a class 
+
+3. Query Selector All: Selects all matching elements.
+
+Example:
+  // HTML
+  <p class="example"></p>
+
+  // JAVASCRIPT
+  const element = document.querySelectorAll(".example");
+
+4. GetElementsByClassName: Selects an element based on its class.
+
+  Example: 
+    // HTML
+    <h1 class="name">John</h1>
+
+    // JAVASCRIPT
+    const name  = document.getElementsByClassName("name");
+
+5. Inner HTML: gets or sets the HTML contained within the element.
+
+  Example:
+  // HTML
+  <h1 id="greeting">Welcome</h1>
+
+  // JAVASCRIPT
+  const greeting = document.getElementById("greeting");
+
+  greeting.innerHTML = '<h1 id="greeting">Greetings</h1>';
+
+  // greeting.innerHTML will replace the previous element with a new code block.
+
+
+6. style: add an inline style to an element.
+
+  Syntax:
+    document.getElementById("id").style.property = "value";
+
+  Example:
+    // HTML
+    <h1 id="element">hello</h1>
+
+    // JAVASCRIPT
+    document.getElementById("example").style.color = "red";
+
+    // Changes the 'hello' message to the color red.
+
+Event Listener:
+
+1. addEventListener: attaches an event to an element
+
+  Syntax:
+    element.addEventListener(event, function, useCapture);
+    // 3rd parameter is a boolean value on whether to use event bubbling 
+    or capturing (optional).
+
+  Example: 
+    element.addEventListener("click", function(){ 
+      alert("Hello World!"); 
+    });
+
+  // when the element is clicked, an alert will pop out saying: "Hello World!".
+
+2. removeEventListener: removes event handlers that have been attached to an 
+AddEventListener method.
+
+  Example:
+
+    // HTML
+    <div id="myDiv">
+      <button onclick="removeHandler()" id="myBtn">Remove</button>
+    </div>
+
+    // JAVASCRIPT
+    document.getElementById("myDiv").addEventListener("mousemove", myFunction);
+  
+    function removeHandler() {
+      document.getElementById("myDiv").removeEventListener("mousemove", myFunction);
+    }
+    // Removes the event handler when you click the button.
+
+------------ Events ------------- END
+
+------------ Timeouts/Intervals ------------- START
+
+Thread of Execution: Javascript is synchronous, 
+meaning all code is executed at the same time. However, 
+it does have asynchronous abilities.
+
+1. setTimeout: calls a function after a number of milliseconds.
+
+  example:
+    setTimeout(function() {
+      console.log('Hello');
+    }, 2000); // 2000 = 2 seconds (2000 milliseconds)
+
+    // sends a 'Hello' from callback after 2 seconds
+
+2. clearTimeout: used to cancel a timeout previously established.
+
+  example: 
+    const timer = setTimeout(changeText, 3000);
+
+    document.querySelector('#cancel')addEventListener('click', () => {
+      clearTimeout(timer);
+    });
+
+  // a button that stops the timeout from continuing
+
+3. setInterval: method to repeatedly execute a function at a specified time interval.
+
+  example:
+    const interval = setInterval(myCallback, 1000);
+
+    function myCallback() {
+      console.log(Date.now());
+    }
+
+    // logs the Date.now method result every 1 second.
+
+4. clearInterval: method is used to stop a timer set with the setInterval() method.
+
+  example: 
+    const interval = setInterval(myCallback, 1000);
+
+    function stopChange() {
+      clearInterval(interval)
+    }
+  
+    document.getElementById('stop').addEventListener('click', stopChange);
+
+    // stops the interval completely
+
+------------ Timeouts/Intervals ------------- END
+
+------------ Promises ------------- START
+
+1. Promises: represents the eventual completion
+  (or failure) of an asynchronous operation and its results.
+
+  A promise can be in one of three states: 
+  pending: initial state, neither fulfilled nor rejected.
+  fulfilled: meaning that the operation was completed successfully.
+  rejected: meaning that the operation failed.
+
+  example: 
+    const promise1 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('hi');
+      }, 3000);
+    });
+
+    promise1.then((value) => {
+      console.log(value);
+      // Expected output: "hi"
+    });
+
+    // wait 3 seconds and the word 'hi' will be logged to the console. 
+
+------------ Promises ------------- END
+
+<!--------------START FETCH METHOD ------------>
+The fetch method in JavaScript is used to make HTTP requests to servers and fetch resources such as text, JSON, or files. It is part of the modern JavaScript Fetch API and provides a more powerful and flexible alternative to the older XMLHttpRequest.
+
+Key Features of fetch
+1. Promise-based: The fetch method returns a Promise that resolves once the response is available.
+
+2. Readable Streams: It provides access to the response body as a stream, making it suitable for large resources.
+
+3. Simpler Syntax: Easier to read and write compared to XMLHttpRequest.
+
+4. Supports Additional Features: Allows customization of requests through options like HTTP methods, headers, body, and credentials.
+----------------------
+Syntax
+
+fetch(url, options)
+----------------------
+** -> url: The URL of the resource you want to fetch.
+** -> options (optional): An object containing settings like method, headers, body, etc.
+
+----------------------
+*** Basic Example
+
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json(); // Parse the response as JSON
+  })
+  .then(data => {
+    console.log(data); // Handle the JSON data
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+
+*** Explanation of the Example
+1. fetch Call:
+Makes a GET request to https://jsonplaceholder.typicode.com/posts/1.
+
+2. Handling the Response:
+The first .then() checks the response's ok property to ensure the HTTP status is in the 200–299 range.
+If successful, it calls response.json() to parse the body as JSON.
+
+3. Processing Data:
+The second .then() receives the parsed JSON and processes it (logs it to the console).
+
+4. Error Handling:
+The .catch() block handles network errors or rejected Promises.
+
+--------------------
+Example with POST Request
+
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST', // HTTP method
+  headers: {
+    'Content-Type': 'application/json' // Specify content type
+  },
+  body: JSON.stringify({
+    title: 'My Post',
+    body: 'This is the content of the post.',
+    userId: 1
+  }) // Stringify the data to send
+})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Post created:', data);
+  })
+  .catch(error => {
+    console.error('Error creating post:', error);
+  });
+
+async await function -->
+
+async function fetchData() {
+    try {
+        let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+        let data = await response.json();
+        console.log('Fetched Data:', data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+fetchData();
+
+2nd Example ------>
+
+// fetch data from an external json file, 
+
+async function fetchData() {
+  try {
+    let response = await fetch('data.json');
+    let data = await response.json(); // convert response to json
+    console.log('Fetched data: ', data);
+  } catch (error) {
+    console.error('Error: ', error);
+  }
+}
+
+fetchData();
+
+3rd Example ------->
+
+async function getPost() {
+  try {
+    let response = await fetch('api.json'); // calls the REstFul API
+    let data = await response.json(); // Converts the API response into a JS object
+    console.log('Post Data:', data);
+  } catch (error) {
+    console.error('Error: ', error);
+  }
+}
+
+getPost();
+
+
+POST request ----->
+
+// RESTapi POST Request
+
+async function createPost() {
+  try {
+    let response = await fetch('api.json', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+        },
+          body: JSON.stringify({
+            title: "Mason\'s New Post", 
+            body: "This is Mason's content.",
+            userId: 1
+          }),
+    });
+    let data = await response.json(); 
+    console.log('Post Created:', data);
+  } catch (error) {
+    console.error('Error: ', error);
+  }
+}
+
+createPost();
+
+-------------
+
+function greet(greeting, ...names) {
+  console.log(`${greeting}, ${names.join(", ")}!`);
+}
+
+greet('Hello', 'Bob, Sandra, Andrew');
+w
+<!--------- JOIN METHOD -------->
+// why .join is useful
+
+function loginActions(user, ...actions) {
+  console.log(`${user} actions performed: ${actions.join(", ")}`);
+}
+
+loginActions("Robbie", "Login", "View Dash", "Logout");
+
+async function greet() { // greet() is an async function that returns a string "Hello, world!".
+  return 'Hello World';\
+}
+
+-------------
+
+async function myMessage() { // is also an async function that awaits the result of greet().
+  let message = await greet(); // awaiting the result of the greet function 
+  console.log(message); // Once greet() resolves, its result is stored in message, which is then logged to the console.
+}
+
+myMessage();
+
+------------
+
+*** Key Notes:
+The fetch method does not reject on HTTP errors (like 404 or 500). It only rejects on network errors. 
+You need to manually check the response.ok property.
+
+For security reasons, fetch does not allow cross-origin cookies unless the credentials option is set to 'include'.
+
+By combining fetch with async/await, you can make the code even cleaner and easier to read.
+
+<!--------------END FETCH METHOD ------------>
+
+------------ Try/Catch ------------- START
+
+  try: The try statement allows you to define a block of code to be tested for errors 
+  while it is being executed.
+
+  catch: The catch statement allows you to define a block of code to be executed, 
+  if an error occurs in the try block.
+
+  Syntax:
+    let x = 0;
+  
+    try {
+      console.log(x); // executes code for it to be tested for errors
+    } catch (error) {
+      console.log('Error: ' + error); // prints the error into the console
+    }
+
+    expected output: 0
+
+------------ Try/Catch ------------- END
+
+------------ Asynchronous JS ------------- START
+
+FETCH // AWAIT // ASYNC
+
+<!--  START FETCH AWAIT ASYNC -->
+Using async/await with the fetch API makes the code easier to read and manage, especially when dealing with multiple asynchronous operations.
+
+Example with GET Request
+
+const fetchData = async () => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1'); // Make the HTTP request
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`); // Check if the response is OK
+    }
+    const data = await response.json(); // Parse the response as JSON
+    console.log(data); // Process the data
+  } catch (error) {
+    console.error('Error fetching data:', error); // Handle errors
+  }
+};
+
+fetchData();
+
+Explanation
+1. async Function: The fetchData function is declared as async, allowing the use of await inside it.
+2. Awaiting the Fetch: The await keyword pauses the execution of the function until the fetch Promise resolves.
+3. Response Handling:
+Check response.ok to ensure the HTTP request was successful.
+Parse the response with response.json() using await again.
+4. Error Handling: Use try...catch to handle errors, such as network issues or non-2xx HTTP responses.
+
+  ---------------------------
+Example with POST Request
+
+const createPost = async () => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST', // HTTP method
+      headers: {
+        'Content-Type': 'application/json' // Specify the content type
+      },
+      body: JSON.stringify({
+        title: 'My Post',
+        body: 'This is the content of the post.',
+        userId: 1
+      }) // Convert the data to JSON string
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json(); // Parse the response as JSON
+    console.log('Post created:', data); // Process the response
+  } catch (error) {
+    console.error('Error creating post:', error); // Handle errors
+  }
+};
+
+createPost();
+------------------------
+Explanation
+1. async/await with POST: The await keyword is used to handle the fetch call and parsing the response, just like in the GET example.
+2. Request Body:
+The body contains a stringified JSON object (JSON.stringify).
+The Content-Type header is set to application/json to indicate the type of data being sent.
+3. Error Handling:
+Non-2xx HTTP statuses and network errors are caught and logged.
+Benefits of async/await
+Readability: The code reads like synchronous code, making it easier to understand.
+Error Handling: Works seamlessly with try...catch for robust error management.  
+
+<!--  END FETCH AWAIT ASYNC -->
+
+------------ Asynchronous JS ------------- END
+
+------------ OOP - Constructors & Prototypes ------------- START
+
+<!-- The code defines a constructor function named Person, which is used to create multiple objects with the same structure. 
+//__proto__	A hidden property that links an object to its prototype.
+-->
+
+class Person {
+  constructor(name) {
+    this.name = name; // asigns the constructor parameter to the name instance property
+  }
+  
+  greet() {
+    console.log(`Hello my name is ${this.name}`);
+  }
+  
+  greetArrow = () => {
+    console.log(`Hello, ${this.name}`);
+  };
+}
+
+const person1 = new Person("Bob");
+
+person1.greet();
+person1.greetArrow();
+
+
+const person = {
+  name: 'Bob',
+  greet: function() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+-----
+
+person.greet();
+
+function Person(name, age, gender) {
+  this.name = name;
+  this.age = age;
+  this.gender = gender;
+}
+
+const person1 = new Person("Sandra", 45, "female");
+console.log(person1);
+
+const person2 = new Person("Autumn", 21, "female");
+console.log(person2);
+
+Components of OOP:
+- Constructor Functions: 
+
+  definition: The purpose of a constructor function is to set the 
+  initial values or properties of an object when it is created.
+
+  // here's a constructor function (you must capitalize the name of the function for it to be considered a constructor function)
+    function Person(first, last, age, eyecolor) {
+      this.firstName = first;
+      this.lastName = last;
+      this.age = age;
+      this.eyeColor = eyecolor;
+      this.nationality = "English";
+    }
+
+  // you can also use the 'new' keyword to create an object constructor
+    const myFather = new Person("John", "Doe", 50, "blue");
+    const myMother = new Person("Sally", "Rally", 48, "green");
+
+_______________________________
+
+- Prototypes:
+
+  definition: The JavaScript prototype property allows you to add new properties to object constructors
+
+  // this example, a new property is added to this object constructor
+    function Person(first, last, age, eyecolor) {
+      this.firstName = first;
+      this.lastName = last;
+      this.age = age;
+      this.eyeColor = eyecolor;
+    }
+
+    Person.prototype.nationality = "English";
+
+  // the example above is equivalent to this:
+    function Person(first, last, age, eyecolor) {
+      this.firstName = first;
+      this.lastName = last;
+      this.age = age;
+      this.eyeColor = eyecolor;
+      this.nationality = nationality; // this is added to the function
+    }
+__________________________
+
+- Classes:
+
+  definition: Classes are a template for creating objects. They encapsulate data with code to work on that data.
+
+  syntax: 
+    class ClassName {
+      constructor() { ... } // constructor: a special method of a class for creating and initializing an object instance of that class.
+
+      get name() { // getter
+
+      }
+
+      calcName() { // method
+
+      }
+    }
+
+  example: 
+    class Rectangle {
+      constructor(height, width) {
+        this.height = height;
+        this.width = width;
+      }
+      // Getter
+      get area() {
+        return this.calcArea();
+      }
+      // Method
+      calcArea() {
+        return this.height * this.width;
+      }
+      *getSides() {
+        yield this.height;
+        yield this.width;
+        yield this.height;
+        yield this.width;
+      }
+    }
+
+    const square = new Rectangle(20, 10);
+
+    console.log(square.area); // 100
+    console.log([...square.getSides()]); // [10, 10, 10, 10]
+      
+    // Created a class called 'Rectangle' and made a constructor defining the height and width. In the getter, it returns the calcArea method I created which will 
+    multiply the height * width which is equal to the 'area'. There's another method called 'getSides' that will yield height and width twice. 
+
+  ____________________
+
+  Class Inheritance: using the 'extends' keyword to connect 2 different classes together.
+    class Animal {
+    constructor(name) {
+      this.name = name;
+    }
+
+    speak() {
+        console.log(`${this.name} makes a noise.`);
+      }
+    }
+
+  class Dog extends Animal { // everything from the 'Dog' class will be added to the 'Animal' class
+    constructor(name) {
+      super(name); // call the super class constructor and pass in the name parameter
+    }
+
+    speak() {
+      console.log(`${this.name} barks.`);
+    }
+  }
+
+  const d = new Dog("Mitzie");
+  d.speak(); // Expected output: Mitzie barks.`
+
+------------ OOP - Constructors & Prototypes ------------- END
+
+------------ Modules and Tooling ------------- START
+
+WHAT ARE MODULES? -> Modules are just JS files that we can import into other JS files. We can import and export things like variables, functions,
+and classes.
+
+WHAT IS NODE JS? -> Node is a JS runtime environment. IT allows JS to run on the server much like any other language such as Python, Ruby, Java, etc.
+
+_________________
+
+CommonJS modules: 
+
+In this example, we have two different files -> 'app.js' and 'utils.js'
+
+utils.js:
+  const message = {
+    id: 1,
+    text: 'Hello',
+  };
+
+  module.exports = message; // we are using module.export so the object 'message' can be used outside of this file.
+
+app.js:
+  const greeting = require('./utils'); // we are now requiring (importing) the 'utils' file so we can actually use the message object.
+
+  console.log(greeting); // expected output: 'Hello'
+
+____________
+
+ES modules: 
+
+This example is essentially the same output as the commonJS modules example.
+
+  utils.js:
+  const message = {
+    id: 1,
+    text: 'Hello',
+  };
+
+  export default message; // more simple way to export modules
+
+  app.js:
+    import message from './modules/utils.js'; // more simple way to import modules 
+
+    console.log(message); // expected output: 'Hello'
+
+------------ Modules and Tooling ------------- END
+
+------------ Iterators, Generators, & Data Structures ------------- START
+
+Symbols -> built-in object whose constructor returns a symbol primitive — 
+also called a Symbol value or just a Symbol — that's guaranteed to be unique (unique, meaning it's a one of a kind value).
+
+Why use Symbols? ->  a Symbol is a unique and immutable primitive value that can be used to create unique identifiers for objects, properties, or methods. 
+Unlike strings or numbers, Symbols are not coerced to a different type and cannot be converted to a string or number.
+
+Example:
+  const symbol = Symbol();
+  const symbol1 = Symbol('foo');
+  const symbol2 = Symbol('bar');
+
+  console.log(typeof symbol); // output: 'symbol'
+  console.log(symbol1.description);
+  console.log(symbol2.description);
+
+
+  // symbols are unique meaning it can't be changed into a number or string.
+  console.log(Symbol('sym') === Symbol('sym')); // this will return false because of it's uniqueness 
+
+  const user = {
+    [Symbol('id')]: 1,
+    name: 'John Doe',
+    email: 'john@gmail.com',
+  };
+
+  // symbols are not enumerable so this will return 'undefined'
+  console.log(user[Symbol('id')]);
+
+____________
+
+In JavaScript, iterations are used to perform repetitive tasks or process items in a sequence like arrays, objects, or numbers. 
+Here’s a breakdown of the most common iteration methods:
+
+1. For Loop
+  Runs a block of code a specific number of times.
+
+  Example:
+
+  for (let i = 0; i < 5; i++) {
+      console.log("Iteration number: " + i);
+  }
+  Output:
+
+  Iteration number: 0
+  Iteration number: 1
+  Iteration number: 2
+  Iteration number: 3
+  Iteration number: 4
+
+  --------------------------
+
+2. While Loop
+  Repeats a block of code as long as a condition is true.
+
+  Example:
+
+  let i = 0;
+  while (i < 3) {
+      console.log("Count: " + i);
+      i++;
+  }
+  Output:
+
+  Count: 0
+  Count: 1
+  Count: 2
+
+  --------------------------
+
+3. For...of Loop
+  Iterates over iterable objects (e.g., arrays, strings).
+
+  Example:
+
+  const fruits = ["apple", "banana", "cherry"];
+  for (const fruit of fruits) {
+      console.log(fruit);
+  }
+  Output:
+
+  apple
+  banana
+  cherry
+
+  --------------------------
+
+4. For...in Loop
+  Iterates over the properties of an object.
+
+  Example:
+
+  const user = { name: "Alice", age: 25, city: "New York" };
+  for (const key in user) {
+      console.log(key + ": " + user[key]);
+  }
+  Output:
+
+  name: Alice
+  age: 25
+  city: New York
+
+  --------------------------
+
+5. forEach (Array Method)
+  Executes a function for each element in an array.
+
+  Example:
+
+  const numbers = [1, 2, 3];
+  numbers.forEach(num => {
+      console.log(num * 2);
+  });
+  Output:
+
+  2
+  4
+  6
+  --------------------------
+
+6. map (Array Method)
+  Creates a new array by applying a function to each element in the array.
+
+  Example:
+
+  const numbers = [1, 2, 3];
+  const squared = numbers.map(num => num * num);
+  console.log(squared);
+  Output:
+
+  [1, 4, 9]
+  --------------------------
+
+7. reduce (Array Method)
+  Processes an array to generate a single value.
+
+  Example:
+
+  const numbers = [1, 2, 3, 4];
+  const sum = numbers.reduce((total, num) => total + num, 0);
+  console.log(sum);
+  Output:
+
+8. splice (Array Method)
+  Modifies an array by removing or replacing existing elements and/or adding new elements in place. 
+
+  Example: 
+  
+  array.splice(start, deleteCount, item1, item2, ...);
+
+  --------------------------
+
+These are just a few examples of how JavaScript handles iterations. The choice of iteration method depends on your use case—whether you’re working with arrays, objects, or a simple numeric loop.
+    
+_______________________________
+
+Generators -> In JavaScript, a generator is a special type of function that can pause its execution and later resume from where it left off.
+Generators are useful for handling sequences of values, asynchronous programming, and managing state.
+
+Key Features of Generators:
+Defined with function*: Generators are created using the function* syntax.
+yield Keyword: Generators use yield to pause execution and return a value.
+Iterators: Generators return an iterator object that can be used with .next().
+State Preservation: When execution resumes, the generator retains its state (variables, logic, etc.).
+
+  -------------------
+
+  function* generatorFunction() {
+    yield 1; // Pauses and returns 1
+    yield 2; // Pauses and returns 2
+    yield 3; // Pauses and returns 3
+  }
+
+  -----------------
+
+  function* numberGenerator() {
+    yield 1;
+    yield 2;
+    yield 3;
+  }
+
+  // Create a generator object
+  const generator = numberGenerator();
+
+  console.log(generator.next()); // { value: 1, done: false }
+  console.log(generator.next()); // { value: 2, done: false }
+  console.log(generator.next()); // { value: 3, done: false }
+  console.log(generator.next()); // { value: undefined, done: true }
+
+  Explanation:
+  value: The value produced by yield.
+  done: Indicates if the generator is finished.
+  ----------------
+
+
+  Example: Infinite Sequence
+  Generators can be used to create an infinite sequence:
+
+  function* infiniteGenerator() {
+    let i = 0;
+    while (true) {
+      yield i++;
+    }
+  }
+
+  const generator = infiniteGenerator();
+  console.log(generator.next().value); // 0
+  console.log(generator.next().value); // 1
+  console.log(generator.next().value); // 2
+  -------------------------
+
+  Example: Generator for Iterating Over an Array
+
+  function* iterateArray(arr) {
+    for (let item of arr) {
+      yield item;
+    }
+  }
+
+  const generator = iterateArray(['a', 'b', 'c']);
+  console.log(generator.next().value); // 'a'
+  console.log(generator.next().value); // 'b'
+  console.log(generator.next().value); // 'c'
+
+  -------------------------
+
+  Example: Asynchronous Workflow with Generators
+  Generators are useful for managing asynchronous operations when combined with Promises.
+
+
+  function* asyncTaskGenerator() {
+    console.log("Task 1 started");
+    yield new Promise((resolve) => setTimeout(() => resolve("Task 1 completed"), 1000));
+
+    console.log("Task 2 started");
+    yield new Promise((resolve) => setTimeout(() => resolve("Task 2 completed"), 1000));
+  }
+
+  const generator = asyncTaskGenerator();
+
+  generator.next().value.then((res) => {
+    console.log(res); // "Task 1 completed"
+    return generator.next().value;
+  }).then((res) => {
+    console.log(res); // "Task 2 completed"
+  });
+
+  -------------------------
+
+  Practical Use Cases:
+  Lazy Evaluation: Generate values on demand.
+  Infinite Sequences: Handle potentially unbounded data.
+  Asynchronous Control Flow: Simplify async operations (e.g., fetching data in steps).
+  Custom Iterators: Implement custom iteration logic for objects or data structures.
+  Generators are powerful and versatile, making them a great choice for scenarios that require precise control over function execution or sequence generation.
+
+------------ Iterators, Generators, & Data Structures ------------- END
+

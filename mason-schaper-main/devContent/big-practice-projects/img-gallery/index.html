@@ -1,0 +1,143 @@
+<!-- have a modal of a close-up image pop up when you click on any image, include a close button -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Image Gallery</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f9;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .container {
+                font-size: 30px;
+                margin-top:20px;
+                color: #0c4c89;
+                font-size: 16px;
+                text-align: center;
+            }
+            .image-click{
+                padding: 20px;
+            }
+            
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+                margin-top: 50px;
+            }
+            
+            .gallery img {
+                width: 100%;
+                max-width: 300px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: transform 0.3s;
+            }
+            
+            .gallery img:hover {
+                transform: scale(1.05);
+            }
+            
+            .modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .modal img {
+                max-width: 90%;
+                max-height: 90%;
+                border-radius: 10px;
+            }
+            
+            .close-button {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: #fff;
+                color: #333;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            
+            .close-button:hover {
+                background: #ddd;
+            }
+            </style>
+    </head>
+
+    <!-- HTML -->
+
+    <body>
+        <div class="container">
+            <h1>My Image Gallery</h1>
+            <div class="gallery">
+                <img src="https://placehold.co/400" class="image-click"/>
+                <img src="https://placehold.co/400" class="image-click"/>
+                <img src="https://placehold.co/400" class="image-click"/>
+            </div>
+            <h4>Click to see full image</h4>
+
+            <div class="modal">
+                <img src="" alt="view-full-img"/>
+                <button class="close-button">Close</button>
+            </div>
+        </div>
+
+    <!-- Javascript -->
+
+    <script>
+        const modal = document.querySelector('.modal');
+        const modalImage = modal.querySelector('img');
+        const gallery = document.querySelector('.gallery');
+
+        // functions
+        
+        const openModal = (e) => {
+            if (e.target.tagName === 'IMG') {
+                modalImage.src = e.target.src;
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        };
+
+        const closeModal = () => {
+            modal.style.display = 'none';
+            modalImage.src = '';
+            document.body.style.overflow = '';
+        };
+        
+        const handleKeydown = (esc) => {
+            if (esc.key === 'Escape') {
+                closeModal();
+            }
+        };
+
+        // event listeners
+
+        gallery.addEventListener('click', openModal);
+        modal.addEventListener('click', closeModal);
+        window.addEventListener('keydown', handleKeydown);
+    </script>
+    </body>
+</html>

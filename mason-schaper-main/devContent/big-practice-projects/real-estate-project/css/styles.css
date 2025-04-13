@@ -1,0 +1,774 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: Galano Grotesque Alt, Adjusted Trebuchet MS Fallback, Trebuchet MS, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px;
+    background: #fff;
+}
+
+#welcome {
+    text-align: center;
+    font-size: 30px;
+}
+
+#user {
+    cursor: unset;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+button {
+    font-family: Galano Grotesque Alt, Adjusted Trebuchet MS Fallback, Trebuchet MS, sans-serif;
+}
+
+nav button {
+    padding: 5px 15px;
+    font-size: 18px;
+    border: 1px solid #000;
+    border-radius: 20px;
+}
+
+.nav-child {
+    display: flex;
+}
+
+.logo-container {
+    display: flex;
+}
+
+.logo-container h2 {
+    font-size: 25px;
+    margin: 15px 0 10px;
+}
+
+.logo-container img {
+    width: 30px;    
+    height: 30px;
+    padding-top: 12px;
+    margin-right: 10px;
+}
+
+.menu-items {
+    padding: 20px 15px 15px 15px;
+}
+
+.menu-items a {
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.1s ease-out;
+    color: #000;
+    margin-left: 10px;
+}
+
+.menu-items a:hover {
+    border-bottom: 3px solid #000;
+    padding-bottom: 3px;
+    text-shadow: 1px 1px 2px #8c8c8c;
+}
+
+.btn-container {
+    margin-left: 50px;
+}
+
+.btn-container img {
+    width: 40px; 
+    height: 40px;
+    padding: 10px 5px 0 0;
+}
+
+.btn-container img, span:hover {
+    cursor: pointer;
+}
+
+.btn-container button {
+    position: relative;
+    bottom: 12px;
+    transition: 0.3s ease-in-out;
+    margin-left: 5px;
+}
+
+.btn-container span {
+    background: #000;
+    color: #fff;
+    border-radius: 100%;
+    padding: 5px 8px;
+    font-size: 12px;
+    position: relative;
+    right: 9.8%;
+    bottom: 25px;
+}
+
+#signup-btn {
+    background: #000;
+    color: #fff;
+}
+
+#signup-btn:hover {
+    color: #ffffff;
+    cursor: pointer;
+    text-shadow: 1px 1px 3px #8c8c8c, 1px 1px 10px #ffffff;
+}
+
+#login-btn {
+    background: #fff;
+}
+
+#login-btn:hover {
+    background: #000;
+    color: #fff5c7;
+    text-shadow: 1px 1px 3px #8c8c8c, 1px 1px 10px #fbe985;
+    cursor: pointer;
+}
+
+#logout-btn {
+    background: rgb(190, 91, 91);
+    color: #fff;
+    border: 1px solid #000;
+    display: none;
+}
+
+#logout-btn:hover {
+    cursor: pointer;
+    background: rgb(123, 23, 23);
+    text-shadow: 1px 1px 3px #8c8c8c, 1px 1px 10px #fbe985;
+}
+
+.search-container {
+    background-image: url('../images/night-house.png');
+    background-position: 50% 55%;
+    background-size: 2000px;
+    filter: saturate(0.6);
+    padding: 60px 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-container h2 {
+    font-size: 60px;
+    color: #fff;
+    text-shadow: 1px 1px 5px #998923, 1px 1px 10px #fbe985;
+    margin: 10px;
+}
+
+#options {
+    display: flex;
+    margin: 10px; 
+}
+
+#options a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px;
+    transition: 0.1s ease-in-out;
+}
+
+#options a:hover {
+    border-bottom: 4px solid #fff;
+    padding-bottom: 3px;
+    text-shadow: 1px 1px 3px #8c8c8c, 1px 1px 10px #fbe985;
+}
+
+.search-bar {
+    margin-left: 3%;
+}
+
+.search-bar input {
+    width: 500px;
+    font-size: 22px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.search-bar button {
+    width: 42px;
+    height: 42px;
+    background: #000;
+    border-radius: 100%;
+}
+
+.search-bar button:hover {
+    cursor: pointer;
+}
+
+#search-btn {
+    position: relative;
+    right: 9.2%;
+    top: 4px;
+}
+
+.search-bar img {
+    width: 25px;
+    height: 25px;
+}
+
+#home-info-container h2 {
+    font-size: 35px;
+    margin: 100px 0 0 0;
+}
+
+#home-info-container p {
+    font-size: 20px;
+}
+
+#home-info-container button {
+    padding: 10px 30px;
+    font-size: 22px;
+    border: 1px solid #000;
+    border-radius: 150px;
+    background: #000;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+#home-info-container button:hover {
+    cursor: pointer;
+    text-shadow: 1px 1px 5px #8c8c8c, 1px 1px 10px #fbe985;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#home-info-container img {
+    width: 50%;
+    background: #fff;
+    box-shadow: 4px 3px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#home-loan-info {
+    display: flex;
+    border-top: 1px solid #000;
+}
+
+#home-loan-info-text {
+    margin-left: 50px;
+}
+
+#local-info {  
+    display: flex;
+    border-bottom: 1px solid #000;
+}
+
+#local-info-text {
+    margin: 40px;
+}
+
+#local-info-text p {
+    text-align: left;
+}
+
+#homes-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px 0;
+}
+
+#homes-container h2 {
+    font-size: 30px;
+    margin: 5px 0 15px 0;
+}
+
+#homes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  
+}
+
+.home {
+    margin: 20px;
+    width: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px 0 rgba(137, 137, 137, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.house-img {
+    width: 500px;
+    height: 360px;
+}
+
+.favorite-home {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    bottom: 60px;
+    left: 88%;
+    background: #fff;
+    border-radius: 50%;
+    padding: 8px;
+    transition: 0.3s ease-in;
+}
+
+.favorite-home:hover {
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 4px 3px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.house-description {
+    padding: 0 20px 10px 20px;
+}
+
+.details-container {
+    display: flex;
+}
+
+.details-container p {
+    margin: 0 10px 0 0;
+}
+
+.list-for-sale {
+    margin: 0;
+    text-align: left;
+}
+
+.house-description h3 {
+    margin: 15px 0;
+    font-size: 28px;
+}
+
+.house-location {
+    margin: 10px 0;
+    text-align: left;
+}
+
+/* ----- single home ----- */
+
+#home-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.single-house-description-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.single-house-description p {
+    font-size: 20px;
+}
+
+.single-house-description h3 {
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.single-home {
+    width: 50%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 4px 3px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.single-home img {
+    width: 1000px;
+    height: 600px;
+}
+
+.single-home a {
+    padding: 5px 15px; 
+    font-size: 20px;
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 30px;
+    margin: 10px 0;
+    height: 26px;
+    transition: 0.3s ease-in-out;
+    color: #000;
+    text-decoration: none;
+}
+
+.single-home a:hover {
+    cursor: pointer;
+    text-shadow: 1px 1px 5px #ecff6f, 1px 1px 10px #fbe985;
+    background: #000000;
+    color: #fff;
+}
+
+/* ----- mortgage-calculator ----- */
+
+#container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#mortgage-container {
+    width: 50%;
+}
+
+.input-container {
+    padding: 10px 0;
+}
+
+#night-sky-bg {
+    background-image: url('../images/night-house.png');
+    width: 100%;
+    background-position: 50% 50%;
+}
+
+#night-sky-bg h2 {
+    font-size: 40px;    
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 3px #8c8c8c, 1px 1px 10px #ffffff;
+    margin: 10px 0 40px 0;
+}
+
+#container label {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+#container input {
+    width: 98.5%;
+    font-size: 20px;
+    padding: 5px;
+}
+
+#container button {
+    font-size: 30px;
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: #000000;
+    transition: 0.3s ease-in-out;
+    color: #fff;
+}
+
+#container button:hover {
+    cursor: pointer;
+    background: #000000;
+    box-shadow: 4px 3px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-shadow: 1px 1px 3px #8c8c8c, 1px 1px 10px #ffffff;
+}
+
+#result {
+    text-align: center;
+    font-size: 18px;
+}
+
+/* ----- favorites ----- */
+
+.favoriteList h2 { text-align: center; }
+
+#favorites {
+    margin: 0 150px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 3%;
+}
+
+.favorite-item {
+    width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 4px 3px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
+}
+
+#empty {
+    text-align: center;
+    margin: 60px;
+    font-size: 20px;
+}
+
+.favorites-content h3 {
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.favorites-content img {
+    width: 400px;
+    height: 280px;
+}
+
+.favorite-description-container {
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.favorite-description-container button {
+    font-size: 16px;
+    padding: 5px 10px;
+    background: transparent;
+    border: 2px solid #000;
+    border-radius: 20px;
+    height: 40px;
+    transition: 0.3s ease-in-out;
+}
+
+.favorite-description-container button:hover {
+    cursor: pointer;
+    background: #ffdcdc;
+}
+
+/* ----- login -----*/
+
+.login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-container {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 440px;
+    margin: 50px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.login-container h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-container #error {
+    color: rgb(255, 0, 0);
+}
+
+.login-container label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #000;
+}
+
+.required-info-container input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#check-box-container {
+    display: flex;
+}
+
+#check-box-container input {
+    width: 15px;
+}
+
+#check-box-container label {
+    padding-bottom: 5px;
+    color: #383838;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: #3a3a3a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.login-container a, p {
+    text-decoration: none;
+    text-align: center;
+}
+
+.login-container a {
+    color: #0184f7;
+}
+
+.login-container button:hover {
+    background-color: #000000;
+    box-shadow: 4px 3px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-container a:hover {
+    color: #026ecd;
+}
+
+/* ----- signup container ----- */
+
+.signup {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signup-container {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 440px;
+    margin: 50px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.signup-container h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signup-container #regResult {
+    color: rgb(255, 0, 0);
+}
+
+.signup-container label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #000;
+}
+
+.required-info-container input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#check-box-container {
+    display: flex;
+}
+
+#check-box-container input {
+    width: 15px;
+}
+
+#check-box-container label {
+    padding-bottom: 5px;
+    color: #383838;
+}
+
+.signup-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: #3a3a3a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.signup-container a, p {
+    text-decoration: none;
+    text-align: center;
+}
+
+.signup-container a {
+    color: #0184f7;
+}
+
+.signup-container button:hover {
+    background-color: #000000;
+    box-shadow: 4px 3px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.signup-container a:hover {
+    color: #026ecd;
+}
+
+/* ----- forgot password ----- */
+
+.password {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.password-container {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 840px;
+    margin: 50px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.password-container  h2 {
+    text-align: center;
+}
+
+#changePassword {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: #3a3a3a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#changePassword:hover {
+    background-color: #000000;
+    box-shadow: 4px 3px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ----- footer ----- */
+
+.footer {
+    background: #000;
+    padding: 0 100px;
+    position: absolute;
+    margin-top: 50px;
+}
+
+.socials {
+    padding: 30px 13px 10px 10px;
+}
+
+.social-icon {
+    width: 30px;
+    margin: 5px;
+}
+
+.footer-child {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-child a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 30px 30px 5px 20px;
+    transition: 0.3s;
+}
+
+.footer-child a:hover {
+    cursor: pointer;
+    color: #fff5c7;
+    text-shadow: 1px 1px 2px #ffffff, 1px 1px 10px #fbe985;
+}
+
+#rights-reserved {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    padding: 30px;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Review Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Leave a Review</h1>
+            <form id="reviewForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+    
+                <label for="product">Product Name:</label>
+                <input type="text" id="product" placeholder="Enter product name" required>
+    
+                <label for="review">Your Review:</label>
+                <textarea id="review" rows="4" placeholder="Write your review here" required></textarea> <!--add 4 rows to the textarea-->
+    
+                <button type="submit">Submit Review</button>
+            </form>
+    
+            <div class="reviews" id="reviews">
+                <h2>Reviews:</h2>
+            </div>
+    
+            <!-- Reset button -->
+            <button id="resetButton" style="margin-top: 20px; background: #f44336; color: white;">Reset All</button>
+        </div>
+    
+        <script>
+            document.getElementById('reviewForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the form from refreshing the page
+    
+                // Get form values
+                const name = document.getElementById('name').value;
+                const product = document.getElementById('product').value;
+                const review = document.getElementById('review').value;
+    
+                // Create a new review element
+                const reviewDiv = document.createElement('div');
+                reviewDiv.classList.add('review');
+                reviewDiv.innerHTML = `
+                    <h3>${name}</h3>
+                    <p><strong>Product:</strong> ${product}</p>
+                    <p>${review}</p>
+                    <div class="review-buttons">
+                        <button class="like-button">Like (<span class="like-count">0</span>)</button>
+                        <button class="dislike-button">Dislike (<span class="dislike-count">0</span>)</button>
+                    </div>
+                `;
+    
+                // Add event listeners for like and dislike buttons
+                const likeButton = reviewDiv.querySelector('.like-button');
+                const dislikeButton = reviewDiv.querySelector('.dislike-button');
+                const likeCount = reviewDiv.querySelector('.like-count');
+                const dislikeCount = reviewDiv.querySelector('.dislike-count');
+    
+                likeButton.addEventListener('click', () => {
+                    likeCount.textContent = parseInt(likeCount.textContent) + 1;
+                });
+    
+                dislikeButton.addEventListener('click', () => {
+                    dislikeCount.textContent = parseInt(dislikeCount.textContent) + 1;
+                });
+    
+                // Append the new review to the reviews section
+                document.getElementById('reviews').appendChild(reviewDiv);
+    
+                // Clear the form fields
+                document.getElementById('name').value = '';
+                document.getElementById('product').value = '';
+                document.getElementById('review').value = '';
+            });
+    
+            // Reset button functionality
+            document.getElementById('resetButton').addEventListener('click', function() {
+                // Clear all reviews
+                const reviewsSection = document.getElementById('reviews');
+                reviewsSection.innerHTML = '<h2>Reviews:</h2>';
+    
+                // Optionally clear form fields as well (if needed)
+                document.getElementById('name').value = '';
+                document.getElementById('product').value = '';
+                document.getElementById('review').value = '';
+            });
+        </script>
+    </body>

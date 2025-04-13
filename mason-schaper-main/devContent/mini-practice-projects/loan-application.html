@@ -1,0 +1,76 @@
+<!--loan application, user has to make $100k per year or better and 
+has a credit score of 650 or better in order to receive a loan of $500k, 
+these need to be met and the user needs to fill out a form with Full Name Credit Score and Annual Net Income-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Loan Application</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body { 
+                font-family: Arial, sans-serif;
+                margin: auto;
+                padding: 30px;
+                max-width: 500px;
+            }
+
+            input, button {
+                width: 100%;
+                padding: 20px;
+                margin: 10px 0;
+            }
+
+            .loanApplicationResult {
+                font-size: 18px;
+                margin-top: 20px;
+            }
+
+            .approved { color: green; } 
+            .denied { color: red; }
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Loan Application Form</h2>
+            <form id="loanApplication">
+                <label>Full Name</label>
+                <input type="text" id="fullName" required>
+
+                <label>Credit Score</label>
+                <input type="number" id="creditScore" min="300" max="850" required>
+
+                <label>Annual Net Income</label>
+                <input type="number" id="annualNetIncome" min="0" required>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div id="loanApplicationResult" class="loanApplicationResult"></div>
+        </div>
+        <script>
+            const form = document.getElementById('loanApplication');
+            const result = document.getElementById('loanApplicationResult');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('fullName').value.trim();
+                const score = parseInt(document.getElementById('creditScore').value); // parse int - 
+                const income = parseFloat(document.getElementById('annualNetIncome').value); // parse float - 
+                 
+                if (income >= 100000 && score >= 650) {
+                    result.innerHTML = `Congratulations, ${name}! You're pre-approved for a $500,000 loan.`;
+                    result.className = 'approved';
+                } else {
+                    result.innerHTML = `Sorry, ${name}. You've not met the qualifications for a loan.`;
+                    result.className = 'denied';
+                }   
+
+            });
+        </script>
+    </body>
+</html>

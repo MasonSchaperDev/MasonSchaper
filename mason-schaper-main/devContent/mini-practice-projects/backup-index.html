@@ -1,0 +1,305 @@
+<!-- 
+ display a page for each item, add a wishlist (seperate page) add a heart icon on each item, 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Shop</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/tech-icon.png" class="logo"/>
+            <h2><a href="index.html">Tech Shop</a></h2>
+        </div>
+
+        <div class="cart-icon-container" onclick="scrollToCart()">
+            <a href="wish-list.html">
+                <img src="images/white-heart.png" class="wish-list"/>
+                <span id="wishlist-count">0</span>
+            </a>
+
+            <img src="images/cart-logo.png" class="cart-icon"/>
+            <span id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <div id="header-container">
+        <h2>Shop For Tech</h2>
+        <input type="text" id="search-bar" oninput="filterProducts()" placeholder="Search Products..."/>
+        <select id="filter-dropdown" onchange="filterProducts()">
+            <option value="all">All Products</option>
+            <option value="appliances">Appliances</option>
+            <option value="computers">Computers</option>
+            <option value="phones">Phones</option>
+            <option value="video games">Video Games</option>
+            <option value="television">Television</option>
+        </select>
+    </div>
+
+    <div class="container"> 
+        <div class="products">
+            <h2>Products</h2>
+            <div id="product-list"></div>
+        </div>
+
+        <div class="cart-container">
+            <h2>Shopping Cart</h2>
+            <div id="cart-list"></div>
+            <p><strong>Total:</strong> $<span id="cart-total">0.00</span></p>
+            <input type="text" placeholder="Enter Coupon Code" id="coupon"/>
+            <button onclick="applyCoupon()" id="apply-coupon">Apply Coupon</button>
+            <p><strong>Discounted Total:</strong> $<span id="discounted-total">0.00</span></p>
+            <!--<img src="images/shopping-cart-icon.png" class="cart-icon"/>-->
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="child-container">
+            <h3>Product</h3>
+            <p><a href="#">Search Jobs</a></p>
+            <p><a href="#">Browse Jobs</a></p>
+            <p><a href="#">Search Salaries</a></p>
+            <p><a href="#">Career Advice</a></p>
+            <p><a href="#">Trust and Safety</a></p>
+        </div>
+
+        <div class="child-container">
+            <h3>Small & Medium Businesses</h3>
+            <p><a href="#">Manufacturing</a></p>
+            <p><a href="#">Fees</a></p>
+            <p><a href="#">How it Works</a></p>
+            <p><a href="#">Plans</a></p>
+            <p><a href="#">Shipping Company</a></p>
+        </div>
+
+        <div class="child-container">
+            <h3>Enterprise Businesses</h3>
+            <p><a href="#">Customer Reviews</a></p>
+            <p><a href="#">Customer Service</a></p>
+            <p><a href="#">FAQs</a></p>
+            <p><a href="#">Request a Consultation</a></p>
+        </div>
+
+        <div class="child-container">
+            <h3>Partner With Us</h3>
+            <p><a href="#">Tech Shop</a></p>
+            <p><a href="#">ATS Integrations</a></p>
+        </div>
+
+        <div class="child-container">
+            <h3>Company</h3>
+            <p><a href="#">About Us</a></p>
+            <p><a href="#">Contact</a></p>
+            <p><a href="#">Investors</a></p>
+            <p><a href="#">Blog</a></p>
+            <p><a href="#">Engineering</a></p>
+        </div>
+    </div>
+
+    <div class="social-media-container">
+        <a href=""><img src="images/facebook-logo.png"/></a>
+        <a href=""><img src="images/instagram-logo.png"/></a>
+        <a href=""><img src="images/x-logo.png"/></a>
+    </div>
+
+    <script>
+        // Mock Product API
+        const products = [
+            {"id": 1, "name": "LG Fridge", "price": 1899.99, "category": "appliances", "description": "36 Inch Wide 23.1 Cu. Ft. Energy Star Certified French Door Refrigerator with TwinChill Evaporators", "image": "images/lg-fridge.png"},
+            {"id": 2, "name": "Samsung Fridge", "price": 1499.99, "category": "appliances", "description": "27 cu. ft. Large Capacity 3-Door French Door Refrigerator with External Water & Ice Dispenser in Black Stainless Steel", "image": "images/samsung-fridge.png"},
+            {"id": 3, "name": "Blaze Grill", "price": 2499.99, "category": "appliances", "description": "Blaze gas grills have a lifetime warranty covering various stainless steel components.", "image": "images/blaze-grill.png"},
+            {"id": 4, "name": "Frigidaire Microwave", "price": 309.99, "category": "appliances", "description": "30 Inch Wide 1.8 Cu. Ft. 1500 Watt Over the Range Microwave with LED Lighting", "image": "images/microwave.png"},
+            {"id": 5, "name": "Hisense 120", "price": 3497.99, "category": "television", "description": "Includes an Ambient Light Rejecting (ALR) screen for stunning picture quality under any lighting condition", "image": "images/hisense-120.png"},
+            {"id": 6, "name": "VIZIO 55", "price": 264.99, "category": "television", "description": "Empower your entertainment with vivid 4K picture quality enhanced by Dolby Vision HDR.", "image": "images/vizio-55.png"},
+            {"id": 7, "name": "Samsung QLED", "price": 4489.99, "category": "television", "description": "Quantum Matrix Pro with Mini LEDs for enhanced brightness and detail.", "image": "images/samsung-qled.png"},
+            {"id": 8, "name": "Furrion Aurora", "price": 2599.99, "category": "television", "description": "Optimized for outdoor viewing with a weatherproof housing and IP54 rating.", "image": "images/furrion-aurora.png"},
+            {"id": 9, "name": "Mario Kart 8 Deluxe", "price": 52.99, "category": "video games", "description": "Hit the road with the definitive version of Mario Kart 8 and play anytime, anywhere.", "image": "images/mario-kart-8.png"},
+            {"id": 10, "name": "Black Myth Wukong", "price": 62.99, "category": "video games", "description": "Explore a world of vast wonders inspired by ancient Chinese mythology.", "image": "images/black-myth-wukong.png"},
+            {"id": 11, "name": "Astro Bot", "price": 59.99, "category": "video games", "description": "Embark on a galactic quest and explore more than 50 planets in search of ASTRO’s lost crew.", "image": "images/astro-bot.png"},
+            {"id": 12, "name": "Super Smash Bros. Ultimate", "price": 49.99, "category": "video games", "description": "Join new stages and fighters, featuring every past Super Smash Bros. roster.", "image": "images/super-smash-bros-ultimate.png"},
+            {"id": 13, "name": "iPhone 5s", "price": 399.99, "category": "phones", "description": "5G speeds ranging between 38 Mbps and 145 Mbps for gaming, streaming, and more.", "image": "images/smartphone-thumbnail.png"},
+            {"id": 14, "name": "Galaxy S25 Ultra", "price": 1199.99, "category": "phones", "description": "Check if your phone is eligible for trade-in and receive a virtual prepaid Mastercard.", "image": "images/samsung-galaxy-s25.png"},
+            {"id": 15, "name": "iPhone 16", "price": 1029.99, "category": "phones", "description": "Built for Apple Intelligence featuring Camera Control and A18 chip.", "image": "images/iphone-16.png"},
+            {"id": 16, "name": "Nokia 2780 Flip Phone", "price": 89.99, "category": "phones", "description": "Designed for use with a nano-SIM card, compatible with T-Mobile.", "image": "images/nokia-flipphone.png"},
+            {"id": 17, "name": "ZBook Laptop", "price": 999.99, "category": "computers", "description": "Upgrade to professional ZBook performance and security with enhanced collaboration features.", "image": "images/laptop-thumbnail.png"},
+            {"id": 18, "name": "MacBook Air 13", "price": 990.99, "category": "computers", "description": "Supercharged by the M2 chip with up to 18 hours of battery life.", "image": "images/macbook-13.png"},
+            {"id": 19, "name": "ASUS ROG Gaming Desktop", "price": 1449.99, "category": "computers", "description": "Upgradable RAM with dual-channel DDR5 support up to 64GB.", "image": "images/asus-desktop.png"},
+            {"id": 20, "name": "Dell Inspiron 24", "price": 599.99, "category": "computers", "description": "All-in-one desktop with a 25° tilt feature for adjustable display angles.", "image": "images/dell-inspiron.png"}
+        ];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderProducts();
+            updateWishlistCount();
+        });
+
+        //let cart = [];
+        //let discountApplied = false;
+
+        function renderProducts(filteredProducts = products) {
+            const productList = document.getElementById("product-list");
+            productList.innerHTML = "";
+
+            const wishlist = JSON.parse(localStorage.getItem("wishlist") || []);
+
+            filteredProducts.forEach(product => {
+                const isWishListed = wishList.includes(product.id.toString());
+                const heartIcon = isWishListed ? "images/red-heart.png" : "images/blue-heart.png";
+
+                const div = document.createElement("div");
+                div.classList.add("product");
+                div.innerHTML = `
+                    <div class="product-content">
+                        <a href="single-item.html"><img src="${product.image}" alt="${product.name}"></a>
+                        <p><strong>${product.name}</strong> - $${product.price.toFixed(2)}</p>
+                    </div>
+                    <div class="product-description"><p>${product.description}</p></div>
+                    <div class="cart-and-heart-container">
+                        <button onclick="addToCart(${product.id})">Add to Cart</button>
+                        <img src="${heartIcon}" data-id="${product.id}" class="add-to-wishlist"/>
+                    </div>
+                `;
+                productList.appendChild(div);
+            });
+
+            document.querySelectorAll('.add-to-wishlist').forEach(heart => {
+                heart.addEventListener('click', function() {
+                    toggleWishlist(this.dataset.id, this);
+                });
+            });
+        }
+            function toggleWishlist(productId, heartElement) {
+                let wishlist = JSON.parse(localStorage.getItem("wishlist") || []);
+
+                if (wishList.includes(productId)) {
+                    wishList = wishList.filter(id => id !== productId);
+                    heartElement.src = "images/blue-heart.png";
+                } else {
+                    wishList.push(productId);
+                    heartElement.src = "images/red-heart.png";
+                }
+                localStorage.setItem("wishlist", JSON.stringify(wishlist));
+                updateWishlistCount();
+            }
+
+            function updateWishListCount() {
+            const wishlist = JSON.parse(localStorage.getItem("wishlist") || [] );
+            document.getElementById('wishlist-count').textContent = wishlist.length;
+
+        }
+
+        let wishList = [];
+
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('add-to-wishlist')) {
+                const heart = event.target;
+                const productId = heart.dataset.id;
+
+                if (wishList.includes(productId)) {
+                    wishList = wishList.filter(id => id !== productId);
+                    heart.src = "images/blue-heart.png";
+                } else {
+                    wishList.push(productId);
+                    heart.src = "images/red-heart.png";
+                }
+                
+                updateWishListCount();
+            }
+        });
+
+        function updateWishListCount() {
+            document.getElementById('wishlist-count').textContent = wishList.length
+        }
+
+
+        function filterProducts() {
+            const searchTerm = document.getElementById("search-bar").value.toLowerCase();
+            const selectedCategory = document.getElementById("filter-dropdown").value;
+
+            const filteredProducts = products.filter(product => {
+            const matchesSearch = product.name.toLowerCase().includes(searchTerm) ||
+            product.description.toLowerCase().includes(searchTerm);
+            const matchesCategory = selectedCategory === "all" || product.category.toLowerCase() === selectedCategory;
+
+            return matchesSearch && matchesCategory;
+
+            });
+            renderProducts(filteredProducts);
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            updateCartCount();
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartList = document.getElementById("cart-list");
+            const cartTotal = document.getElementById("cart-total");
+            const discountedTotal = document.getElementById("discounted-total");
+            cartList.innerHTML = "";
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price * item.quantity;
+                const div = document.createElement("div");
+                div.classList.add("cart-item");
+                div.innerHTML = `
+                    <div class="cart-content">
+                        <img src="${item.image}" alt="${item.name}">
+                        <p>${item.name} - $${item.price.toFixed(2)} (x${item.quantity})</p>
+                    </div>
+                    <button onclick="removeFromCart(${index})">Remove</button>
+                `;
+                cartList.appendChild(div);
+            });
+            cartTotal.textContent = total.toFixed(2);
+            discountedTotal.textContent = discountApplied ? applyDiscount(total).toFixed(2) : '0.00';
+        }
+
+        function removeFromCart(index) {
+            cart[index].quantity -= 1;
+            if (cart[index].quantity === 0) {
+                cart.splice(index, 1);
+            }
+            updateCartCount();
+            renderCart();
+        }
+
+        function applyCoupon() {
+            const couponInput = document.getElementById("coupon").value;
+            if (couponInput === "GET10" && getTotalPrice() > 1000) {
+                discountApplied = true;
+            } else {
+                discountApplied = false;
+            }
+            renderCart();
+        }
+
+        function applyDiscount(total) {
+            return discountApplied ? total * 0.9 : total;
+        }
+
+        function getTotalPrice() {
+            return cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        }
+
+        function updateCartCount() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById("cart-count").textContent = totalItems;
+        }
+
+    </script>
+</body>
+</html>

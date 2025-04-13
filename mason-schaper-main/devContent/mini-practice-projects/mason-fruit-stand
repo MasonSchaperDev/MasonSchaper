@@ -1,0 +1,75 @@
+<!-- fruit stand called Mason's fruit stand, it has 5 different fruit options: banana, apple, orange, mango, grapes.
+if person comes to my stand, they have a shopping bag that only can hold 5 fruits. 
+if more than 5 fruits are in the bag, you can't add any more. you can remove the fruits from shopping bag. -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body { font-family: Arial; padding: 20px; }
+            #bag { margin-top: 20px; }
+            .fruit { display: flex; justify-content: space-between; width: 200px; margin: 5px 0; }
+            .fruit span { flex-grow: 1; }
+            button { margin-left: 10px; }
+          </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Mason's Fruit Stand</h2>
+            <label for="fruitSelect">Pick a Fruit</label>
+            <select id="fruitSelect">
+                <option value="Apple">Apple</option>
+                <option value="Banana">Banana</option>
+                <option value="Grapes">Grapes</option>
+                <option value="Orange">Orange</option>
+                <option value="Mango">Mango</option>
+            </select>
+            <button id="add-fruit" onclick="addFruit()">Add Fruit</button>
+            <p id="fruit-message" style="color: red"></p>
+
+            <h2>Your Shopping Bag</h2>
+            <div id="fruitBag"></div>
+        </div>
+        <script>
+            const maxFruits = 5;
+            let bag = [];
+
+            function renderBag() {
+                const bagContainer = document.getElementById('fruitBag');
+                bagContainer.innerHTML = '';
+                
+                bag.forEach((fruit, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'fruit';
+                    div.innerHTML = `
+                        <span>${fruit}</span>
+                        <button onclick="removeFruit(${index})">Remove Fruit</button>
+                    `;
+                });
+            }
+
+            function addFruit() {
+                const message = document.getElementById('fruit-message');
+                const selectedFruit = document.getElementById('fruitSelect').value;
+
+                if (bag >= maxFruits) {
+                    message.textContent = 'Bag is Full.';
+                }
+                bag.push(selectedFruit);
+                message.textContent = '';
+                renderBag();
+            }
+
+            function removeFruit(index) {
+                bag.splice(index, 1);
+                document.getElementById('fruit-message').textContent = '';
+                renderBag();
+            }
+        </script>
+    </body>
+</html>

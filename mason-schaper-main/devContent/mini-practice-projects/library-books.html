@@ -1,0 +1,327 @@
+<!-- add an edit button that allows you to edit the book description, add a read more to cut off half the description.  -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Library</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                margin: 0;
+                overflow-x: hidden;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .container {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            #header-container {
+                display: flex;
+            }
+
+            ul {
+                padding: 0;
+            }
+
+            input {
+                height: 20px;
+                padding: 5px;
+                font-size: 18px;
+            }
+
+            input:focus::placeholder {
+                color: transparent;
+            }
+
+            #library {
+                border-top: 1px solid #000;
+                padding-top: 20px;
+            }
+
+            .book {
+                border: 1px solid #000;
+                padding: 10px;
+                list-style: none;
+                margin: 10px;
+                display: flex;
+                justify-content: space-between;
+                width: 500px;
+            }
+
+            .book p {
+                width: 350px;
+            }
+
+            .add-book {
+                color: #fff;
+                background: rgb(83, 83, 241);
+                border: 1px solid #000;
+                padding: 5px 10px;
+                transition: 0.3s;
+                margin: 27% 0 0 0;
+                font-size: 16px;
+            }
+
+            .edit-book {
+                background:rgb(61, 111, 95);
+
+            }
+
+            .edit-book:hover {
+                background:rgb(39, 73, 62);
+                cursor: pointer;
+            }
+
+            #add-to-library {
+                padding: 10px;
+                font-size: 18px;
+                background: #ffff94;
+                transition: 0.3s;
+            }
+
+            #add-to-library:hover {
+                cursor: pointer; 
+                background: rgb(168, 168, 34);       
+            } 
+            
+            .more-link {
+                color: #005cfb;
+                transition: 0.3s;
+            }
+
+            .more-link:hover {
+                cursor: pointer;
+                color: #0c3f97;
+            }
+
+            .remove-book {
+                color: #fff;
+                background: #ff0000df;
+                border: 1px solid #000;
+                padding: 5px 10px;
+                transition: 0.3s;
+                margin: 27% 0 0 0;
+                height: 35px;
+                font-size: 20px;
+            }
+
+            .button-container {
+                display: flex;
+            }
+
+            .button-container button {
+                color: #fff;
+                border: 1px solid #000;
+                padding: 5px 10px;
+                transition: 0.3s;
+                margin: 70% 0 0 10px;
+                font-size: 16px;
+                height: 30px;
+            }
+
+            .add-book:hover {
+                color: #fff;
+                background: rgb(55, 55, 157);
+                cursor: pointer;
+            }
+
+            .remove-book:hover {
+                color: #fff;
+                background: #9a0808df;
+                cursor: pointer;
+            }
+
+            .input-container {
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+
+            input, textarea {
+                width: 500px;
+                padding: 10px;
+                border: 1px solid #000;
+                border-radius: 5px;
+            }
+
+            textarea {
+                height: 200px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+                <h2>Library</h2>
+            <div class="input-container">
+                <input type="text" placeholder="Type a title to add it..." id="title-input"/>
+                <textarea id="book-description" placeholder="Enter description"></textarea>
+                <button id="add-to-library" onclick="addBookToLibrary()">Add To Library</button>
+            </div>
+
+            <h2>Library</h2>
+            <div id="library" class="library"></div>
+
+            <h3>Personal Library</h3>
+            <ul id="personal-library"></ul>
+        </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            let books = [
+                {id: 1, title: "Moby Dick", description: "Moby-Dick; or, The Whale is an 1851 epic novel by American writer Herman Melville. The book is centered on the sailor Ishmael's narrative of the maniacal quest of Ahab, captain of the whaling ship Pequod, for vengeance against Moby Dick, the giant white sperm whale that bit off his leg on the ship's previous voyage."},
+                {id: 2, title: "To Kill a Mockingbird", description: "To Kill a Mockingbird is a 1960 Southern Gothic novel by American author Harper Lee. It became instantly successful after its release; in the United States, it is widely read in high schools and middle schools."},
+                {id: 3, title: "Great Gatsby", description: "The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway's interactions with Jay Gatsby, the mysterious millionaire with an obsession to reunite with his former lover, Daisy Buchanan."},
+                {id: 4, title: "Pride and Prejudice", description: "Pride and Prejudice follows the turbulent relationship between Elizabeth Bennet, the daughter of a country gentleman, and Fitzwilliam Darcy, a rich aristocratic landowner. They must overcome the titular sins of pride and prejudice in order to fall in love and marry."},
+                {id: 5, title: "1984", description: "Nineteen Eighty-Four is a dystopian novel and cautionary tale by English writer George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final completed book."}
+            ];
+
+            let personalLibrary = [];
+
+            const maxDescriptionLength = 50;
+
+            const library = document.getElementById('library');
+            const personalLibraryList = document.getElementById('personal-library');
+            const titleInput = document.getElementById('title-input');
+            const descInput = document.getElementById('book-description');
+            
+            
+            function renderBooks() {
+                library.innerHTML = "";
+                books.forEach(item => {
+                    const li = document.createElement("li");
+                    li.classList.add('book');
+
+                    let shortDescription = item.description.length > maxDescriptionLength 
+                    ? item.description.substring(0, maxDescriptionLength) + "..." : item.description;
+
+                    li.innerHTML = `
+                    <div>
+                        <strong>${item.title}</strong>
+                        <p id="desc-${item.id}">${shortDescription}
+                            ${item.description.length > maxDescriptionLength 
+                            ? `<span class="more-link" onclick="toggleDescription(${item.id})">more</span>` : ""}
+                        </p>
+                    </div>
+
+                    <div class="button-container">
+                        <button class="add-book" onclick="addToPersonalLibrary(${item.id})">Add</button>
+                        <button class="edit-book" onclick="editBook(${item.id})">Edit</button>
+                    </div>
+                    `;
+                    library.appendChild(li);
+                });
+            }
+
+            function toggleDescription(id) {
+                const descElement = document.getElementById(`desc-${id}`);
+                const book = books.find(b => b.id == id);
+                if (descElement.innerText.includes("...")) {
+                    descElement.innerHTML = `${book.description} 
+                    <span class="more-link" onclick="toggleDescription(${id})">less</span>`;
+                } else {
+                    descElement.innerHTML = `${book.description.substring(0, maxDescriptionLength)}...
+                    <span class="more-link" onclick="toggleDescription(${id})">more</span>`;
+                }
+            }
+
+            function addBookToLibrary() {
+                const title = titleInput.value.trim();
+                const description = descInput.value.trim();
+
+                if (title === "" || description === "") {
+                    alert("Add a title and description please.");
+                    return;
+                }
+
+                const newBook = {
+                    id: books.length + 1,
+                    title: title,
+                    description: description
+                };
+
+                books.push(newBook);
+                renderBooks();
+
+                title.input.value = "";
+                description.input.value = "";
+            }
+
+
+            function addToPersonalLibrary(id) {
+                const book = books.find(b => b.id === id);
+                if (book && !personalLibrary.some(b => b.id === id)) {
+                    personalLibrary.push(book);
+                    updatePersonalLibrary();
+                }
+            }
+
+            function editBook(id) {
+                const book = books.find(b => b.id === id);
+                if (book) {
+                  const newTitle = prompt("Edit Book Title: ", book.title);
+                  const newDescription = prompt("Edit Book Description:", book.description);
+                   
+                    if (newTitle !== null && newTitle.trim() !== "" && newDescription.trim() !== ""){
+                        book.title = newTitle.trim();
+                        book.description = newDescription.trim();
+
+                        renderBooks();
+                        updatePersonalLibrary();
+                    }
+                }
+            }
+
+            function removeBook(id) {
+                personalLibrary = personalLibrary.filter(book => book.id !== id);
+               // if (id !== -1) {
+               // personalLibrary.splice(id, 1); cannot use filter and splice within the same function
+                updatePersonalLibrary();
+            }
+
+            function updatePersonalLibrary() {
+                personalLibraryList.innerHTML = '';
+
+                if (personalLibrary.length === 0) {
+                    personalLibraryList.innerHTML = '<p>No books are here yet.</p>';
+                    return;
+                }
+
+                personalLibrary.forEach(item => {
+                    const li = document.createElement("li");
+                    li.classList.add('book');
+                    li.innerHTML = `
+                    <div>
+                        <strong>${item.title}</strong> 
+                        <p>${item.description}</p>
+                    </div>
+                    <button class="remove-book" onclick="removeBook(${item.id})">Remove</button>`;
+                    personalLibraryList.appendChild(li);
+                });
+            }
+
+            titleInput.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    addBookToLibrary();
+                }
+            });
+
+            renderBooks();
+            updatePersonalLibrary();
+
+             window.addBookToLibrary = addBookToLibrary;
+             window.addToPersonalLibrary = addToPersonalLibrary;
+             window.removeBook = removeBook;
+             window.editBook = editBook;
+             window.toggleDescription = toggleDescription;
+        });
+        </script>
+    </body>
+</html>

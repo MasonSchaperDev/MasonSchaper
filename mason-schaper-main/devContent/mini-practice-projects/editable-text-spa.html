@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editable Text SPA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+      width: 400px;
+    }
+
+    #editableText {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      font-size: 16px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .btns {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 8px 14px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .edit-btn {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .save-btn {
+      background-color: #28a745;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="editableText">This is an editable dummy text sentence that you can edit and save.</div>
+        <textarea id="editor" style="display: none"></textarea>
+
+        <div class="btns">
+            <button class="edit-btn" onclick="toggleEdit()">Edit</button>
+            <button class="save-btn" onclick="saveText()">Save</button>
+        </div>
+    </div>
+
+    <script>
+        const editableText = document.getElementById("editableText");
+        const editor = document.getElementById("editor");
+
+        const saved = localStorage.getItem("savedText");
+        if (saved) {
+            editableText.textContent = saved; 
+        }
+
+        function toggleEdit() {
+            editor.value = editableText.textContent;
+            editableText.style.display = "none";
+            editor.style.display = "block";
+            editor.focus();
+        }
+
+        function saveText() {
+            const newText = editor.value.trim();
+            
+            if (newText !== "") {
+                editableText.textContent = newText;
+                localStorage.setItem("savedText", newText);
+            } 
+            editor.style.display = "none";
+            editableText.style.display = "block";
+        }
+    </script>
+</body>
+</html>

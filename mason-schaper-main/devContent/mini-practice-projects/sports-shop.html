@@ -1,0 +1,211 @@
+<!-- Sporting Goods shop, user is going to be able to ADD 5 items to his shopping bag, 
+there will be a short description of the product/item 
+and the user will be able to delete the item/product from their bag, 
+and the ability to ADD a note to every item the user has in their shopping bag. as well as delete edit this item NOTE.
+
+Items / products are as follows
+shoes/sneakers
+shorts
+sweatshirt
+socks
+hat/cap
+compressions socks
+sweat bands
+fitness watch
+
+NOTE: added the fitness watch to keep track of my physical activity while working out
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                overflow-x: hidden;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            
+            h2 {
+                text-align: center;
+                border-bottom: 1px solid #000;
+                padding: 20px;
+                font-size: 30px;
+            }
+
+            h4 {
+                margin: 10px 0;
+            }
+
+            .product {
+                border: 1px solid #000;
+                padding: 10px;
+                margin: 10px;
+            }
+
+            #bag {
+                margin-bottom: 50px;
+            }
+
+            #no-products {
+                text-align: center;
+            }
+
+            #message {
+                text-align: center;
+                color: red;
+            }
+
+            .btn-container {
+                display: flex;
+            }
+
+            .add-btn {
+                background-color: green;
+                padding: 5px 10px;
+                color:#fff;
+                transition: 0.3s;
+            }
+
+            .add-note {
+                color: #fff;
+                margin: 0 10px;
+                padding: 5px 10px;
+                background: rgb(218, 144, 7);
+                transition: 0.3s;
+            }
+
+            .remove-btn {
+                background-color: red;
+                padding: 5px 10px;
+                color: #fff;
+                transition: 0.3s;
+            }
+
+            .add-btn:hover {
+                cursor: pointer;
+                background-color: rgb(6, 165, 22);
+                
+            }
+
+            .add-note:hover { 
+                background: #895701;
+                cursor: pointer;
+            }
+
+            .remove-btn:hover {
+                cursor: pointer;
+                background-color: rgb(184, 11, 11);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Sporting Goods</h2>
+            <div id="products"></div>
+            <h2>Shopping Bag</h2>
+            <p id="message"></p>
+            <div id="bag">
+                
+            </div>
+        </div>
+
+        <script>
+            const maxItems = 5;
+
+            const products = [
+                {id: 1, name: "Shoes/Sneakers", description: "Discover the latest styles of brand name shoes & accessories for Men, Women & Kids."},
+                {id: 2, name: "Shorts", description: "Hoochie daddy shorts, or daddy hoochie shorts, are essentially short-shorts for men."},
+                {id: 3, name: "Sweatshirt", description: "The softy comfort of French terry fleece and cotton blends feels great any time of day."},
+                {id: 4, name: "Socks", description: "a way to raise awareness about missing children and their families, with the sock symbolizing hope."},
+                {id: 5, name: "Hat/Cap", description: "we dare to say that hat is a more broader term and includes more types of headwear than cap."},
+                {id: 6, name: "Compressions/Socks", description: "Wearing compression socks can improve blood circulation, reduce swelling, and potentially alleviate pain "},
+                {id: 7, name: "Sweat Bands", description: "Sweatbands Sports Wristband for Men & Women - Moisture Wicking Athletic Cotton Terry Cloth Sweatband for Tennis, Basketball, Running, Gym, Working Out."},
+                {id: 8, name: "Fitness Watch", description: "Amazfit's Balance Smartwatch is our top overall pick for its accuracy, comfort, ultra-long battery life, and much more."}
+            ];
+
+            let bag = [];
+
+            function renderProducts() {
+                const productContainer = document.getElementById('products');
+                productContainer.innerHTML = '';
+
+                products.forEach(product => {
+                    const div = document.createElement('div');
+                    div.className = 'product';
+                    div.innerHTML = `
+                        <h4>${product.name}</h4>
+                        <p>${product.description}</p>
+                        <button class="add-btn" onclick="addProduct(${product.id})">Add Item</button>
+                    `;
+                    productContainer.appendChild(div);
+                });
+            }
+
+            function renderBag() {
+                const bagContainer = document.getElementById('bag');
+                bagContainer.innerHTML = '';
+
+                if (bag.length === 0) {
+                    bagContainer.innerHTML = '<p id="no-products">No Products Here Yet.</p>';
+                    return;
+                }
+
+                bag.forEach((product, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'product';
+                    div.innerHTML = `
+                        <h4>${product.name}</h4>
+                        <p>${product.description}</p>
+                        <p><strong>Note:</strong> ${product.note || ''}</p>
+                        <input type="text" id="note-${index}" value="${product.note || ''}" placeholder="Enter your note!"/>
+
+                        <div class="btn-container">
+                            <button class="remove-btn" onclick="removeProduct(${index})">Remove Item</button>
+                            <button class="add-note" onclick="addNote(${index})">Add Note</button>
+                        </div>
+                    `;
+                    bagContainer.appendChild(div); 
+                })
+            }
+
+            function addNote(index) {
+                const input = document.getElementById(`note-${index}`);
+                if (input) {
+                    bag[index].note = input.value;
+                    renderBag();
+                }
+            }
+
+            function addProduct(id) {
+                const message = document.getElementById('message');
+                const product = products.find(p => p.id === id);
+
+                if (bag.length >= maxItems) {
+                    message.textContent = 'Bag is full. Remove a product to add another.';
+                    return;
+                }
+
+                bag.push(product);
+                message.textContent = '';
+                renderBag();
+            }
+
+            function removeProduct(index) {
+                bag.splice(index, 1);
+                document.getElementById('message').textContent = '';
+                renderBag();
+            }
+
+            renderProducts();
+            renderBag();
+        </script>
+    </body>
+</html>

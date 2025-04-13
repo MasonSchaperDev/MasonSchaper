@@ -1,7 +1,7 @@
 body {
     margin: 0;
     overflow-x: hidden;
-    font-family: Galano Grotesque Alt, Adjusted Trebuchet MS Fallback, Trebuchet MS, sans-serif;
+    font-family: "Galano Grotesque Alt", "Adjusted Trebuchet MS Fallback", "Trebuchet MS", sans-serif;
 }
 
 nav {
@@ -585,7 +585,7 @@ nav button {
     transition: 0.3s ease-in-out;
 }
 
-.login-container a, p {
+.login-container a, .login-container p {
     text-decoration: none;
     text-align: center;
 }
@@ -671,7 +671,7 @@ nav button {
     transition: 0.3s ease-in-out;
 }
 
-.signup-container a, p {
+.signup-container a, .signup-container p {
     text-decoration: none;
     text-align: center;
 }

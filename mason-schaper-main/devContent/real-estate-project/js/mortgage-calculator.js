@@ -17,6 +17,17 @@ function calculateMortgage() {
     document.getElementById('result').style.color = 'green';
 }
 
+function updateFavoriteCount() {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const countElement = document.getElementById("favorite-count");
+
+    if (countElement) {
+        countElement.textContent = favorites.length;
+    }
+}   
+
+updateFavoriteCount();
+
 // this handles all of the STATE for logins
 const savedInfo = JSON.parse(localStorage.getItem('loginInfo'));
 const savedInfoSession = JSON.parse(localStorage.getItem('loginInfoSession'));

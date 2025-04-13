@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             document.getElementById('regResult').textContent = 'Registered Successfully.';
             document.getElementById('regResult').style.color = 'green';
+            const favoriteList = JSON.parse(localStorage.getItem("favorites") || []);
+            favoriteList.length === 0;
+            const countElement = document.getElementById("favorite-count");
+            countElement.textContent = favoriteList.length;
             setTimeout(() => {
                 window.location.href = "index.html";
             }, 2000);

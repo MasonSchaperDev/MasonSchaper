@@ -2,6 +2,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const registerBtn = document.getElementById('register');
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    function updateFavoriteCount() {
+        document.getElementById("favorite-count").textContent = favorites.length;
+    }   
+    
+    updateFavoriteCount();
     
     registerBtn.addEventListener('click', (event) => {
         event.preventDefault();
@@ -13,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const userData = {username, password};
             localStorage.setItem('loginInfo', JSON.stringify(userData));
             localStorage.setItem('loginInfoSession', JSON.stringify(userData));
-
+            localStorage.setItem("favorites", []) || [];
             document.getElementById('regResult').textContent = 'Registered Successfully.';
             document.getElementById('regResult').style.color = 'green';
             setTimeout(() => {

@@ -141,7 +141,7 @@ nav button {
 }
 
 .search-container {
-    background-image: url('../../images/night-house.png');
+    background-image: url('../images/night-house.png');
     background-position: 50% 55%;
     background-size: 2000px;
     filter: saturate(0.6);
@@ -412,7 +412,7 @@ nav button {
 }
 
 #night-sky-bg {
-    background-image: url('../../images/night-house.png');
+    background-image: url('../images/night-house.png');
     width: 100%;
     background-position: 50% 50%;
 }

@@ -1,12 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loginBtn = document.getElementById('login');
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
     function updateFavoriteCount() {
-        document.getElementById("favorite-count").textContent = favorites.length;
+        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        const countElement = document.getElementById("favorite-count");
+    
+        if (countElement) {
+            countElement.textContent = favorites.length;
+        }
     }   
     
-    updateFavoriteCount();
+    updateFavoriteCount();    
 
     loginBtn.addEventListener('click', (event) => {
         event.preventDefault();
@@ -29,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (username === savedInfo.username && password === savedInfo.password) {
             document.getElementById('message').textContent = 'Logged in Successfully.';
             document.getElementById('message').style.color = 'green';
-            localStorage.setItem("favorites", []) || [];
             const userData = {username, password};
+
             localStorage.setItem('loginInfoSession', JSON.stringify(userData));
             setTimeout(() => {
                 window.location.href = "index.html";

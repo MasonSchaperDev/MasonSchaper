@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const changePassword = document.getElementById('changePassword');
+
+    function updateFavoriteCount() {
+        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        const countElement = document.getElementById("favorite-count");
+    
+        if (countElement) {
+            countElement.textContent = favorites.length;
+        }
+    }   
+    
+    updateFavoriteCount();    
     
     changePassword.addEventListener('click', (event) => {
         event.preventDefault();

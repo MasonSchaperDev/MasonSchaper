@@ -83,8 +83,6 @@ if (savedInfo && savedInfo.username) {
     signupBtn.style.display = "none";
     favoriteCount.style.right = "15%";
     logoutBtn.style.display = "unset";
-} else {
-    userDisplay.textContent = 'Guest';
 }
 
 function logOutUser() {

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Home - RealHouses</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+        <nav class="nav">
+            <div class="nav-child">
+                <div class="logo-container">
+                    <a href="index.html"><img src="images/house-logo.png"/></a>
+                    <h2>RealHouses.com</h2>
+                </div>
+
+                <div class="menu-items">
+                    <a href="index.html">Home</a>
+                    <a href="">Buy</a>
+                    <a href="">Sell</a>
+                    <a href="">Rent</a>
+                    <a href="">Mortgage</a>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <a href="favorite-houses.html"><img src="images/heart-icon.png"/></a>
+                <span id="favorite-count">0</span>
+                <button onclick="logOutUser()" id="logout-btn">Log out</button>
+                <a href="login-page.html"><button id="login-btn">Log in</button></a>
+                <a href="signup-page.html"><button id="signup-btn">Sign up</button></a>
+            </div>
+        </nav>
+
+        <div id="night-sky-bg"><h2>Mortgage Calculator</h2></div>
+        <div id="container">
+            <div id="mortgage-container">
+                <div class="input-container"><label>Loan Amount $: </label><input type="number" id="loanAmount"/></div>
+                <div class="input-container"><label>Annual Interest Rate %: </label><input type="number" id="interestRate" step="0.01"/></div>
+                <div class="input-container"><label>Loan Term (Years): </label><input type="number" id="loanTerm"/></div>
+
+                <button onclick="calculateMortgage()">Calculate Mortgage</button>
+                <p id="result"></p>
+            </div>
+        </div>
+
+        <div class="footer" style="bottom: -100px">
+            <div class="socials">
+                <a href=""><img src="images/x-logo.png" class="social-icon"/></a>
+                <a href=""><img src="images/instagram-logo.png" class="social-icon"/></a>
+                <a href=""><img src="images/pinterest-logo.png" class="social-icon"/></a>
+            </div>
+
+            <div class="footer-child">
+                <a href="">About us</a>
+                <a href="">Careers</a>
+                <a href="">Accessibility</a>
+                <a href="">Feedback</a>
+                <a href="">Media room</a>
+                <a href="">Ad Choices</a>
+                <a href="">Advertise with us</a>
+                <a href="">Agent support</a>
+                <a href="">Privacy</a>
+                <a href="">Terms</a>
+                <a href="">Home Made</a>
+                <a href="">Tech Blog</a>
+            </div>
+            <p id="rights-reserved">© 1995-2025 RealHouses All rights reserved.</p>
+        </div>
+
+        <script src="js/mortgage-calculator.js"></script>
+    </body>
+    </html>

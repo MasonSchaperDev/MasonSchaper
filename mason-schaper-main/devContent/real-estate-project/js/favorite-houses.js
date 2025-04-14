@@ -197,7 +197,6 @@ function updateUIForSession() {
       }
     }
     
-    // Define favoriteCount safely.
     const favoriteCount = document.getElementById('favorite-count');
     
     if (sessionData && sessionData.username) {
@@ -215,7 +214,6 @@ function updateUIForSession() {
     }
   }
   
-
 updateUIForSession();
 
 function logOutUser() {

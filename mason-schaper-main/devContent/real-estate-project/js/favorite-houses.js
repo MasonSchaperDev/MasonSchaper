@@ -227,7 +227,7 @@ function logOutUser() {
   if (document.getElementById('homes')) {
     renderHouses();
   }
-
+  document.querySelector('.btn-container').style = 'display: flex';
   window.location.href = "index.html"; 
 }
 

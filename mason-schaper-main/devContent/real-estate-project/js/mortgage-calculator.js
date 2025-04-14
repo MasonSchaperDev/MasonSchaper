@@ -46,6 +46,37 @@ if (savedInfoSession && savedInfoSession.username) {
     userDisplay.textContent = 'Guest';
 }
 
+function updateUIForSession() {
+    const sessionStr = localStorage.getItem('loginInfoSession');
+    console.log("Raw loginInfoSession:", sessionStr);
+    let sessionData = null;
+    if (sessionStr) {
+      try {
+        sessionData = JSON.parse(sessionStr);
+      } catch (e) {
+        console.error("Error parsing loginInfoSession", e);
+      }
+    }
+    
+    const favoriteCount = document.getElementById('favorite-count');
+    
+    if (sessionData && sessionData.username) {
+      userDisplay.textContent = sessionData.username;
+      loginBtn.style.display = "none";
+      signupBtn.style.display = "none";
+      logoutBtn.style.display = "block"; 
+      if (favoriteCount) favoriteCount.style.right = "15%";
+    } else {
+      userDisplay.textContent = "Guest";
+      loginBtn.style.display = "block";
+      signupBtn.style.display = "block";
+      logoutBtn.style.display = "none";
+      if (favoriteCount) favoriteCount.style.right = "10%";
+    }
+  }
+  
+updateUIForSession();
+
 function logOutUser() {
     const loginBtn = document.getElementById('login-btn');
     const signupBtn = document.getElementById('signup-btn');

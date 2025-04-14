@@ -16,7 +16,7 @@ function getFavoritesKey() {
 }
 
 // Select UI elements.
-const userDisplay = document.getElementById('user');
+const userDisplay = document.getElementById('username');
 const loginBtn = document.getElementById('login-btn');
 const signupBtn = document.getElementById('signup-btn');
 const logoutBtn = document.getElementById('logout-btn');
@@ -125,8 +125,8 @@ if (savedInfoSession && savedInfoSession.username) {
     userDisplay.textContent = savedInfoSession.username;
     loginBtn.style.display = "none";
     signupBtn.style.display = "none";
-    favoriteCount.style.right = "15%";
-
+    favoriteCount.style.top = "5px";
+    favoriteCount.style.left = "-11%";
     logoutBtn.style.display = "block"; 
 } else {
     userDisplay.textContent = 'Guest';
@@ -146,6 +146,7 @@ function logOutUser() {
     signupBtn.style.display = "block";  
     logoutBtn.style.display = "none";  
     userDisplay.textContent = 'Guest';
+    favoriteCount.style.left = "0%";
 
     updateFavoriteCount();
     renderHouses();

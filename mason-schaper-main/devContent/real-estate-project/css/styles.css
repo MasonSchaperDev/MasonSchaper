@@ -18,7 +18,17 @@ nav {
 
 #user {
     cursor: unset;
-}
+    background: #ff2b2b;    
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 20px;
+    position: relative;
+    left: -8%;
+    top: 7px;
+    height: 28px;
+    margin-left: 20px;
+} 
 
 input:focus::placeholder {
     color: transparent;
@@ -75,6 +85,7 @@ nav button {
 
 .btn-container {
     margin-left: 50px;
+    display: flex;
 }
 
 .btn-container img {
@@ -92,17 +103,24 @@ nav button {
     bottom: 12px;
     transition: 0.3s ease-in-out;
     margin-left: 5px;
+    height: 35px;
+    margin-top: 25px;
 }
 
 .btn-container span {
-    background: #000;
+    margin-top: 5px;
+}
+
+#favorite-count {
+    background: #ff2b2b;
     color: #fff;
     border-radius: 100%;
     padding: 5px 8px;
     font-size: 12px;
     position: relative;
-    right: 9.8%;
-    bottom: 25px;
+    left: -8%;
+    top: 7px;
+    height: 14px;
 }
 
 #signup-btn {

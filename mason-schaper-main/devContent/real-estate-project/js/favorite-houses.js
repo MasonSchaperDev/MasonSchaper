@@ -184,6 +184,18 @@ const loginBtn = document.getElementById('login-btn');
 const signupBtn = document.getElementById('signup-btn');
 const logoutBtn = document.getElementById('logout-btn');
 const userDisplay = document.getElementById('user');
+const savedInfo = JSON.parse(localStorage.getItem('loginInfo'));
+const savedInfoSession = JSON.parse(localStorage.getItem('loginInfoSession'));
+const favoriteCount = document.getElementById('favorite-count');
+
+if (savedInfoSession && savedInfoSession.username) {
+    loginBtn.style.display = "none";
+    signupBtn.style.display = "none";
+    favoriteCount.style.right = "15%";
+    logoutBtn.style.display = "unset";
+} else {
+    userDisplay.style.display = 'none';
+}
 
 function updateUIForSession() {
     const sessionStr = localStorage.getItem('loginInfoSession');

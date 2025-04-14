@@ -146,7 +146,6 @@ function logOutUser() {
     signupBtn.style.display = "block";  
     logoutBtn.style.display = "none";  
     userDisplay.textContent = 'Guest';
-    favoriteCount.style.left = "0%";
 
     updateFavoriteCount();
     renderHouses();

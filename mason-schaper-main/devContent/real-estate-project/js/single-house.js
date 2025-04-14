@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         favoriteCount.style.right = "15%";
         logoutBtn.style.display = "unset";
     } else {
-        userDisplay.textContent = 'Guest';
+        userDisplay.style.display = 'none';
     }
 
     function logOutUser() {

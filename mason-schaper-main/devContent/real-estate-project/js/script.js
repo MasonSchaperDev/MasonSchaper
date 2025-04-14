@@ -1,11 +1,48 @@
+// ============================
+// Favorites & Session Management
+// ============================
+
+let savedInfoSession = JSON.parse(localStorage.getItem('loginInfoSession'));
+const savedInfo = JSON.parse(localStorage.getItem('loginInfo'));
+
+if (!savedInfoSession || !savedInfoSession.username) {
+    localStorage.setItem('favorites', JSON.stringify([]));
+}
+
+function getFavoritesKey() {
+    return (savedInfoSession && savedInfoSession.username) ?
+           `favorites_${savedInfoSession.username}` :
+           'favorites';
+}
+
+// Select UI elements.
+const userDisplay = document.getElementById('user');
+const loginBtn = document.getElementById('login-btn');
+const signupBtn = document.getElementById('signup-btn');
+const logoutBtn = document.getElementById('logout-btn');
+const favoriteCount = document.getElementById('favorite-count');
+
+function updateFavoriteCount() {
+    if (!favoriteCount) return;
+    const isLoggedIn = savedInfoSession && savedInfoSession.username;
+    if (!isLoggedIn) {
+        favoriteCount.textContent = "0";
+        return;
+    }
+    const favorites = JSON.parse(localStorage.getItem(getFavoritesKey()) || '[]');
+    favoriteCount.textContent = favorites.length;
+}
+
+updateFavoriteCount();
+
 let homes = [];
 
 fetch('json/homes.json')
-.then(response => response.json())
-.then(data => {
-    homes = data;
-    renderHouses();
-});
+    .then(response => response.json())
+    .then(data => {
+        homes = data;
+        renderHouses();
+    });
 
 function renderHouses(houseList = homes) {
     const homeList = document.getElementById('homes');
@@ -20,7 +57,7 @@ function renderHouses(houseList = homes) {
         return;
     }
 
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const favorites = JSON.parse(localStorage.getItem(getFavoritesKey()) || '[]');
 
     houseList.forEach(home => {
         const isFavorite = favorites.includes(home.id.toString());
@@ -29,7 +66,9 @@ function renderHouses(houseList = homes) {
         const div = document.createElement('div');
         div.classList.add('home');
         div.innerHTML = `
-            <a href="single-house.html?houseId=${home.id}"><img src="${home.image}" class="house-img"/></a>
+            <a href="single-house.html?houseId=${home.id}">
+                <img src="${home.image}" class="house-img"/>
+            </a>
             <img src="${heartIcon}" class="favorite-home" data-id="${home.id}"/>
 
             <div class="house-description">
@@ -55,14 +94,16 @@ function renderHouses(houseList = homes) {
 
 function filterHouses() {
     const searchTerm = document.getElementById("search").value.toLowerCase();
-    const filteredHouses = homes.filter(house => 
+    const filteredHouses = homes.filter(house =>
         house.location.toLowerCase().includes(searchTerm)
     );
     renderHouses(filteredHouses);
 }
 
 function toggleFavorite(houseId, heartIcon) {
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    houseId = houseId.toString();
+    const key = getFavoritesKey();
+    let favorites = JSON.parse(localStorage.getItem(key) || '[]');
 
     if (favorites.includes(houseId)) {
         favorites = favorites.filter(id => id !== houseId);
@@ -72,60 +113,42 @@ function toggleFavorite(houseId, heartIcon) {
         heartIcon.src = "images/heart-filled-icon.png";
     }
 
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+    localStorage.setItem(key, JSON.stringify(favorites));
     updateFavoriteCount();
 }
 
-function updateFavoriteCount() {
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    const countElement = document.getElementById("favorite-count");
-
-    if (countElement) {
-        countElement.textContent = favorites.length;
-    }
-}   
 document.getElementById('search').addEventListener("input", filterHouses);
 updateFavoriteCount();
 
-// this handles all of the STATE for logins
-const savedInfo = JSON.parse(localStorage.getItem('loginInfo'));
-const savedInfoSession = JSON.parse(localStorage.getItem('loginInfoSession'));
-const userDisplay = document.getElementById('user');
-const loginBtn = document.getElementById('login-btn');
-const signupBtn = document.getElementById('signup-btn');
-const logoutBtn = document.getElementById('logout-btn');
-const favoriteCount = document.getElementById('favorite-count');
-
+// Update UI based on login state.
 if (savedInfoSession && savedInfoSession.username) {
-    userDisplay.textContent = savedInfo.username;
+    userDisplay.textContent = savedInfoSession.username;
     loginBtn.style.display = "none";
     signupBtn.style.display = "none";
     favoriteCount.style.right = "15%";
-    logoutBtn.style.display = "unset";
+
+    logoutBtn.style.display = "block"; 
 } else {
     userDisplay.textContent = 'Guest';
 }
 
 function logOutUser() {
-    const loginBtn = document.getElementById('login-btn');
-    const signupBtn = document.getElementById('signup-btn');
-    const favoriteCount = document.getElementById('favorite-count');
-    const logoutBtn = document.getElementById('logout-btn');
-    const userDisplay = document.getElementById('user');
-
     localStorage.removeItem('loginInfoSession');
-    loginBtn.style.display = "unset";
-    signupBtn.style.display = "unset";
 
-    if(favoriteCount) {
-        favoriteCount.style.right = "10%";
+    if (savedInfoSession && savedInfoSession.username) {
+        localStorage.removeItem(`favorites_${savedInfoSession.username}`);
     }
+    localStorage.setItem('favorites', JSON.stringify([]));
 
-    logoutBtn.style.display = "none";
+    savedInfoSession = null;
 
-    if (userDisplay) {
-        userDisplay.textContent = 'Guest';
-    }
+    loginBtn.style.display = "block"; 
+    signupBtn.style.display = "block";  
+    logoutBtn.style.display = "none";  
+    userDisplay.textContent = 'Guest';
+
+    updateFavoriteCount();
+    renderHouses();
 }
 
 logoutBtn.addEventListener('click', logOutUser);

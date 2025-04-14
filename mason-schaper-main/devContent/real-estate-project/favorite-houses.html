@@ -1,70 +1,85 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Favorites - RealHouses</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
-    <body>
-        <nav class="nav">
-            <div class="nav-child">
-                <div class="logo-container">
-                    <a href="index.html"><img src="images/house-logo.png"/></a>
-                    <h2>RealHouses.com</h2>
-                </div>
-
-                <div class="menu-items">
-                    <a href="index.html">Home</a>
-                    <a href="">Buy</a>
-                    <a href="">Sell</a>
-                    <a href="">Rent</a>
-                    <a href="mortgage-calculator.html">Mortgage</a>
-                </div>
-            </div>
-
-            <div class="btn-container">
-                <a href="favorite-houses.html"><img src="images/heart-icon.png"/></a>
-                <span id="favorite-count">0</span>
-                <button onclick="logOutUser()" id="logout-btn">Log out</button>
-                <a href="login-page.html"><button id="login-btn">Log in</button></a>
-                <a href="signup-page.html"><button id="signup-btn">Sign up</button></a>
-            </div>
-        </nav>
-
-        <div class="container"> 
-            <div class="favoriteList">
-                <h2>Favorites</h2>
-                <div id="favorites"></div>
-            </div>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Favorites - RealHouses</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-child">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="images/house-logo.png" alt="RealHouses Logo"/>
+          </a>
+          <h2>RealHouses.com</h2>
         </div>
-        
-        <div class="footer" id="footer">
-            <div class="socials">
-                <a href=""><img src="images/x-logo.png" class="social-icon"/></a>
-                <a href=""><img src="images/instagram-logo.png" class="social-icon"/></a>
-                <a href=""><img src="images/pinterest-logo.png" class="social-icon"/></a>
-            </div>
-
-            <div class="footer-child">
-                <a href="">About us</a>
-                <a href="">Careers</a>
-                <a href="">Accessibility</a>
-                <a href="">Feedback</a>
-                <a href="">Media room</a>
-                <a href="">Ad Choices</a>
-                <a href="">Advertise with us</a>
-                <a href="">Agent support</a>
-                <a href="">Privacy</a>
-                <a href="">Terms</a>
-                <a href="">Home Made</a>
-                <a href="">Tech Blog</a>
-            </div>
-            <p id="rights-reserved">© 1995-2025 RealHouses All rights reserved.</p>
+        <div class="menu-items">
+          <a href="index.html">Home</a>
+          <a href="">Buy</a>
+          <a href="">Sell</a>
+          <a href="">Rent</a>
+          <a href="mortgage-calculator.html">Mortgage</a>
         </div>
+      </div>
+      <div class="btn-container">
+        <a href="favorite-houses.html">
+          <img src="images/heart-icon.png" alt="Favorites"/>
+        </a>
+        <span id="favorite-count">0</span>
+        <!-- Added user display element -->
+        <span id="user"></span>
+        <button id="logout-btn">Log out</button>
+        <a href="login-page.html">
+          <button id="login-btn">Log in</button>
+        </a>
+        <a href="signup-page.html">
+          <button id="signup-btn">Sign up</button>
+        </a>
+      </div>
+    </nav>
 
-        <script src="js/favorite-houses.js"></script>
-    </body>
+    <div class="container">
+      <div class="favoriteList">
+        <h2>Favorites</h2>
+        <div id="favorites"></div>
+      </div>
+    </div>
+
+    <div class="footer" id="footer">
+      <div class="socials">
+        <a href="">
+          <img src="images/x-logo.png" class="social-icon" alt="X Logo"/>
+        </a>
+        <a href="">
+          <img src="images/instagram-logo.png" class="social-icon" alt="Instagram Logo"/>
+        </a>
+        <a href="">
+          <img src="images/pinterest-logo.png" class="social-icon" alt="Pinterest Logo"/>
+        </a>
+      </div>
+
+      <div class="footer-child">
+        <a href="">About us</a>
+        <a href="">Careers</a>
+        <a href="">Accessibility</a>
+        <a href="">Feedback</a>
+        <a href="">Media room</a>
+        <a href="">Ad Choices</a>
+        <a href="">Advertise with us</a>
+        <a href="">Agent support</a>
+        <a href="">Privacy</a>
+        <a href="">Terms</a>
+        <a href="">Home Made</a>
+        <a href="">Tech Blog</a>
+      </div>
+      <p id="rights-reserved">© 1995-2025 RealHouses All rights reserved.</p>
+    </div>
+
+    <!-- Load external JS file -->
+    <script src="js/favorite-houses.js"></script>
+  </body>
 </html>

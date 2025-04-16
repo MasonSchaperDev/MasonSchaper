@@ -6,12 +6,16 @@ import { homePage } from "./pages/home.js";
 import { aboutPage } from "./pages/about.js";
 import { contactPage } from "./pages/contact.js";
 import { ourDogs } from "./pages/our-dogs.js";
+import { locationPage } from "./pages/location.js";
+import { aboutMasonPage } from "./pages/about-mason.js";
 
 const routes = {
     home: homePage,
     about: aboutPage,
     contact: contactPage,
-    dogs: ourDogs
+    dogs: ourDogs,
+    location: locationPage,
+    mason: aboutMasonPage
 };
 
 export function loadPage(page) {

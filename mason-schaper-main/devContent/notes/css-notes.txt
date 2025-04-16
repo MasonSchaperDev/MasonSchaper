@@ -1,3 +1,12 @@
+<---------------------- TARGET BLANK VS _BLANK ----------------- START
+
+blank targets an existing frame or window called "blank". A new window is created only if "blank" doesn't already exist.
+
+_blank is a reserved name which targets a new, unnamed window.
+
+<---------------------- TARGET BLANK VS _BLANK ----------------- END
+
+
 ------------------------ SELECTORS START --------------------------
 
 selectors are patterns used to select the element you want to style.
@@ -9,7 +18,6 @@ p {
     font-size: 10px;
 }
 
-
 id selector: The id selector uses the id attribute of an HTML element to select a specific element.
 The id of an element is unique within a page, so the id selector is used to select one unique element! Use '#' to define it.
 syntax: 
@@ -18,7 +26,6 @@ syntax:
     font-size: 10px;
 }
 
-
 class selector: The class selector selects HTML elements with a specific class attribute.
 To select elements with a specific class, write a period (.) character, followed by the class name.
 
@@ -26,13 +33,11 @@ To select elements with a specific class, write a period (.) character, followed
     color: #fff;
 }
 
-
 universal selector: The universal selector "*" selects all HTML elements on the page.
 
 * {
     background-color: #fff;
 }
-
 
 attribute: Attribute selectors give you different ways to select elements based on the presence of a certain attribute on an element.
 
@@ -40,7 +45,6 @@ a[href="www.google.com"] {
     background-color: #df009d;
 }
 /* this will select any element with an A-tag targeting google */
-
 
 pseudo: pseudo classes style specific parts of an element or value. 
 It also includes pseudo-elements, which select a 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tailwind SPA Example</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <nav class="bg-white shadow">
+    <ul class="container mx-auto flex">
+      <li class="flex-1">
+        <a href="#home"
+           id="link-home"
+           class="block text-center py-4 text-gray-700 hover:bg-gray-200 transition">Home</a>
+      </li>
+      <li class="flex-1">
+        <a href="#about"
+           id="link-about"
+           class="block text-center py-4 text-gray-700 hover:bg-gray-200 transition">About</a>
+      </li>
+      <li class="flex-1">
+        <a href="#services"
+           id="link-services"
+           class="block text-center py-4 text-gray-700 hover:bg-gray-200 transition">Services</a>
+      </li>
+      <li class="flex-1">
+        <a href="#contact"
+           id="link-contact"
+           class="block text-center py-4 text-gray-700 hover:bg-gray-200 transition">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="app" class="flex-1 container mx-auto p-6 bg-white mt-6 rounded shadow"></main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- JavaScript-SPA-Tailwind/
+├── index.html
+└── app.js
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini JS SPA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex space-x-4">
+      <a href="#/home" class="hover:text-blue-500">Home</a>
+      <a href="#/about" class="hover:text-blue-500">About</a>
+      <a href="#/contact" class="hover:text-blue-500">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main id="app" class="container mx-auto px-4 py-6"></main>
+
+  <script src="app.js"></script>
+</body>
+</html>

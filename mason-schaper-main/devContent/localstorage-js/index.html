@@ -1,0 +1,38 @@
+<!-- js-modules-advanced/
+├── index.html
+└── script.js
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Local Storage</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            body { font-family: sans-serif; display: flex; }
+            #menu { width: 200px; margin-right: 20px; }
+            #menu li { cursor: pointer; margin: 5px 0; color: blue; }
+            #menu li:hover { text-decoration: underline; }
+            #product-display img { max-width: 200px; display: block; margin-bottom: 10px; }
+        </style>
+    </head>
+    <body>
+        <ul id="menu"></ul>
+        <div id="product-display">
+            <h2>Select a product to buy</h2>
+        </div>
+
+        <script>
+            const products = [
+                { id: 1, name: 'Headphones', description: 'Bluetooth wireless headphones', price: 200.99 },
+                { id: 2, name: 'Tablet', description: '24in screen tablet', price: 1330.99 },
+                { id: 3, name: 'Mouse', description: 'Wired Mouse with 2 buttons', price: 79.99 }
+            ];
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>

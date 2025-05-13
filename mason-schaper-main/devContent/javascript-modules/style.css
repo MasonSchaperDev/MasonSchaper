@@ -1,0 +1,35 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+  }
+  
+  nav#menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  nav#menu button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #eef;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  nav#menu button.active {
+    background: #336699;
+    color: #fff;
+  }
+  
+  main#content {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-height: 200px;
+    background: #fafafa;
+  }
+  

@@ -22,4 +22,6 @@ export function createMenu(container, items, onSelect) {
 
         onSelect(btn.dataset.key);
     })
-}
+    const first = container.querySelector('button');
+    if (first) first.click();
+  }

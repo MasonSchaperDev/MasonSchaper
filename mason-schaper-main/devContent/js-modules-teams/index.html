@@ -1,0 +1,42 @@
+<!-- /js-modules-teams 
+├── index.html
+├── data.js
+└── main.js
+-->
+<!--
+Select a team from a <select> dropdown there will be 3 teams Sharks, Eagles, Tigers
+Enter a player’s name in an input field, the label for this teamSelect will be within the label and it will be Choose a team
+Click “Add Player” to append that name under the chosen team
+You will also need a <section> that will hold the rosterSection that will be where the dynamically-generated team rosters go
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Team Roster Manager APP</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body { font-family: sans-serif; padding: 2rem; }
+            section { margin-top: 1.5rem; }
+            ul { list-style: disc inside; }
+        </style>
+    </head>
+    <body>
+        <h1>Team Roster Manager</h1>
+        <label>Choose a team:
+            <select id="teamSelect"></select>
+        </label>
+
+        <label>Player name:
+            <input id="playerInput" type="text">
+        </label>
+
+        <button id="addBtn">Add Players</button>
+
+        <section id="rosterSection"></section>
+
+        <script type="module" src="./main.js"></script>
+    </body>
+</html>

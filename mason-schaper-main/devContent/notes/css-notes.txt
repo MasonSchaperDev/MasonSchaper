@@ -6,6 +6,12 @@ _blank is a reserved name which targets a new, unnamed window.
 
 <---------------------- TARGET BLANK VS _BLANK ----------------- END
 
+<---------------------- TAILWIND ----------------- START
+
+Input this into the html head to use Tailwind CSS --> <script src="https://cdn.tailwindcss.com"></script>
+
+
+<---------------------- TAILWIND ----------------- END
 
 ------------------------ SELECTORS START --------------------------
 

@@ -1,0 +1,118 @@
+<!--separate meats, beverages, and vegetables into modules: index.js, beverages.js, meats.js, vegetables.js. 
+Each category will have its own array.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grocery Cart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <h1 class="text-3xl font-bold mb-6">Grocery Shop</h1>
+  <div class="grid grid-cols-4 gap-6">
+    <!-- Categories -->
+    <div id="categories" class="col-span-3 grid grid-cols-3 gap-4"></div>
+    <!-- Cart -->
+    <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-2xl font-semibold mb-4">Your Cart (<span id="cart-count">0</span>)</h2>
+      <ul id="cart-items" class="list-disc list-inside space-y-2"></ul>
+      <button id="clear-cart" class="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+        Clear Cart
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Data
+    const categories = {
+      Meats: ['Steak', 'Chicken', 'Bacon'],
+      Beverages: ['Water', 'Soda', 'Juice'],
+      Vegetables: ['Broccoli', 'Tomato', 'Onion']
+    };
+    const cart = {};
+
+    // Render category sections
+    const categoriesEl = document.getElementById('categories');
+    Object.entries(categories).forEach(([category, items]) => {
+      const section = document.createElement('div');
+      section.className = 'bg-white p-4 rounded shadow';
+      section.innerHTML = `<h3 class="text-xl font-semibold mb-2">${category}</h3>`;
+      const list = document.createElement('ul');
+      list.className = 'space-y-2';
+      items.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'flex justify-between items-center';
+        li.innerHTML = `
+          <span>${item}</span>
+          <button data-item="${item}" class="px-2 py-1 bg-green-500 text-white rounded hover:bg-green-600">
+            Add
+          </button>
+        `;
+        list.appendChild(li);
+      });
+      section.appendChild(list);
+      categoriesEl.appendChild(section);
+    });
+
+    // Handlers
+    function renderCart() {
+      const itemsEl = document.getElementById('cart-items');
+      itemsEl.innerHTML = '';
+      let totalCount = 0;
+      Object.entries(cart).forEach(([item, qty]) => {
+        totalCount += qty;
+        const li = document.createElement('li');
+        li.className = 'flex justify-between items-center';
+        li.innerHTML = `
+          <div class="flex items-center space-x2">
+            <span>${item}</span>
+            <button data-decrement="${item}" class="px-2 py-1 bg-yellow-500 text-white rounded hover: bg-yellow-600">-</button>
+            <span>${qty}</span>
+            <button data-increment="${item}" class="px-2 py-1 bg-green-500 text-white rounded hover: bg-green-600">+</button>
+          </div>
+          <button data-delete="${item}" class="px-2 py-1 bg-red-500 text-white rounded hover: bg-red-600">Delete</button>
+        `;
+        itemsEl.appendChild(li);
+      });
+      document.getElementById('cart-count').textContent = totalCount;
+    }
+
+    categoriesEl.addEventListener('click', e => {
+      if (e.target.dataset.item) {
+        const name = e.target.dataset.item;
+        cart[name] = (cart[name] || 0) + 1;
+        renderCart();
+      }
+    });
+
+    document.getElementById('cart-items').addEventListener('click', e => {
+      // need to declare 3 variables: nameInc, nameDec, nameDel. Set it equal to the dataset that matches each variable. 
+      const nameInc = e.target.dataset.increment;
+      const nameDec = e.target.dataset.decrement;
+      const nameDel = e.target.dataset.delete;
+
+      if (nameInc) {
+        cart[nameInc] = (cart[nameInc] || 0) + 1;
+      } else if (nameDec) {
+        if (cart[nameDec] > 1) {
+          cart[nameDec]--;
+        } else {
+          delete cart[nameDec];
+        }
+      } else if (nameDel) {
+        delete cart[nameDel];
+      }
+      renderCart();
+    });
+
+    document.getElementById('clear-cart').addEventListener('click', () => {
+      Object.keys(cart).forEach(key => delete cart[key]);
+      renderCart();
+    });
+ 
+    // Initial render
+    renderCart();
+  </script>
+</body>
+</html>

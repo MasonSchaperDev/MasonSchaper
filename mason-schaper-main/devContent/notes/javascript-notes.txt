@@ -638,6 +638,29 @@ Key Points:
 
 Use the rest operator when you are unsure of how many arguments a function might receive.
 
+Spreading in object literals enumerates the own properties of the value. 
+For typical arrays, all indices are enumerable own properties, so arrays can be spread into objects.
+
+D. Destructuring Objects
+The destructuring syntax is a JavaScript syntax that makes it possible to unpack values from arrays,
+or properties from objects, into distinct variables.
+
+Example --> 
+let a, b, rest;
+[a, b] = [10, 20];
+
+console.log(a);
+// Expected output: 10
+
+console.log(b);
+// Expected output: 20
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
+// Expected output: Array [30, 40, 50]
+
+
 3. Returning Values from Functions
 A function can return a value using the return keyword. If no value is returned, the function returns undefined by default.
 
@@ -700,6 +723,9 @@ Key Points:
 This pattern is very useful in functional programming.
 
 It allows for flexible and reusable code patterns.
+
+spreading in object literals enumerates the own properties of the value.
+For typical arrays, all indices are enumerable own properties, so arrays can be spread into objects.
 
 5. Scope and Closures
 A. Function Scope
@@ -1732,32 +1758,6 @@ This example provides a comprehensive demonstration of several JavaScript array 
 Each method helps manipulate array data to fit various needs, from simple additions and removals to more complex transformations and aggregations.
 
 <------------ ARRAY METHODS ------------- END
-
-<------------   IMPORT STATEMENTS ------------- START
-
-The static import declaration is used to import read-only live bindings which are exported by another module. 
-  For example --> import { function } from './fileName.js';
-
-In order to use the import declaration in a source file, the file must be interpreted by the runtime as a module. 
-  For example --> <script src="./script.js" type="module"></script>
-
-<------------ IMPORT STATEMENTS ------------- END
-
-<------------   EXPORT STATEMENTS ------------- START
-
-The export statement in JavaScript modules enables the sharing of variables, functions, or classes with other modules. It comes in two primary forms: named exports and default exports.
-  For example --> export const greeting = "Hello!";
-  // After you export the variable, you can bind it to another file with an import statement.
-  For example --> import { greeting } from './greeting.js';
-
-Let's do this with a function too.
-  Example --> export function greeting() { 
-    console.log('Hello.');
-  }
-
-  Then bind it --> import { greeting } from './greeting.js';
-
-<------------   EXPORT STATEMENTS ------------- END
 
 <------------ EVENTS ------------- START
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Javascript Lesson</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+              font-family: Arial, sans-serif;
+              display: flex;
+              height: 100vh;
+              margin: 0;
+            }
+            nav {
+              width: 200px;
+              background: #f4f4f4;
+              padding: 1rem;
+              box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            }
+            nav button {
+              display: block;
+              width: 100%;
+              margin-bottom: 0.5rem;
+              padding: 0.5rem;
+              background: white;
+              border: 1px solid #ccc;
+              cursor: pointer;
+              text-align: left;
+            }
+            nav button.active {
+              background: #e0e0e0;
+              font-weight: bold;
+            }
+            #content {
+              flex: 1;
+              padding: 2rem;
+            }
+          </style>
+    </head>
+    <body>
+        <nav id="menu"></nav>
+        <main id="content"></main>
+        <script src="./main.js" type="module"></script>
+    </body>
+</html>

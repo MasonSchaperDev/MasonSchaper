@@ -638,10 +638,31 @@ Key Points:
 
 Use the rest operator when you are unsure of how many arguments a function might receive.
 
-Spreading in object literals enumerates the own properties of the value. 
-For typical arrays, all indices are enumerable own properties, so arrays can be spread into objects.
+D. Spread Operator 
+He spread (...) syntax allows an iterable, such as an array or string,
+to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected. 
 
-D. Destructuring Objects
+
+Example:
+  function sum(x, y, z) {
+    return x + y + z;
+  }
+
+  const numbers = [1, 2, 3];
+
+  console.log(sum(...numbers));
+  // Expected output: 6
+
+  console.log(sum.apply(null, numbers));
+  // Expected output: 6
+
+Key points:
+  Spreading in object literals enumerates the own properties of the value. 
+  For typical arrays, all indices are enumerable own properties, so arrays can be spread into objects.
+
+
+
+E. Destructuring Objects
 The destructuring syntax is a JavaScript syntax that makes it possible to unpack values from arrays,
 or properties from objects, into distinct variables.
 
@@ -1631,6 +1652,19 @@ Example:
 The do...while loop runs the block of code at least once before checking the condition (k <= 5). 
 In this example, it appends the value of k to the doWhileOutput string, increments k, and then checks 
 the condition to decide if it should continue.
+
+For...Of Loop:
+
+The for...of loop in JavaScript is designed for iterating over iterable objects, such as Arrays, Strings, Maps, Sets, and more. 
+It provides a clean and readable syntax for accessing the values within these objects.
+
+Syntax: 
+const myArray = [10, 20, 30];
+
+for (const element of myArray) {
+  console.log(element);
+}
+// Expected output: 10, 20, 30
 
 Each loop type is useful in different situations:
 

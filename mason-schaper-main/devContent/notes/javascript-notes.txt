@@ -2900,7 +2900,7 @@ Custom Collection Example
   <script>
     // Custom Collection Class that is Iterable using a Generator
     class CustomCollection {
-      constructor(...items) {
+      constructor(...items) { 
         this.items = items;
       }
       // Implement the default iterator using a generator function.

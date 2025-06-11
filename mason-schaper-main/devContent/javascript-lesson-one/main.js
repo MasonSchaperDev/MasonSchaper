@@ -37,7 +37,7 @@ Object.keys(sections).forEach((name, idx) => {
             btn.classList.toggle('active', showBio);
             render();
         });
-    }
+    }x
     menuEl.appendChild(btn);
 });
 
